@@ -95,8 +95,8 @@ SPACESHIP_PROMPT_ORDER=(
 # SPACESHIP_PYENV_SUFFIX=") "
 # SPACESHIP_PYENV_SYMBOL=""
 
-
-plugins=(git autojump vi-mode zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git vi-mode zsh-syntax-highlighting zsh-autosuggestions)
+#plugins=(git autojump zsh-syntax-highlighting zsh-autosuggestions)
 
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/.shortcutrc" ] && source "$HOME/.config/.shortcutrc"
