@@ -1,1 +1,1 @@
-# bindkey -s '^o' 'lfcd\n'
+bindkey -s '^o' 'lfcd\n'
