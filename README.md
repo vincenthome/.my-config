@@ -1,3 +1,7 @@
 # .config
 
-put all these in ~/.config
+```
+cd ~
+git clone https://github.com/vincenthome/.config.git
+```
+
