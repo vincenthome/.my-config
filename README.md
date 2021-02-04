@@ -1,3 +1,14 @@
+# Install and switch to zsh
+
+- Via Package Manager: `apt install zsh`
+- Verify installation by running `zsh --version`
+- Make it your default shell: `chsh -s $(which zsh)`
+
+# Install oh-my-zsh
+
+- curl: `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+- wget: `sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"`
+
 # .config
 
 ```
