@@ -15,7 +15,6 @@
 - edit ~/.zshrc: 
   - add near front `[ -f "$HOME/.config/.zshrc" ] && source "$HOME/.config/.zshrc"` 
   - add near bottom 
-  
     ```
     #### Load aliases and shortcuts if existent. MUST RUN AFTER oh-my-zsh.sh
     [ -f "$HOME/.config/.shortcutrc" ] && source "$HOME/.config/.shortcutrc"
