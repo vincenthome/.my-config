@@ -37,14 +37,14 @@ ZSH_THEME="agnoster"
 - `vscode` – makes interaction between the command line and the code editor easier.
 - `zsh-autosuggestions`
 
-## Directory Navigation
+## Directory
 
 - Skip `cd`
 
-- `...` to move up 2 directories
-
+- `..` `...` `....` `.....` to move up x directories
+- `/` `~`
+- `rd`
 - partialDirectory `TAB` / some path `TAB`
-
 - `z` from most frequent diretory list
 
 
