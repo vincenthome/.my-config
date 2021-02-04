@@ -120,3 +120,14 @@ Finally, right click on the terminal’s title bar, choose Properties > Font and
 ## Tips and Tricks
 
 [https://www.sitepoint.com/zsh-tips-tricks/](https://www.sitepoint.com/zsh-tips-tricks/)
+
+## Install Nodejs
+
+### Ubuntu
+
+```
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
+[https://github.com/nodesource/distributions/blob/master/README.md#debinstall](https://github.com/nodesource/distributions/blob/master/README.md#debinstall)
