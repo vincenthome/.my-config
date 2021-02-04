@@ -19,7 +19,7 @@ Activate them
 ```
 plugins=(zsh-autosuggestions)
 ZSH_THEME="agnoster"
-```
+```  
 
 ### Popular Themes
 
@@ -36,6 +36,9 @@ ZSH_THEME="agnoster"
 - `sudo` – hitting ESC twice puts sudo in front of the current command, or the last one if the command line is empty.
 - `vscode` – makes interaction between the command line and the code editor easier.
 - `zsh-autosuggestions`
+- `zsh-syntax-highlighting`
+- `lf`
+- `autojump`
 
 ## Directory
 
@@ -75,7 +78,7 @@ function acp() {
 - `unrar (tab)`
 
 ## Fonts
-p.s. In WSL, if we are seeing broken characters in terminal, as soon as installed Oh My Zsh. To remedy this we need to install the Powerline fonts and tell our terminal to use them.
+p.s. In WSL, if we are seeing broken characters in terminal, as soon as installed Oh My Zsh. To remedy this we need to install the Powerline fonts and tell our terminal to use them. fira-code-nerdfont
 
 ```
 git clone https://github.com/powerline/fonts.git
