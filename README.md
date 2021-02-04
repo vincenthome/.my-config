@@ -5,6 +5,16 @@ cd ~
 git clone https://github.com/vincenthome/.config.git
 ```
 
+## Custom Theme, Plugin
+
+Install them here
+
+```
+~/.oh-my-zsh/custom/plugins
+~/.oh-my-zsh/custom/theme
+```
+
+## Fonts
 p.s. In WSL, if we are seeing broken characters in terminal, as soon as installed Oh My Zsh. To remedy this we need to install the Powerline fonts and tell our terminal to use them.
 
 ```
