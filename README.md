@@ -40,9 +40,9 @@ ZSH_THEME="agnoster"
 ## Directory
 
 - Skip `cd`
-
 - `..` `...` `....` `.....` to move up x directories
 - `/` `~`
+- `take` Create a new directory and change to it
 - `rd`
 - partialDirectory `TAB` / some path `TAB`
 - `z` from most frequent diretory list
@@ -62,6 +62,17 @@ function acp() {
   git push
 }
 ```
+
+## Misc
+
+- `x` Extract an archive
+- `alias` list all aliases
+- `zsh_stats` Get a list of the top 20 commands and how many times they have been run.
+- `uninstall_oh_my_zsh`
+- `omz update` Upgrade Oh-my-zsh
+- `ls -(tab)
+- `ssh (tab)`
+- `unrar (tab)`
 
 ## Fonts
 p.s. In WSL, if we are seeing broken characters in terminal, as soon as installed Oh My Zsh. To remedy this we need to install the Powerline fonts and tell our terminal to use them.
