@@ -30,31 +30,31 @@ ZSH_THEME="agnoster"
 
 - `cloudapp` – uploads files and piped contents to the Cloudapp service. Outputs and copies the resultant URL to the clipboard.
 - `command-not-found` – if a command is not recognized in the $PATH, this will use Ubuntu’s command-not-found package to find it or suggest spelling mistakes (Only for Ubuntu and openSUSE).
+- `git`
 - `node` – open the Node API, for your current version, in your browser.
 - `npm` – adds autocompletion to npm.
 - `sudo` – hitting ESC twice puts sudo in front of the current command, or the last one if the command line is empty.
 - `vscode` – makes interaction between the command line and the code editor easier.
+- `zsh-autosuggestions`
 
-## Navigation
+## Directory Navigation
 
-### Directory
+- Skip `cd`
 
-Skip `cd`
+- `...` to move up 2 directories
 
-`...` to move up 2 directories
+- partialDirectory `TAB` / some path `TAB`
 
-partialDirectory `TAB` / some path `TAB`
-
-`z` from most frequent diretory list
+- `z` from most frequent diretory list
 
 
 ## Git
 
-Command Lookup e.g. `git a` + `TAB`
+- Command Lookup e.g. `git a` + `TAB`
 
-plugins=(git z zsh-autosuggestions)
+- plugins=(git)
 
-alias for multiple commands:
+- alias for multiple commands:
 ```
 function acp() {
   git add .
