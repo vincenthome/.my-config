@@ -11,9 +11,28 @@
 
 # Install .config
 
-```
-git clone https://github.com/vincenthome/.config.git ~
-```
+- Clone: `git clone https://github.com/vincenthome/.config.git ~/.config`
+- edit ~/.zshrc: 
+  - add near front `[ -f "$HOME/.config/.zshrc" ] && source "$HOME/.config/.zshrc"` 
+  - add near bottom 
+  
+    ```
+    #### Load aliases and shortcuts if existent. MUST RUN AFTER oh-my-zsh.sh
+    [ -f "$HOME/.config/.shortcutrc" ] && source "$HOME/.config/.shortcutrc"
+    [ -f "$HOME/.config/.aliasrc" ] && source "$HOME/.config/.aliasrc"
+
+    autoload -U colors && colors
+    unset LS_COLORS;
+    LS_COLORS='rs=0:di=01;35;40:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=$export LS_COLORS
+
+    zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+    export CLICOLOR=1
+    export CLICOLOR_FORCE=1
+    ```
+  
+
+
+
 
 ## Custom Theme, Plugin
 
