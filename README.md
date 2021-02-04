@@ -94,6 +94,16 @@ If PowerShell blocks you from running the script, then try setting the Execution
 
 Finally, right click on the terminal’s title bar, choose Properties > Font and make sure a Powerline font is selected. In testing, Deja Vu Sans Mono for Powerline.
 
+## GNU find
+
+- File:  find dir -name filename // '.' current dir 
+- wildcard * must enclosed w/ quote ' test*.* 
+- Dir: find . -type d dirname
+- cheatsheet - https://bencane.com/2012/07/22/cheat-sheet-21-useful-find-commands/ 
+- grep word filename
+ - … | less  // keystroke: 'b' back / 'spacebar' forward / 'q' quit
+
+
 ## Tips and Tricks
 
 [https://www.sitepoint.com/zsh-tips-tricks/](https://www.sitepoint.com/zsh-tips-tricks/)
