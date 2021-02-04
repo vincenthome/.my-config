@@ -9,7 +9,7 @@
 - curl: `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 - wget: `sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"`
 
-# .config
+# Install .config
 
 ```
 git clone https://github.com/vincenthome/.config.git ~
