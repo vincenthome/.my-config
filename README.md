@@ -7,11 +7,60 @@ git clone https://github.com/vincenthome/.config.git
 
 ## Custom Theme, Plugin
 
-Install them here
+Install them here:
 
 ```
 ~/.oh-my-zsh/custom/plugins
 ~/.oh-my-zsh/custom/theme
+```
+
+Activate them
+
+```
+plugins=(zsh-autosuggestions)
+ZSH_THEME="agnoster"
+```
+
+### Popular Themes
+
+- `agnoster`
+- `spaceship`
+
+### Popular Plugins
+
+- `cloudapp` – uploads files and piped contents to the Cloudapp service. Outputs and copies the resultant URL to the clipboard.
+- `command-not-found` – if a command is not recognized in the $PATH, this will use Ubuntu’s command-not-found package to find it or suggest spelling mistakes (Only for Ubuntu and openSUSE).
+- `node` – open the Node API, for your current version, in your browser.
+- `npm` – adds autocompletion to npm.
+- `sudo` – hitting ESC twice puts sudo in front of the current command, or the last one if the command line is empty.
+- `vscode` – makes interaction between the command line and the code editor easier.
+
+## Navigation
+
+### Directory
+
+Skip `cd`
+
+`...` to move up 2 directories
+
+partialDirectory `TAB` / some path `TAB`
+
+`z` from most frequent diretory list
+
+
+## Git
+
+Command Lookup e.g. `git a` + `TAB`
+
+plugins=(git z zsh-autosuggestions)
+
+alias for multiple commands:
+```
+function acp() {
+  git add .
+  git commit -m "$1"
+  git push
+}
 ```
 
 ## Fonts
