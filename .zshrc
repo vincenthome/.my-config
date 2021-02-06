@@ -10,14 +10,13 @@ ZSH_THEME="spaceship"
 #CUSTOM SPACESHIP OVERRIDE
 SPACESHIP_PROMPT_ORDER=(
     time          # Time stampts section
+    node          # Node.js section
     user          # Username section
     dir           # Current directory section
     host          # Hostname section
     git           # Git section (git_branch + git_status)
-
     package       # Package version
-
-    node          # Node.js section
+    
     # docker        # Docker section
     # aws           # Amazon Web Services section
     # gcloud        # Google Cloud Platform section
@@ -28,7 +27,7 @@ SPACESHIP_PROMPT_ORDER=(
 
     exec_time     # Execution time
     line_sep      # Line break
-    vi_mode       # Vi-mode indicator
+    #vi_mode       # Vi-mode indicator
 
     # jobs          # Background jobs indicator
     
