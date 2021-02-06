@@ -15,17 +15,17 @@
 
 - `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 
-# Install .config
+# Install .my-config
 
-- Clone: `git clone https://github.com/vincenthome/.config.git ~/.config`
+- Clone: `git clone https://github.com/vincenthome/.my-config.git ~/.my-config`
 - edit ~/.zshrc: 
-  - add near front `[ -f "$HOME/.config/.zshrc" ] && source "$HOME/.config/.zshrc"` 
+  - add near front `[ -f "$HOME/.my-config/.zshrc" ] && source "$HOME/.my-config/.zshrc"` 
   - add near bottom 
   
     ```
     # Load aliases and shortcuts if existent. MUST RUN AFTER oh-my-zsh.sh
-    [ -f "$HOME/.config/.shortcutrc" ] && source "$HOME/.config/.shortcutrc"
-    [ -f "$HOME/.config/.aliasrc" ] && source "$HOME/.config/.aliasrc"
+    [ -f "$HOME/.my-config/.shortcutrc" ] && source "$HOME/.my-config/.shortcutrc"
+    [ -f "$HOME/.my-config/.aliasrc" ] && source "$HOME/.my-config/.aliasrc"
 
     autoload -U colors && colors
     unset LS_COLORS;
@@ -180,7 +180,6 @@ sudo apt-get install -y nodejs
 # Windows 10 Terminal 
 
 [https://docs.microsoft.com/en-us/windows/terminal/](https://docs.microsoft.com/en-us/windows/terminal/)
-
 
 
 
