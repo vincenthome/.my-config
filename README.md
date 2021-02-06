@@ -1,3 +1,7 @@
+# Install nvm
+
+-  Instructions: [https://github.com/nvm-sh/nvm#installing-and-updating](https://github.com/nvm-sh/nvm#installing-and-updating)
+
 # Install .ssh
 
 - priviate key: `id_rsa`
