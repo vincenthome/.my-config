@@ -5,6 +5,7 @@
 # 3 Ways to Install NPM (Node Package Manager) on Ubuntu
 
 - For Specific Version using nvm OR from NodeSource Repository: [https://phoenixnap.com/kb/install-latest-node-js-and-nmp-on-ubuntu](https://phoenixnap.com/kb/install-latest-node-js-and-nmp-on-ubuntu)
+- todo extract above info
 
 # Install .ssh
 
