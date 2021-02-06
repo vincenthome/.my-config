@@ -2,6 +2,10 @@
 
 -  Instructions: [https://github.com/nvm-sh/nvm#installing-and-updating](https://github.com/nvm-sh/nvm#installing-and-updating)
 
+# 3 Ways to Install NPM (Node Package Manager) on Ubuntu
+
+- For Specific Version using nvm OR from NodeSource Repository: [https://phoenixnap.com/kb/install-latest-node-js-and-nmp-on-ubuntu](https://phoenixnap.com/kb/install-latest-node-js-and-nmp-on-ubuntu)
+
 # Install .ssh
 
 - priviate key: `id_rsa`
