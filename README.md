@@ -1,3 +1,9 @@
+# Install .ssh
+
+- priviate key: `id_rsa`
+- public key: `id_rsa.pub`
+- known host?
+
 # Install and switch to zsh
 
 - Via Package Manager: `apt install zsh`
