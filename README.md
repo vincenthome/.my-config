@@ -170,6 +170,10 @@ sudo apt-get install -y nodejs
 
 `sudo apt install build-essential`
 
+# Install Python2 on Ubuntu
+
+`sudo apt install python2`
+
 
 
 
