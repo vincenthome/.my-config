@@ -20,6 +20,7 @@
 - Clone: `git clone https://github.com/vincenthome/.my-config.git ~/.my-config`
 - edit ~/.zshrc: 
   - add near front `[ -f "$HOME/.my-config/.zshrc" ] && source "$HOME/.my-config/.zshrc"` 
+  - comment out `ZSH_THEME=`, `plugins=`
   - add near bottom 
   
     ```
