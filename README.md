@@ -178,6 +178,10 @@ sudo apt-get install -y nodejs
 
 `npm install -g @angular/cli`
 
+# Windows 10 Terminal 
+
+[https://docs.microsoft.com/en-us/windows/terminal/](https://docs.microsoft.com/en-us/windows/terminal/)
+
 
 
 
