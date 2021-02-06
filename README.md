@@ -3,7 +3,7 @@
 - priviate key: `id_rsa`
 - public key: `id_rsa.pub`
 - known host?
-- If get error about private key not secure, run `chmod 400 ~/.ssh/id_rsa`
+- If get error about Permission for private key `id_rsa` too open, run `chmod 400 ~/.ssh/id_rsa`
 
 # Install and switch to zsh
 
