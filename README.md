@@ -174,6 +174,10 @@ sudo apt-get install -y nodejs
 
 `sudo apt install python2`
 
+# Install Angular Global
+
+`npm install -g @angular/cli`
+
 
 
 
