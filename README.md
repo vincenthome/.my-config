@@ -1,12 +1,3 @@
-# Install nvm
-
--  Instructions: [https://github.com/nvm-sh/nvm#installing-and-updating](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-# 3 Ways to Install NPM (Node Package Manager) on Ubuntu
-
-- For Specific Version using nvm OR from NodeSource Repository: [https://phoenixnap.com/kb/install-latest-node-js-and-nmp-on-ubuntu](https://phoenixnap.com/kb/install-latest-node-js-and-nmp-on-ubuntu)
-- todo extract above info
-
 # Install .ssh
 
 - priviate key: `id_rsa`
@@ -158,13 +149,27 @@ Finally, right click on the terminal’s title bar, choose Properties > Font and
 
 [https://www.sitepoint.com/zsh-tips-tricks/](https://www.sitepoint.com/zsh-tips-tricks/)
 
+
+# Install nvm
+
+-  Instructions: [https://github.com/nvm-sh/nvm#installing-and-updating](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+# 3 Ways to Install Nodejs/Npm (Node Package Manager) on Ubuntu
+
+- For Specific Version using nvm OR from NodeSource Repository: [https://phoenixnap.com/kb/install-latest-node-js-and-nmp-on-ubuntu](https://phoenixnap.com/kb/install-latest-node-js-and-nmp-on-ubuntu)
+- todo extract above info
+
 ## Install Nodejs
-
-### Ubuntu
-
 ```
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
-
 [https://github.com/nodesource/distributions/blob/master/README.md#debinstall](https://github.com/nodesource/distributions/blob/master/README.md#debinstall)
+
+# Installing GCC on Ubuntu 20.04
+
+`sudo apt install build-essential`
+
+
+
+
