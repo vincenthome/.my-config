@@ -175,10 +175,10 @@ function acp() {
 # Install .ssh
 
 - Copy .ssh directory `cp -r /mnt/c/.ssh ~/.ssh`
+- Set premission: `chmod 400 ~/.ssh/id_rsa` 
   - priviate key: `id_rsa`
   - public key: `id_rsa.pub`
   - known host?
-  - If get error about Permission for private key `id_rsa` too open, run `chmod 400 ~/.ssh/id_rsa`
 
 # Fonts
 p.s. In WSL, if we are seeing broken characters in terminal, as soon as installed Oh My Zsh. To remedy this we need to install the Powerline fonts and tell our terminal to use them. fira-code-nerdfont
