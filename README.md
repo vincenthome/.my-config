@@ -192,6 +192,9 @@ sudo apt-get install -y nodejs
   "fontFace": "MesloLGS NF",
   "startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\",
   ```
+- Theme
+  - Dracula [https://draculatheme.com/windows-terminal](https://draculatheme.com/windows-terminal)
+ 
 
 
 
