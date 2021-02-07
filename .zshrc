@@ -4,18 +4,18 @@ ZSH_DISABLE_COMPFIX="true"
 HISTSIZE=10000
 SAVEHIST=10000
 
-ZSH_THEME="spaceship"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
 #CUSTOM SPACESHIP OVERRIDE
-SPACESHIP_PROMPT_ORDER=(
-    time          # Time stampts section
-    node          # Node.js section
-    user          # Username section
-    dir           # Current directory section
-    host          # Hostname section
-    git           # Git section (git_branch + git_status)
-    package       # Package version
+# SPACESHIP_PROMPT_ORDER=(
+#     time          # Time stampts section
+#     node          # Node.js section
+#     user          # Username section
+#     dir           # Current directory section
+#     host          # Hostname section
+#     git           # Git section (git_branch + git_status)
+#     package       # Package version
     
     # docker        # Docker section
     # aws           # Amazon Web Services section
@@ -25,15 +25,15 @@ SPACESHIP_PROMPT_ORDER=(
     # dotnet        # .NET section
     # kubectl       # Kubectl context section
 
-    exec_time     # Execution time
-    line_sep      # Line break
+#     exec_time     # Execution time
+#     line_sep      # Line break
     #vi_mode       # Vi-mode indicator
 
     # jobs          # Background jobs indicator
     
-    exit_code     # Exit code section
-    char          # Prompt character
-)
+#     exit_code     # Exit code section
+#     char          # Prompt character
+# )
 
 # SPACESHIP_PROMPT_ORDER=(
 #   time     #
