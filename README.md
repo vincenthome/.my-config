@@ -2,14 +2,30 @@
 
 [https://docs.microsoft.com/en-us/windows/terminal/](https://docs.microsoft.com/en-us/windows/terminal/)
 
-- Install Powerline Fonts: `Cascadia (Code|Mono) PL` ttf [https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font](https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font)
-- Settings
-  ```
-  "fontFace": "Cascadia Code PL",
-  "fontFace": "MesloLGS NF",
-  "startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\",
-  ```
-- Theme
+- Install Fonts:
+  - Powerline: `Cascadia (Code|Mono) PL` ttf [https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font](https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font)
+  - Settings Profile
+    - Font, Color Scheme
+      ```
+      "profiles":
+      {
+          "defaults":
+          {
+              "colorScheme" : "Dracula",
+              "fontFace": "Cascadia Code PL"
+          },
+      ```
+    - Special Font for Powerlevel10k
+      ```
+        "fontFace": "MesloLGS NF",
+        "fontSize": 10,
+      ```
+    - Starting Directory
+      ```
+      "startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\",
+      ```
+      
+- Install Theme
   - Dracula [https://draculatheme.com/windows-terminal](https://draculatheme.com/windows-terminal)
 
 # Install and switch to zsh
