@@ -19,10 +19,9 @@
 
 - Clone: `git clone https://github.com/vincenthome/.my-config.git ~/.my-config`
 - edit ~/.zshrc: 
-  - add near front `[ -f "$HOME/.my-config/.zshrc" ] && source "$HOME/.my-config/.zshrc"` 
-  - comment out `ZSH_THEME=`, `plugins=`
-  - add near bottom 
-  
+  - near front add: `[ -f "$HOME/.my-config/.zshrc" ] && source "$HOME/.my-config/.zshrc"` 
+  - comment out `ZSH_THEME=`, `plugins=`. They are coming from `$HOME/.my-config/.zshrc`
+  - near bottom add:
     ```
     # Load aliases and shortcuts if existent. MUST RUN AFTER oh-my-zsh.sh
     [ -f "$HOME/.my-config/.shortcutrc" ] && source "$HOME/.my-config/.shortcutrc"
@@ -56,16 +55,17 @@ ZSH_THEME="agnoster"
 
 ### Popular Themes
 
+- `Powerlevel10k` [https://github.com/romkatv/powerlevel10k](https://github.com/romkatv/powerlevel10k)
+  - Font
+    - Install Font: [https://github.com/romkatv/powerlevel10k#manual-font-installation](https://github.com/romkatv/powerlevel10k#manual-font-installation)
+    - Set Font: Windows Terminal Settings - `"fontFace": "MesloLGS NF"`
+  - `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
+  - Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.my-config/.zshrc`
 - `agnoster`
-- `spaceship`
+- `spaceship` * issue - prompt TOO slow
   - `git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1`
   - Symlink `ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"`
   - Set `ZSH_THEME="spaceship"` in your .zshrc
-- `Powerlevel10k` [https://github.com/romkatv/powerlevel10k](https://github.com/romkatv/powerlevel10k)
-  - Install Font: [https://github.com/romkatv/powerlevel10k#manual-font-installation](https://github.com/romkatv/powerlevel10k#manual-font-installation)
-  - Windows Terminal Settings: `"fontFace": "MesloLGS NF"`
-  - `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
-  - Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in ~/.zshrc
   
 ### Popular Plugins
 
