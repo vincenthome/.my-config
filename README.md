@@ -49,8 +49,8 @@ Install them here:
 Activate them
 
 ```
+ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git z zsh-autosuggestions)
-ZSH_THEME="agnoster"
 ```  
 
 ### Popular Themes
