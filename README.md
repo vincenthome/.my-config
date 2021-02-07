@@ -38,7 +38,7 @@
     export CLICOLOR_FORCE=1
     ```
   
-## Popular Plugins
+# Popular Plugins
 
 `~/.oh-my-zsh/custom/plugins`
 
@@ -55,7 +55,7 @@
 - `zsh-autosuggestions` [https://github.com/zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 - `zsh-syntax-highlighting` [https://github.com/zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
   
-## Popular Themes
+# Popular Themes
 
 `~/.oh-my-zsh/custom/theme`
 
@@ -72,14 +72,14 @@
   - Symlink `ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"`
   - Set `ZSH_THEME="spaceship"` in your .zshrc
   
-### Activate Plugins, Themes
+## Activate Plugins, Themes
 
 ```
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git z zsh-autosuggestions)
 ```  
   
-## Directory
+# Directory
 
 - Skip `cd`
 - `..` `...` `....` `.....` to move up x directories
@@ -90,7 +90,7 @@ plugins=(git z zsh-autosuggestions)
 - `z` from most frequent diretory list
 
 
-## Git
+# Git
 
 - Command Lookup e.g. `git a` + `TAB`
 
@@ -105,7 +105,7 @@ function acp() {
 }
 ```
 
-## Misc
+# Misc
 
 - `x` Extract an archive
 - `alias` list all aliases
@@ -116,7 +116,7 @@ function acp() {
 - `ssh (tab)`
 - `unrar (tab)`
 
-## Fonts
+# Fonts
 p.s. In WSL, if we are seeing broken characters in terminal, as soon as installed Oh My Zsh. To remedy this we need to install the Powerline fonts and tell our terminal to use them. fira-code-nerdfont
 
 ```
@@ -133,7 +133,7 @@ If PowerShell blocks you from running the script, then try setting the Execution
 
 Finally, right click on the terminal’s title bar, choose Properties > Font and make sure a Powerline font is selected. In testing, Deja Vu Sans Mono for Powerline.
 
-## GNU find
+# GNU find
 
 - File:  find dir -name filename // '.' current dir 
 - wildcard * must enclosed w/ quote ' test*.* 
@@ -143,26 +143,27 @@ Finally, right click on the terminal’s title bar, choose Properties > Font and
  - … | less  // keystroke: 'b' back / 'spacebar' forward / 'q' quit
 
 
-## Tips and Tricks
+# Tips and Tricks
 
 [https://www.sitepoint.com/zsh-tips-tricks/](https://www.sitepoint.com/zsh-tips-tricks/)
 
 
-# Install nvm
-
--  Instructions: [https://github.com/nvm-sh/nvm#installing-and-updating](https://github.com/nvm-sh/nvm#installing-and-updating)
 
 # 3 Ways to Install Nodejs/Npm (Node Package Manager) on Ubuntu
 
-- For Specific Version using nvm OR from NodeSource Repository: [https://phoenixnap.com/kb/install-latest-node-js-and-nmp-on-ubuntu](https://phoenixnap.com/kb/install-latest-node-js-and-nmp-on-ubuntu)
-- todo extract above info
+## Install nvm
+
+-  Instructions: [https://github.com/nvm-sh/nvm#installing-and-updating](https://github.com/nvm-sh/nvm#installing-and-updating)
+  - available versions: `nvm ls-remote`
 
 ## Install Nodejs
-```
-curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-sudo apt-get install -y nodejs
-```
-[https://github.com/nodesource/distributions/blob/master/README.md#debinstall](https://github.com/nodesource/distributions/blob/master/README.md#debinstall)
+
+  - Specific Version: `nvm install 12.18.3`
+    - Switch Version: `nvm use 8.11.1`
+  - From NodeSource: [https://github.com/nodesource/distributions/blob/master/README.md#debinstall](https://github.com/nodesource/distributions/blob/master/README.md#debinstall)
+    - e.g. Node 14 `curl -sL https://deb.nodesource.com/setup_14.x | sudo -E zsh -`
+    - e.g. Node 12 `curl -sL https://deb.nodesource.com/setup_12.x | sudo -E zsh -`
+    - `sudo apt-get install -y nodejs`
 
 # Installing GCC on Ubuntu 20.04
 
