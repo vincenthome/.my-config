@@ -118,4 +118,4 @@ lfcd () {
     fi
 }
 
-export DOCKER_HOST=tcp://localhost:2375
+# export DOCKER_HOST=tcp://localhost:2375
