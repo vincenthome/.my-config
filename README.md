@@ -1,9 +1,16 @@
-# Install .ssh
+# Windows 10 Terminal 
 
-- priviate key: `id_rsa`
-- public key: `id_rsa.pub`
-- known host?
-- If get error about Permission for private key `id_rsa` too open, run `chmod 400 ~/.ssh/id_rsa`
+[https://docs.microsoft.com/en-us/windows/terminal/](https://docs.microsoft.com/en-us/windows/terminal/)
+
+- Install Powerline Fonts: `Cascadia (Code|Mono) PL` ttf [https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font](https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font)
+- Settings
+  ```
+  "fontFace": "Cascadia Code PL",
+  "fontFace": "MesloLGS NF",
+  "startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\",
+  ```
+- Theme
+  - Dracula [https://draculatheme.com/windows-terminal](https://draculatheme.com/windows-terminal)
 
 # Install and switch to zsh
 
@@ -149,23 +156,12 @@ function acp() {
 
 `npm install -g @angular/cli@x.x.x`
 
-# Windows 10 Terminal 
+# Install .ssh
 
-[https://docs.microsoft.com/en-us/windows/terminal/](https://docs.microsoft.com/en-us/windows/terminal/)
-
-- Install Powerline Fonts: `Cascadia (Code|Mono) PL` ttf [https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font](https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font)
-- Settings
-  ```
-  "fontFace": "Cascadia Code PL",
-  "fontFace": "MesloLGS NF",
-  "startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\",
-  ```
-- Theme
-  - Dracula [https://draculatheme.com/windows-terminal](https://draculatheme.com/windows-terminal)
- 
-
-
-
+- priviate key: `id_rsa`
+- public key: `id_rsa.pub`
+- known host?
+- If get error about Permission for private key `id_rsa` too open, run `chmod 400 ~/.ssh/id_rsa`
 
 # Fonts
 p.s. In WSL, if we are seeing broken characters in terminal, as soon as installed Oh My Zsh. To remedy this we need to install the Powerline fonts and tell our terminal to use them. fira-code-nerdfont
