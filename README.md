@@ -149,7 +149,7 @@ Finally, right click on the terminal’s title bar, choose Properties > Font and
 
 
 
-# 3 Ways to Install Nodejs/Npm (Node Package Manager) on Ubuntu
+# Install Nodejs/Npm on Ubuntu
 
 ## Install nvm
 
