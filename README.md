@@ -38,17 +38,13 @@
     export CLICOLOR_FORCE=1
     ```
   
-
-
-
-
 ## Custom Theme, Plugin
 
 Install them here:
 
 ```
-~/.oh-my-zsh/custom/plugins
 ~/.oh-my-zsh/custom/theme
+~/.oh-my-zsh/custom/plugins
 ```
 
 Activate them
@@ -65,7 +61,12 @@ ZSH_THEME="agnoster"
   - `git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1`
   - Symlink `ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"`
   - Set `ZSH_THEME="spaceship"` in your .zshrc
-
+- `Powerlevel10k` [https://github.com/romkatv/powerlevel10k](https://github.com/romkatv/powerlevel10k)
+  - Install Font: [https://github.com/romkatv/powerlevel10k#manual-font-installation](https://github.com/romkatv/powerlevel10k#manual-font-installation)
+  - Windows Terminal Settings: `"fontFace": "MesloLGS NF"`
+  - `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
+  - Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in ~/.zshrc
+  
 ### Popular Plugins
 
 - `autojump`
