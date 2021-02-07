@@ -116,39 +116,6 @@ function acp() {
 - `ssh (tab)`
 - `unrar (tab)`
 
-# Fonts
-p.s. In WSL, if we are seeing broken characters in terminal, as soon as installed Oh My Zsh. To remedy this we need to install the Powerline fonts and tell our terminal to use them. fira-code-nerdfont
-
-```
-git clone https://github.com/powerline/fonts.git
-```
-
-Then open an admin PowerShell, navigate to the root of the repo and run:
-
-```
-.\install.ps1
-```
-
-If PowerShell blocks you from running the script, then try setting the ExecutionPolicy as per this [https://stackoverflow.com/questions/4037939/powershell-says-execution-of-scripts-is-disabled-on-this-system/4038991#4038991](https://stackoverflow.com/questions/4037939/powershell-says-execution-of-scripts-is-disabled-on-this-system/4038991#4038991)
-
-Finally, right click on the terminal’s title bar, choose Properties > Font and make sure a Powerline font is selected. In testing, Deja Vu Sans Mono for Powerline.
-
-# GNU find
-
-- File:  find dir -name filename // '.' current dir 
-- wildcard * must enclosed w/ quote ' test*.* 
-- Dir: find . -type d dirname
-- cheatsheet - https://bencane.com/2012/07/22/cheat-sheet-21-useful-find-commands/ 
-- grep word filename
- - … | less  // keystroke: 'b' back / 'spacebar' forward / 'q' quit
-
-
-# Tips and Tricks
-
-[https://www.sitepoint.com/zsh-tips-tricks/](https://www.sitepoint.com/zsh-tips-tricks/)
-
-
-
 # Install Nodejs/Npm on Ubuntu
 
 ## Install nvm
@@ -191,6 +158,41 @@ Finally, right click on the terminal’s title bar, choose Properties > Font and
 - Theme
   - Dracula [https://draculatheme.com/windows-terminal](https://draculatheme.com/windows-terminal)
  
+
+
+
+
+# Fonts
+p.s. In WSL, if we are seeing broken characters in terminal, as soon as installed Oh My Zsh. To remedy this we need to install the Powerline fonts and tell our terminal to use them. fira-code-nerdfont
+
+```
+git clone https://github.com/powerline/fonts.git
+```
+
+Then open an admin PowerShell, navigate to the root of the repo and run:
+
+```
+.\install.ps1
+```
+
+If PowerShell blocks you from running the script, then try setting the ExecutionPolicy as per this [https://stackoverflow.com/questions/4037939/powershell-says-execution-of-scripts-is-disabled-on-this-system/4038991#4038991](https://stackoverflow.com/questions/4037939/powershell-says-execution-of-scripts-is-disabled-on-this-system/4038991#4038991)
+
+Finally, right click on the terminal’s title bar, choose Properties > Font and make sure a Powerline font is selected. In testing, Deja Vu Sans Mono for Powerline.
+
+# GNU find
+
+- File:  find dir -name filename // '.' current dir 
+- wildcard * must enclosed w/ quote ' test*.* 
+- Dir: find . -type d dirname
+- cheatsheet - https://bencane.com/2012/07/22/cheat-sheet-21-useful-find-commands/ 
+- grep word filename
+ - … | less  // keystroke: 'b' back / 'spacebar' forward / 'q' quit
+
+
+# Tips and Tricks
+
+[https://www.sitepoint.com/zsh-tips-tricks/](https://www.sitepoint.com/zsh-tips-tricks/)
+
 
 
 
