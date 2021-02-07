@@ -197,6 +197,6 @@ Finally, right click on the terminal’s title bar, choose Properties > Font and
 
 [https://www.sitepoint.com/zsh-tips-tricks/](https://www.sitepoint.com/zsh-tips-tricks/)
 
-
+# Bindkey Tutorial [https://jdhao.github.io/2019/06/13/zsh_bind_keys/](https://jdhao.github.io/2019/06/13/zsh_bind_keys/)
 
 
