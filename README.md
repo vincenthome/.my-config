@@ -78,7 +78,11 @@
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git z zsh-autosuggestions)
 ```  
-  
+
+# Install lf (as in "list files") terminal file manager [https://github.com/gokcehan/lf/wiki/Tutorial](https://github.com/gokcehan/lf/wiki/Tutorial) 
+
+- `curl -L https://github.com/gokcehan/lf/releases/latest/download/lf-linux-amd64.tar.gz | sudo tar xzC /usr/local/bin`
+
 # Directory
 
 - Skip `cd`
