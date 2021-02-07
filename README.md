@@ -175,7 +175,7 @@ Finally, right click on the terminal’s title bar, choose Properties > Font and
 
 # Install Angular Global
 
-`npm install -g @angular/cli`
+`npm install -g @angular/cli@x.x.x`
 
 # Windows 10 Terminal 
 
