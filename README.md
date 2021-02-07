@@ -61,6 +61,7 @@ plugins=(git z zsh-autosuggestions)
     - Set Font: Windows Terminal Settings - `"fontFace": "MesloLGS NF"`
   - `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
   - Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.my-config/.zshrc`
+  - Configuration wizard: `p10k configure`
 - `agnoster`
 - `spaceship` * issue - prompt TOO slow
   - `git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1`
