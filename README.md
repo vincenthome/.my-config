@@ -185,7 +185,12 @@ sudo apt-get install -y nodejs
 [https://docs.microsoft.com/en-us/windows/terminal/](https://docs.microsoft.com/en-us/windows/terminal/)
 
 - Install Powerline Fonts: `Cascadia (Code|Mono) PL` ttf [https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font](https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font)
-- Set Font: Windows Terminal Settings - `"fontFace": "Cascadia Code PL"`
+- Settings
+  ```
+  "fontFace": "Cascadia Code PL",
+  "fontFace": "MesloLGS NF",
+  "startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\",
+  ```
 
 
 
