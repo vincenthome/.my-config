@@ -28,6 +28,10 @@
 - Install Theme
   - Dracula [https://draculatheme.com/windows-terminal](https://draculatheme.com/windows-terminal)
 
+- Terminal Settings Ctrl + Alt + ,
+
+  [Settings.json](Settings.json)
+
 # Install and switch to zsh
 
 - Via Package Manager: `sudo apt install zsh`
