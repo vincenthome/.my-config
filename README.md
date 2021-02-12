@@ -32,6 +32,7 @@
 
   - Keyboard shortcut: `Ctrl + Alt + ,`
   - [settings.json](settings.json)
+  - Windows 10 built-in [Segoe MDL2 Icons codes](https://docs.microsoft.com/en-us/windows/uwp/design/style/segoe-ui-symbol-font#icon-list)
 
 # Install and switch to zsh
 
