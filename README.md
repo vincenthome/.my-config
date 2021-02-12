@@ -30,7 +30,7 @@
 
 - Terminal Settings Ctrl + Alt + ,
 
-  [Settings.json](Settings.json)
+  [Settings.json](settings.json)
 
 # Install and switch to zsh
 
