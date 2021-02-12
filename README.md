@@ -28,9 +28,10 @@
 - Install Theme
   - Dracula [https://draculatheme.com/windows-terminal](https://draculatheme.com/windows-terminal)
 
-- Terminal Settings Ctrl + Alt + ,
+- Terminal Settings 
 
-  [Settings.json](settings.json)
+  - Keyboard shortcut: `Ctrl + Alt + ,`
+  - [settings.json](settings.json)
 
 # Install and switch to zsh
 
