@@ -28,7 +28,7 @@
 - Install Theme
   - Dracula [https://draculatheme.com/windows-terminal](https://draculatheme.com/windows-terminal)
 
-- Terminal Settings 
+- My Custom Terminal Settings 
 
   - Keyboard shortcut: `Ctrl + Alt + ,`
   - [settings.json](settings.json)
