@@ -95,7 +95,7 @@ ZSH_THEME="agnoster"
 # SPACESHIP_PYENV_SUFFIX=") "
 # SPACESHIP_PYENV_SYMBOL=""
 
-plugins=(git z zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git kubectl z zsh-syntax-highlighting zsh-autosuggestions)
 #plugins=(git vi-mode autojump zsh-syntax-highlighting zsh-autosuggestions)
 
 # Load aliases and shortcuts if existent.
