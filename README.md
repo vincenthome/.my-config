@@ -170,6 +170,15 @@ function acp() {
 
 `sudo apt install build-essential`
 
+# Install Kubectl
+
+- Instructions: [https://kubernetes.io/docs/tasks/tools/install-kubectl/](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+
+1. Download: `curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"`
+2. Install: `sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl`
+3. Test: `kubectl version --client` 
+4. Cleanup: `rm kubectl`
+
 # Install Python2 on Ubuntu
 
 `sudo apt install python2`
