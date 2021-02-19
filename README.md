@@ -166,9 +166,16 @@ function acp() {
     - e.g. Node 12 `curl -sL https://deb.nodesource.com/setup_12.x | sudo -E zsh -`
     - `sudo apt-get install -y nodejs`
 
-# Installing GCC on Ubuntu 20.04
+# Install GCC on Ubuntu 20.04
 
 `sudo apt install build-essential`
+
+# Install Azure CLI
+
+- Instructions: [https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt#option-1-install-with-one-command](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt#option-1-install-with-one-command)
+- `curl -sL https://aka.ms/InstallAzureCLIDeb | sudo zsh`
+- `az --version`
+- `az login`
 
 # Install Kubectl
 
