@@ -48,7 +48,7 @@
                 "fontFace": "MesloLGS NF",
                 "fontSize": 10,
                 // "icon": "\uE709",
-                "icon": "%USERPROFILE%\\.my-config\\WindowsTerminal\\icon\\ubuntu20-logo.png",
+                "icon": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\\\.my-config\\WindowsTerminal\\icon\\ubuntu20-logo.png",
                 "tabColor": "#DD4814",
                 // "backgroundImage": "desktopWallpaper",
                 // "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_dreamer2.jpg",
@@ -64,7 +64,7 @@
                 // "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_tree_and_moon.jpg",
                 // "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_coldnight.jpg",
                 // UBUNTU LOGOS: https://design.ubuntu.com/brand/ubuntu-logo/
-                "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_thetwoandthelighthouse_ubuntu.jpg",
+                "backgroundImage": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_thetwoandthelighthouse_ubuntu.jpg",
                 "backgroundImageAlignment": "topRight"
                 // "backgroundImageStretchMode": "uniformToFill",
             },
