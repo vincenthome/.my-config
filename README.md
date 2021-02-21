@@ -2,16 +2,16 @@
 
 [https://docs.microsoft.com/en-us/windows/terminal/](https://docs.microsoft.com/en-us/windows/terminal/)
 
-- Quick Start
+- Quick Setup
   - Install Powerline Font: `Cascadia (Code|Mono) PL` ttf [https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font](https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font)
   - git clone this repo to %USERPROFILE%
-  - Customize Terminal Settings `Ctrl + Alt + ,`
-    - Copy & paste content of %USERPROFILE%\.my-config\WindowsTerminal\[settings.json](WindowsTerminal/settings.json) to replace existing Terminal Settings.
+  - Settings Keyboard shortcut: `Ctrl + Alt + ,`
+  - Customize Settings `Ctrl + Alt + ,`
+    - Copy & paste content of [settings.json](WindowsTerminal/settings.json) to replace existing Settings
 
-- Install Fonts:
-  - Powerline: `Cascadia (Code|Mono) PL` ttf [https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font](https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font)
-  - Settings Profile
-    - Font, Color Scheme
+- Details:
+  - Settings:
+    - Fonts, Color Scheme
       ```
       "profiles":
       {
@@ -30,15 +30,15 @@
       ```
       "startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\",
       ```
+    - ect ...
       
-- Install Theme
-  - Dracula [https://draculatheme.com/windows-terminal](https://draculatheme.com/windows-terminal)
+  - Color Schemes
+    - [Switching Scheme](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes)
+    - Dracula [https://draculatheme.com/windows-terminal](https://draculatheme.com/windows-terminal)
 
-- My Custom Terminal Settings 
-
-  - Keyboard shortcut: `Ctrl + Alt + ,`
-  - [settings.json](settings.json)
-  - Windows 10 built-in [Segoe MDL2 Icons codes](https://docs.microsoft.com/en-us/windows/uwp/design/style/segoe-ui-symbol-font#icon-list)
+  - Tab Icons
+    - [Switching Icon](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/profile-general#icon)
+    - Windows 10 built-in [Segoe MDL2 Icons codes for "Icon": ""](https://docs.microsoft.com/en-us/windows/uwp/design/style/segoe-ui-symbol-font#icon-list)
 
 # Install and switch to zsh
 
