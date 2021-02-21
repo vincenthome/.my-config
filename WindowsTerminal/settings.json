@@ -79,7 +79,7 @@
                 // "icon": "\uE709",
                 "icon": "%USERPROFILE%\\.my-config\\WindowsTerminal\\icon\\ubuntu18-logo.png",
                 "tabColor": "#DD4814",
-                "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_thetwoandthelighthouse_ubuntu.jpg",
+                "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_thetwoandthelighthouse_ubuntu18.jpg",
                 "backgroundImageAlignment": "topRight"
             },
             {
