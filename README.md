@@ -2,6 +2,14 @@
 
 [https://docs.microsoft.com/en-us/windows/terminal/](https://docs.microsoft.com/en-us/windows/terminal/)
 
+## WSL
+- Windows access Linux files: \\wsl$\Ubuntu-20.04\home\battlestar
+- Linux access Windows files: /mnt/c/
+- symlinks to make Windows paths easier to access: e.g. `ln s /mnt/c/Users/chitl/Downloads`  ~/Downloads
+- wslview - open default Windows application for file extension
+- wslpath
+
+## Windows Termainl
 - Quick Setup
   - Install Powerline Font: `Cascadia (Code|Mono) PL` ttf [https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font](https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font)
   - git clone this repo to %USERPROFILE%
