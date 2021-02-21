@@ -113,7 +113,7 @@
                 "icon": "%USERPROFILE%\\.my-config\\WindowsTerminal\\icon\\powershell-logo.png",
                 "startingDirectory": "%HOMEDRIVE%\\",
                 "tabColor": "#6470D7",
-                "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\PowerShell_Hero_Wallpaper_4k_1.jpg",
+                "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\PowerShell_Hero_Wallpaper_4k_powershell.jpg",
                 "backgroundImageAlignment": "topRight"
             },
             {
