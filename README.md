@@ -40,6 +40,14 @@
     - [Switching Icon](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/profile-general#icon)
     - Windows 10 built-in [Segoe MDL2 Icons codes for "Icon": ""](https://docs.microsoft.com/en-us/windows/uwp/design/style/segoe-ui-symbol-font#icon-list)
 
+  - Pane
+    - New Default Profile Vertical/Horizontal: `Alt + Shift + Plus` / `Alt + Shift + Minus`
+    - New Current Profile (auto v/h): `Alt + Shift + D`
+    - New Select Profile (auto v/h): `Alt + Dropdown`
+    - Move Focus: `Alt + arrow keys`
+    - Resize: `Alt + Shift + arrow keys`
+    - [More](https://docs.microsoft.com/en-us/windows/terminal/panes)
+
 # Install and switch to zsh
 
 - Via Package Manager: `sudo apt install zsh`
