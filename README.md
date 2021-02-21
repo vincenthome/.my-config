@@ -1,6 +1,12 @@
-# Windows 10 Terminal 
+# WSL + Windows Terminal Configurations
 
 [https://docs.microsoft.com/en-us/windows/terminal/](https://docs.microsoft.com/en-us/windows/terminal/)
+
+- Quick Start
+  - Install Powerline Font: `Cascadia (Code|Mono) PL` ttf [https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font](https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font)
+  - git clone this repo to %USERPROFILE%
+  - Customize Terminal Settings `Ctrl + Alt + ,`
+    - Copy & paste content of %USERPROFILE%\.my-config\WindowsTerminal\[settings.json](WindowsTerminal/settings.json) to replace existing Terminal Settings.
 
 - Install Fonts:
   - Powerline: `Cascadia (Code|Mono) PL` ttf [https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font](https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font)
