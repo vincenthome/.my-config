@@ -48,21 +48,21 @@
                 "fontFace": "MesloLGS NF",
                 "fontSize": 10,
                 // "icon": "\uE709",
-                "icon": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\\\.my-config\\WindowsTerminal\\icon\\ubuntu20-logo.png",
+                "icon": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\icon\\ubuntu20-logo.png",
                 "tabColor": "#DD4814",
                 // "backgroundImage": "desktopWallpaper",
-                // "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_dreamer2.jpg",
-                // "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_fishing.jpg",
-                // "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_lost.jpg",
-                // "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_mountain3winter.jpg",
-                // "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_sleepingchild.jpg",
-                // "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_thetwoandthealiens.jpg",
-                // "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_thetwoandthemoon.jpg",
-                // "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_thetwoandthenightmare.jpg",
-                // "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_thetwoonthemoon.jpg",
-                // "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_towardsthewithin.jpg",
-                // "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_tree_and_moon.jpg",
-                // "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_coldnight.jpg",
+                // "backgroundImage": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_dreamer2.jpg",
+                // "backgroundImage": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_fishing.jpg",
+                // "backgroundImage": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_lost.jpg",
+                // "backgroundImage": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_mountain3winter.jpg",
+                // "backgroundImage": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_sleepingchild.jpg",
+                // "backgroundImage": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_thetwoandthealiens.jpg",
+                // "backgroundImage": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_thetwoandthemoon.jpg",
+                // "backgroundImage": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_thetwoandthenightmare.jpg",
+                // "backgroundImage": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_thetwoonthemoon.jpg",
+                // "backgroundImage": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_towardsthewithin.jpg",
+                // "backgroundImage": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_tree_and_moon.jpg",
+                // "backgroundImage": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_coldnight.jpg",
                 // UBUNTU LOGOS: https://design.ubuntu.com/brand/ubuntu-logo/
                 "backgroundImage": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_thetwoandthelighthouse_ubuntu.jpg",
                 "backgroundImageAlignment": "topRight"
@@ -77,9 +77,9 @@
                 "fontFace": "MesloLGS NF",
                 "fontSize": 10,
                 // "icon": "\uE709",
-                "icon": "%USERPROFILE%\\.my-config\\WindowsTerminal\\icon\\ubuntu18-logo.png",
+                "icon": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\icon\\ubuntu18-logo.png",
                 "tabColor": "#DD4814",
-                "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_thetwoandthelighthouse_ubuntu18.jpg",
+                "backgroundImage": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_thetwoandthelighthouse_ubuntu18.jpg",
                 "backgroundImageAlignment": "topRight"
             },
             {
@@ -87,12 +87,12 @@
                 "hidden": false,
                 "name": "Debian",
                 "source": "Windows.Terminal.Wsl",
-                "icon": "%USERPROFILE%\\.my-config\\WindowsTerminal\\icon\\debian-logo.png",
+                "icon": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\icon\\debian-logo.png",
                 "tabColor": "#E81D62",
-                // "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\debian\\vladstudio_dragonology2_debian.jpg",
-                // "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\debian\\vladstudio_dragonology4_debian.jpg",
-                // "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\debian\\vladstudio_squares3_debian.jpg",
-                "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_where_halloween_smiles_are_born_debian.jpg",
+                // "backgroundImage": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\backgroundImage\\debian\\vladstudio_dragonology2_debian.jpg",
+                // "backgroundImage": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\backgroundImage\\debian\\vladstudio_dragonology4_debian.jpg",
+                // "backgroundImage": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\backgroundImage\\debian\\vladstudio_squares3_debian.jpg",
+                "backgroundImage": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_where_halloween_smiles_are_born_debian.jpg",
                 "backgroundImageAlignment": "topRight"
             },
             {
@@ -101,7 +101,7 @@
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure",
                 "tabColor": "#BDCADB",
-                "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_mountain3winter.jpg",
+                "backgroundImage": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_mountain3winter.jpg",
                 "backgroundImageAlignment": "topRight"
             },
             {
@@ -110,10 +110,10 @@
                 "hidden": false,
                 "name": "Windows PowerShell",
                 "commandline": "powershell.exe",
-                "icon": "%USERPROFILE%\\.my-config\\WindowsTerminal\\icon\\powershell-logo.png",
+                "icon": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\icon\\powershell-logo.png",
                 "startingDirectory": "%HOMEDRIVE%\\",
                 "tabColor": "#6470D7",
-                "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\PowerShell_Hero_Wallpaper_4k_powershell.jpg",
+                "backgroundImage": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\backgroundImage\\PowerShell_Hero_Wallpaper_4k_powershell.jpg",
                 "backgroundImageAlignment": "topRight"
             },
             {
@@ -123,7 +123,7 @@
                 "name": "Command Prompt",
                 "commandline": "cmd.exe",
                 "startingDirectory": "%HOMEDRIVE%\\",
-                "backgroundImage": "%USERPROFILE%\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_new_york_dark_cmd.jpg",
+                "backgroundImage": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\.my-config\\WindowsTerminal\\backgroundImage\\vladstudio_new_york_dark_cmd.jpg",
                 "backgroundImageAlignment": "topRight"
             }
         ]
