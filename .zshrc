@@ -4,8 +4,8 @@ ZSH_DISABLE_COMPFIX="true"
 HISTSIZE=10000
 SAVEHIST=10000
 
-ZSH_THEME="agnoster"
-#ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
 #CUSTOM SPACESHIP OVERRIDE
