@@ -1,4 +1,4 @@
-# WSL + Windows Terminal Configurations + 2
+# WSL + Windows Terminal Configurations
 
 [https://docs.microsoft.com/en-us/windows/terminal/](https://docs.microsoft.com/en-us/windows/terminal/)
 
