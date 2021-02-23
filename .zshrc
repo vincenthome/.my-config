@@ -99,8 +99,8 @@ plugins=(git kubectl z zsh-syntax-highlighting zsh-autosuggestions)
 #plugins=(git vi-mode autojump zsh-syntax-highlighting zsh-autosuggestions)
 
 # Load aliases and shortcuts if existent.
-[ -f "$HOME/.config/.shortcutrc" ] && source "$HOME/.config/.shortcutrc"
-[ -f "$HOME/.config/.aliasrc" ] && source "$HOME/.config/.aliasrc"
+[ -f "$HOME/.my-config/.shortcutrc" ] && source "$HOME/.my-config/.shortcutrc"
+[ -f "$HOME/.my-config/.aliasrc" ] && source "$HOME/.my-config/.aliasrc"
 
 unsetopt BG_NICE
 
