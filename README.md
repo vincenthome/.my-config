@@ -204,13 +204,23 @@ function acp() {
 
 # Authentication Options
 
-## Git Credential Manager Core for Windows / Linux (preview)
+## PAT Personal Access Token 
+
+- Create PAT
+  - Github: Profile -> Settings -> Developer Settings -> Personal Access Tokens -> Generate new token
+
+- `git config credential.helper store`
+  - Persist credential on file `~/.git-credentials` 
+
+## SSH
+
+### Git Credential Manager Core for Windows / Linux (preview)
 
 [https://docs.microsoft.com/en-us/azure/devops/repos/git/set-up-credential-managers?view=azure-devops#install-git-credential-manager-core](https://docs.microsoft.com/en-us/azure/devops/repos/git/set-up-credential-managers?view=azure-devops#install-git-credential-manager-core)
 
-## Creating an SSH Key Pair for User Authentication
+### Creating an SSH Key Pair for User Authentication
 
-# Install .ssh
+#### Install .ssh
 
 - Unbuntu
   - `ssh-keygen`
