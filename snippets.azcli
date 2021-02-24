@@ -1,0 +1,24 @@
+NOW=$( date '+%y%m%d' )
+MRG="mrg$NOW"
+MAP="map$NOW"
+MWA="mwa$NOW"
+
+az login
+az logout
+
+# Resource Group
+az group list -o table
+az group list -o jsonc
+
+az group create -l eastus -n $MRG
+az group delete -y -n $MRG
+
+# App Service Plan
+az appservice plan list -o table
+az appservice plan create --resource-group $MRG -n $MAP --sku FREE
+
+# Web App
+az webapp list -o table
+az webapp show -g $MRG -n $MWA -o jsonc | jq '.defaultHostName' -r
+az webapp create -g $MRG -p $MAP -n $MWA
+

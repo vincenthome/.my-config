@@ -173,6 +173,12 @@ function acp() {
     - e.g. Node 12 `curl -sL https://deb.nodesource.com/setup_12.x | sudo -E zsh -`
     - `sudo apt-get install -y nodejs`
 
+## Install jq 
+
+- `sudo apt-get install jq`
+- [Doc](https://stedolan.github.io/jq/manual/#Basicfilters)
+
+
 # Install GCC on Ubuntu 20.04
 
 `sudo apt install build-essential`
