@@ -206,11 +206,12 @@ function acp() {
 
 ## PAT Personal Access Token 
 
+- Config to save credentials on disk: `git config credential.helper store`
+  - credentials saved in `~/.git-credentials`
+
 - Create PAT
   - Github: Profile -> Settings -> Developer Settings -> Personal Access Tokens -> Generate new token
 
-- `git config credential.helper store`
-  - Persist credential on file `~/.git-credentials` 
 
 ## SSH
 
