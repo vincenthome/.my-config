@@ -7,6 +7,7 @@ MWA="mwa$NOW"
 MCR="mcr$NOW"
 MKC="mkc$NOW"
 IMG="k8s/docker-angular-starter"
+echo $MKC
 
 # Authentication
 az login
@@ -24,8 +25,12 @@ az group list -o table
 az group list -o jsonc
 
 az group create -l $LOC -n $MRG
-az group delete -n $MRG --yes --no-wait
-# az group delete -n $MKC2 --yes --no-wait
+
+# ***** !!! WARNING !!! ******************************************
+# ***** !!! WARNING !!! ******************************************
+az group delete -n $MRG --no-wait
+# ***** !!! WARNING !!! ******************************************
+# ***** !!! WARNING !!! ******************************************
 
 # App Service Plan
 az appservice plan list -o table
@@ -41,21 +46,21 @@ az acr list -o table
 az acr create -n $MCR -g $MRG --sku Basic --admin-enabled true
 az acr delete -n $MCR
 
-# ACR Repo
-# !Important: delete indivdual image by tag not supported/working
-az acr repository list -n $MCR
-az acr repository show-tags -n $MCR --top 10 --orderby time_desc --repository angularstarter
-az acr repository delete -n $MCR --repository sample/hello-world
-
 ## ACR Build + Push Image https://docs.microsoft.com/en-us/azure/container-registry/container-registry-quickstart-task-cli
 az acr build -r $MCR -t $IMG:{{.Run.ID}} .
 az acr build -r $MCR -t $IMG:{{.Run.ID}} --build-arg configuration=dev .  
 # az acr run -r $MCR --cmd '$Registry/sample/hello-world:v1' /dev/null
 
+# ACR Repo
+# !Important: delete indivdual image by tag not supported/working
+az acr repository list -n $MCR
+az acr repository show-tags -n $MCR --top 10 --orderby time_desc --repository $IMG
+az acr repository delete -n $MCR --repository sample/hello-world
+
 # AKS Azure Kubernetes Service https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest
 # !important --attach-acr to connect AKS to ACR https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration#create-a-new-aks-cluster-with-acr-integration
 az aks list -g $MRG -o table
-az aks create -g $MRG -n $MKC --node-count 1 --enable-addons monitoring --generate-ssh-keys --attach-acr $MCR
+az aks create -g $MRG -n $MKC --node-count 2 --enable-addons monitoring --generate-ssh-keys --attach-acr $MCR
 az aks delete -g $MRG -n $MKC
 # Bring AKS cluster ssh keys to local ~.ssh
 az aks get-credentials -g $MRG -n $MKC
