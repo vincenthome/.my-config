@@ -6,7 +6,7 @@ MAP="map$NOW"
 MWA="mwa$NOW"
 MCR="mcr$NOW"
 MKC="mkc$NOW"
-# MKC2="MC_${MRG}_${MKC}_${LOC}"
+IMG="k8s/docker-angular-starter"
 
 # Authentication
 az login
@@ -42,27 +42,28 @@ az acr create -n $MCR -g $MRG --sku Basic --admin-enabled true
 az acr delete -n $MCR
 
 # ACR Repo
+# !Important: delete indivdual image by tag not supported/working
 az acr repository list -n $MCR
 az acr repository show-tags -n $MCR --top 10 --orderby time_desc --repository angularstarter
 az acr repository delete -n $MCR --repository sample/hello-world
-# !Important: not allowed to delete a specific image tag
-# az acr repository delete -n $MCR --image sample/hello-world:cag
 
 ## ACR Build + Push Image https://docs.microsoft.com/en-us/azure/container-registry/container-registry-quickstart-task-cli
-az acr build -r $MCR -t angularstarter:v1 .
-az acr build -r $MCR -t sample/hello-world:{{.Run.ID}} --build-arg configuration=dev .  
+az acr build -r $MCR -t $IMG:{{.Run.ID}} .
+az acr build -r $MCR -t $IMG:{{.Run.ID}} --build-arg configuration=dev .  
 # az acr run -r $MCR --cmd '$Registry/sample/hello-world:v1' /dev/null
 
-# Azure Kubernetes Service https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest
+# AKS Azure Kubernetes Service https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest
+# !important --attach-acr to connect AKS to ACR https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration#create-a-new-aks-cluster-with-acr-integration
 az aks list -g $MRG -o table
-# https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration#create-a-new-aks-cluster-with-acr-integration
 az aks create -g $MRG -n $MKC --node-count 1 --enable-addons monitoring --generate-ssh-keys --attach-acr $MCR
 az aks delete -g $MRG -n $MKC
+# Bring AKS cluster ssh keys to local ~.ssh
 az aks get-credentials -g $MRG -n $MKC
 
 # kubectl
 kubectl get nodes
-kubectl apply -f k8s.yml
+# update deployment.yaml container -> image using: $IMG:{{.Run.ID}}
+kubectl apply -f deployment.yaml
 kubectl get pods
 kubectl describe pod <pod-id>  # for troubleshooting
 kubectl get Service
