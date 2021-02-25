@@ -1,22 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: azure-vote-front
+  name: angular
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: azure-vote-front
+      app: angular
   template:
     metadata:
       labels:
-        app: azure-vote-front
+        app: angular
     spec:
-      nodeSelector:
-        "beta.kubernetes.io/os": linux
       containers:
-      - name: azure-vote-front
-        image: mcr.microsoft.com/azuredocs/azure-vote-front:v1
+      - name: nginx
+        image: mcr210224.azurecr.io/angularstarter:v1
         resources:
           requests:
             cpu: 100m
@@ -26,17 +24,15 @@ spec:
             memory: 256Mi
         ports:
         - containerPort: 80
-        env:
-        - name: REDIS
-          value: "azure-vote-back"
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: azure-vote-front
+  name: angular
 spec:
-  type: LoadBalancer
+  selector:
+    app: angular
   ports:
   - port: 80
-  selector:
-    app: azure-vote-front
+    targetPort: 80
+  type: LoadBalancer
