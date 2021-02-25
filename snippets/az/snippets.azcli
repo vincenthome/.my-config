@@ -23,7 +23,6 @@ az provider show -n Microsoft.OperationalInsights -o table
 # Resource Group
 az group list -o table
 az group list -o jsonc
-
 az group create -l $LOC -n $MRG
 
 # ***** !!! WARNING !!! ******************************************
@@ -60,7 +59,7 @@ az acr repository delete -n $MCR --repository sample/hello-world
 # AKS Azure Kubernetes Service https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest
 # !important --attach-acr to connect AKS to ACR https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration#create-a-new-aks-cluster-with-acr-integration
 az aks list -g $MRG -o table
-az aks create -g $MRG -n $MKC --node-count 2 --enable-addons monitoring --generate-ssh-keys --attach-acr $MCR
+az aks create -g $MRG -n $MKC --node-count 1 --enable-addons monitoring --generate-ssh-keys --attach-acr $MCR
 az aks delete -g $MRG -n $MKC
 # Bring AKS cluster ssh keys to local ~.ssh
 az aks get-credentials -g $MRG -n $MKC
@@ -72,3 +71,25 @@ kubectl apply -f deployment.yaml
 kubectl get pods
 kubectl describe pod <pod-id>  # for troubleshooting
 kubectl get Service
+
+
+# Get Public Address
+kubectl cluster-info
+# Get Service Port
+kubectl get svc
+
+http://<public address>:<svc port>
+
+# Troubleshooting
+
+// verify if configmap is created or not
+kubectl get cm -n development
+// verify the data in the configmap
+kubectl describe cm -n development
+
+// get the one of the pod
+kubectl get po -n development
+// exec into one of the pod
+kubectl exec -it <podname> /bin/sh -n development
+# cd /usr/share/nginx/html/envapp/assets
+# cat app.config.json
