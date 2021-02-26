@@ -212,7 +212,7 @@ function acp() {
 
 ## PAT Personal Access Token
 - Install Git Credential Manager Core on 'Windows Side' [GCM](https://docs.microsoft.com/en-us/azure/devops/repos/git/set-up-credential-managers?view=azure-devops#install-git-credential-manager-core)
-- Reference Git Credential Manager from a WSL distro:
+- Reference Git Credential Manager from a WSL distro: [Ref](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup)
   - `git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe"`
 - Using PAT Personal Access Token 
   - Github: Profile -> Settings -> Developer Settings -> Personal Access Tokens -> Generate new token
