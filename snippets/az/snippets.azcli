@@ -99,7 +99,7 @@ kubectl exec -it $POD1 -- /bin/sh
 kubectl get Services -o wide
 
 HOST=$(kubectl get Service -o json | jq '.items[0].status.loadBalancer.ingress[].ip' -r)
-echo http://$HOST
+wslview http://$HOST
 
 ## ConfigMap
 kubectl get cm
