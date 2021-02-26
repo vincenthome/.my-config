@@ -97,7 +97,7 @@ kubectl exec -it $POD1 -- /bin/sh
 
 ## SERVICE
 kubectl get Services -o wide
-
+## TODO: is there a way to get Service by service name so jq don't have to use [0]
 HOST=$(kubectl get Service -o json | jq '.items[0].status.loadBalancer.ingress[].ip' -r)
 wslview http://$HOST
 

@@ -210,6 +210,10 @@ function acp() {
 
 # Authentication Options
 
+## Git Credential Manager Core for Windows / Linux (preview)
+
+[https://docs.microsoft.com/en-us/azure/devops/repos/git/set-up-credential-managers?view=azure-devops#install-git-credential-manager-core](https://docs.microsoft.com/en-us/azure/devops/repos/git/set-up-credential-managers?view=azure-devops#install-git-credential-manager-core)
+
 ## PAT Personal Access Token 
 
 - Config to save credentials on disk: `git config credential.helper store`
@@ -220,10 +224,6 @@ function acp() {
 
 
 ## SSH
-
-### Git Credential Manager Core for Windows / Linux (preview)
-
-[https://docs.microsoft.com/en-us/azure/devops/repos/git/set-up-credential-managers?view=azure-devops#install-git-credential-manager-core](https://docs.microsoft.com/en-us/azure/devops/repos/git/set-up-credential-managers?view=azure-devops#install-git-credential-manager-core)
 
 ### Creating an SSH Key Pair for User Authentication
 
