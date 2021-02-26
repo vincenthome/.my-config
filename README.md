@@ -210,35 +210,20 @@ function acp() {
 
 # Authentication Options
 
-## Git Credential Manager Core for Windows / Linux (preview)
-
-[https://docs.microsoft.com/en-us/azure/devops/repos/git/set-up-credential-managers?view=azure-devops#install-git-credential-manager-core](https://docs.microsoft.com/en-us/azure/devops/repos/git/set-up-credential-managers?view=azure-devops#install-git-credential-manager-core)
-
-## PAT Personal Access Token 
-
-- Config to save credentials on disk: `git config credential.helper store`
-  - credentials saved in `~/.git-credentials`
-
-- Create PAT
+## PAT Personal Access Token
+- Install Git Credential Manager Core on 'Windows Side' [GCM](https://docs.microsoft.com/en-us/azure/devops/repos/git/set-up-credential-managers?view=azure-devops#install-git-credential-manager-core)
+- Reference Git Credential Manager from a WSL distro:
+  - `git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe"`
+- Using PAT Personal Access Token 
   - Github: Profile -> Settings -> Developer Settings -> Personal Access Tokens -> Generate new token
-
+  - Azure: ???
 
 ## SSH
 
-### Creating an SSH Key Pair for User Authentication
-
-#### Install .ssh
-
-- Unbuntu
-  - `ssh-keygen`
-    - and provide a fullpath filename e.g. `~/.ssh/azure_vincenthome_id_rsa`
-
-- Windows
-  - Use a Window tool to generate the key pair
-  - Copy .ssh directory `cp -r /mnt/c/.ssh ~/.ssh`
-  - Set premission: `chmod 400 ~/.ssh/id_rsa` 
-    - priviate key: `id_rsa`
-    - public key: `id_rsa.pub`
+- Create SSH Key Pair in Ubuntu
+  - `ssh-keygen` when prompted, provide custom filename e.g. `~/.ssh/xyz_id_rsa`
+  - Set premission: `chmod 400 ~/.ssh/xyz_id_rsa` `chmod 400 ~/.ssh/xyz_id_rsa.pub` 
+- For Windows: copy above files `cp ~/.ssh/xyz_id_rsa /mnt/c/.ssh` `cp ~/.ssh/xyz_id_rsa.pub /mnt/c/.ssh`
 
 # Fonts
 p.s. In WSL, if we are seeing broken characters in terminal, as soon as installed Oh My Zsh. To remedy this we need to install the Powerline fonts and tell our terminal to use them. fira-code-nerdfont
