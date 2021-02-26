@@ -1,4 +1,5 @@
-NOW=$( date '+%y%m%d' )
+NOW=$(date '+%y%m%d')
+NOWH=$(date '+%y%m%d%H')
 # Resource Group, App Plan, Web App
 LOC="eastus"
 MRG="mrg$NOW"
@@ -6,7 +7,8 @@ MAP="map$NOW"
 MWA="mwa$NOW"
 MCR="mcr$NOW"
 MKC="mkc$NOW"
-IMG="k8s/docker-angular-starter"
+IMG=$(jq -r .name package.json)
+VER=$(jq -r .version package.json)
 echo $MKC
 
 # Authentication
@@ -46,8 +48,8 @@ az acr create -n $MCR -g $MRG --sku Basic --admin-enabled true
 az acr delete -n $MCR
 
 ## ACR Build + Push Image https://docs.microsoft.com/en-us/azure/container-registry/container-registry-quickstart-task-cli
-az acr build -r $MCR -t $IMG:{{.Run.ID}} .
-az acr build -r $MCR -t $IMG:{{.Run.ID}} --build-arg configuration=dev .  
+az acr build -r $MCR -t $IMG:$VER-$NOWH .
+az acr build -r $MCR -t $IMG:$VER-$NOWH --build-arg configuration=dev .  
 # az acr run -r $MCR --cmd '$Registry/sample/hello-world:v1' /dev/null
 
 # ACR Repo
@@ -60,36 +62,49 @@ az acr repository delete -n $MCR --repository sample/hello-world
 # !important --attach-acr to connect AKS to ACR https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration#create-a-new-aks-cluster-with-acr-integration
 az aks list -g $MRG -o table
 az aks create -g $MRG -n $MKC --node-count 1 --enable-addons monitoring --generate-ssh-keys --attach-acr $MCR
+
+# ***** !!! WARNING !!! ******************************************
+# ***** !!! WARNING !!! ******************************************
 az aks delete -g $MRG -n $MKC
+# ***** !!! WARNING !!! ******************************************
+# ***** !!! WARNING !!! ******************************************
+
 # Bring AKS cluster ssh keys to local ~.ssh
 az aks get-credentials -g $MRG -n $MKC
 
 # kubectl
-kubectl get nodes
-# update deployment.yaml container -> image using: $IMG:{{.Run.ID}}
-kubectl apply -f deployment.yaml
-kubectl get pods
-kubectl describe pod <pod-id>  # for troubleshooting
-kubectl get Service
 
+## NODES
+kubectl get nodes -o wide
+
+## Apply Yaml
+echo $MCR.azurecr.io/$IMG:$VER-$NOWH
+# ***** !!! TODO !!! ******************************************
+# ***** !!! TODO !!! ******************************************
+# ***** update manifest.yaml container -> image /w above path
+kubectl apply -f manifest.yaml
+
+## PODS
+kubectl get pods -o wide
+
+POD1=$(kubectl get pods -o json | jq '.items[0].metadata.name' -r)
+kubectl describe pod $POD1
+
+### POD SHELL
+kubectl exec -it $POD1 -- /bin/sh
+#### cd /usr/share/nginx/html/envapp/assets
+#### cat app.config.json
+
+## SERVICE
+kubectl get Services -o wide
+
+HOST=$(kubectl get Service -o json | jq '.items[0].status.loadBalancer.ingress[].ip' -r)
+echo http://$HOST
+
+## ConfigMap
+kubectl get cm
+kubectl describe cm
 
 # Get Public Address
 kubectl cluster-info
-# Get Service Port
-kubectl get svc
 
-http://<public address>:<svc port>
-
-# Troubleshooting
-
-// verify if configmap is created or not
-kubectl get cm -n development
-// verify the data in the configmap
-kubectl describe cm -n development
-
-// get the one of the pod
-kubectl get po -n development
-// exec into one of the pod
-kubectl exec -it <podname> /bin/sh -n development
-# cd /usr/share/nginx/html/envapp/assets
-# cat app.config.json
