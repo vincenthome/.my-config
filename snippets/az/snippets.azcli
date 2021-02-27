@@ -94,6 +94,7 @@ kubectl describe pod $POD1
 ### POD SHELL
 kubectl exec -it $POD1 -- /bin/sh
 
+https://kubernetes.io/docs/tasks/debug-application-cluster/get-shell-running-container/#running-individual-commands-in-a-container
 https://kubernetes.io/docs/tasks/debug-application-cluster/get-shell-running-container/#opening-a-shell-when-a-pod-has-more-than-one-container
 
 #### cd /usr/share/nginx/html/envapp/assets
