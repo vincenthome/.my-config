@@ -6,6 +6,7 @@ MAP="map$NOW"
 MWA="mwa$NOW"
 MCR="mcr$NOW"
 MKC="mkc$NOW"
+MAL="app=angular"
 IMG=$(jq -r .name package.json)
 VER=$(jq -r .version package.json)
 echo $MKC
@@ -16,15 +17,12 @@ az logout
 # TODO fix this
 az ad signed-in-user show | jq '.mail' -r
 
-# TODO: Learn to use label: a=b  and selector
-# TODO: How to get container/pod logs
-
 # Resource Group
 az group list -o table
 az group list -o json
 az group create -l $LOC -n $MRG
 
-# ***** !!! WARNING !!! ******************************************
+# ***** !!! WARNING DEL RESOURCE GROUP !!! ***********************
 # ***** !!! WARNING !!! ******************************************
 az group delete -n $MRG --no-wait
 # ***** !!! WARNING !!! ******************************************
@@ -97,13 +95,16 @@ kubectl exec $POD1 -- cat /usr/share/nginx/html/assets/k8s/app.config.json
 
 # Opening a shell when a Pod has more than one container
 # https://kubernetes.io/docs/tasks/debug-application-cluster/get-shell-running-container/#opening-a-shell-when-a-pod-has-more-than-one-container
-`kubectl exec -i -t my-pod --container main-app -- /bin/bash`
+kubectl exec -i -t $POD1 --container nginx -- /bin/sh
 
 ## SERVICE
-kubectl get services -o wide
-## TODO: is there a way to get Service by service name so jq don't have to use [0]
-HOST=$(kubectl get Service -o json | jq '.items[0].status.loadBalancer.ingress[].ip' -r)
-wslview http://$HOST
+kubectl get services -l $MAL -o wide
+wslview http://"$(kubectl get Service -l $MAL -o json | jq '.items[].status.loadBalancer.ingress[].ip' -r)"
+
+# TODO: Learn to use label: a=b  and selector
+kubectl logs $POD1
+kubectl logs -l $MAL
+kubectl logs -f -l $MAL --all-containers
 
 ## ConfigMap
 kubectl get cm
