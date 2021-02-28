@@ -1,0 +1,11 @@
+
+
+
+# App Service Plan
+az appservice plan list -o table
+az appservice plan create -g $MRG -n $MAP --sku FREE
+
+# Web App
+az webapp list -o table
+az webapp show -g $MRG -n $MWA -o jsonc | jq '.defaultHostName' -r
+az webapp create -g $MRG -p $MAP -n $MWA

@@ -1,5 +1,4 @@
 NOW=$(date '+%y%m%d')
-NOWH=$(date '+%y%m%d%H')
 # Resource Group, App Plan, Web App
 LOC="eastus"
 MRG="mrg$NOW"
@@ -14,17 +13,15 @@ echo $MKC
 # Authentication
 az login
 az logout
+# TODO fix this
 az ad signed-in-user show | jq '.mail' -r
 
-# Azure Monitor for containers - https://docs.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-overview
-az provider register --namespace Microsoft.OperationsManagement
-az provider register --namespace Microsoft.OperationalInsights
-az provider show -n Microsoft.OperationsManagement -o table
-az provider show -n Microsoft.OperationalInsights -o table
+# TODO: Learn to use label: a=b  and selector
+# TODO: How to get container/pod logs
 
 # Resource Group
 az group list -o table
-az group list -o jsonc
+az group list -o json
 az group create -l $LOC -n $MRG
 
 # ***** !!! WARNING !!! ******************************************
@@ -33,30 +30,25 @@ az group delete -n $MRG --no-wait
 # ***** !!! WARNING !!! ******************************************
 # ***** !!! WARNING !!! ******************************************
 
-# App Service Plan
-az appservice plan list -o table
-az appservice plan create -g $MRG -n $MAP --sku FREE
-
-# Web App
-az webapp list -o table
-az webapp show -g $MRG -n $MWA -o jsonc | jq '.defaultHostName' -r
-az webapp create -g $MRG -p $MAP -n $MWA
-
 # ACR
 az acr list -o table
 az acr create -n $MCR -g $MRG --sku Basic --admin-enabled true
 az acr delete -n $MCR
 
+
+# UPDATE IMAGE NEED NEW TIMESTAMP
+NOWHM=$(date '+%y%m%d%H%M')
 ## ACR Build + Push Image https://docs.microsoft.com/en-us/azure/container-registry/container-registry-quickstart-task-cli
-az acr build -r $MCR -t $IMG:$VER-$NOWH .
-az acr build -r $MCR -t $IMG:$VER-$NOWH --build-arg configuration=dev .  
+# This Dockerfile - Default to Production
+az acr build -r $MCR -t $IMG:$VER-$NOWHM .
+az acr build -r $MCR -t $IMG:$VER-$NOWHM --build-arg configuration=dev .  
 # az acr run -r $MCR --cmd '$Registry/sample/hello-world:v1' /dev/null
 
 # ACR Repo
 # !Important: delete indivdual image by tag not supported/working
 az acr repository list -n $MCR
 az acr repository show-tags -n $MCR --top 10 --orderby time_desc --repository $IMG
-az acr repository delete -n $MCR --repository sample/hello-world
+az acr repository delete -n $MCR --repository $IMG
 
 # AKS Azure Kubernetes Service https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest
 # !important --attach-acr to connect AKS to ACR https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration#create-a-new-aks-cluster-with-acr-integration
@@ -78,7 +70,7 @@ az aks get-credentials -g $MRG -n $MKC
 kubectl get nodes -o wide
 
 ## Apply Yaml
-echo $MCR.azurecr.io/$IMG:$VER-$NOWH
+echo $MCR.azurecr.io/$IMG:$VER-$NOWHM
 # ***** !!! TODO !!! ******************************************
 # ***** !!! TODO !!! ******************************************
 # ***** update manifest.yaml container -> image /w above path
@@ -94,14 +86,21 @@ kubectl describe pod $POD1
 ### POD SHELL
 kubectl exec -it $POD1 -- /bin/sh
 
-https://kubernetes.io/docs/tasks/debug-application-cluster/get-shell-running-container/#running-individual-commands-in-a-container
-https://kubernetes.io/docs/tasks/debug-application-cluster/get-shell-running-container/#opening-a-shell-when-a-pod-has-more-than-one-container
+# Running individual commands in a container
+# https://kubernetes.io/docs/tasks/debug-application-cluster/get-shell-running-container/#running-individual-commands-in-a-container
+kubectl exec $POD1 env
+kubectl exec $POD1 -- ps aux
+kubectl exec $POD1 -- ls /
+kubectl exec $POD1 -- ls /usr/share/nginx/html/assets/k8s
+kubectl exec $POD1 -- cat /proc/1/mounts
+kubectl exec $POD1 -- cat /usr/share/nginx/html/assets/k8s/app.config.json
 
-#### cd /usr/share/nginx/html/envapp/assets
-#### cat app.config.json
+# Opening a shell when a Pod has more than one container
+# https://kubernetes.io/docs/tasks/debug-application-cluster/get-shell-running-container/#opening-a-shell-when-a-pod-has-more-than-one-container
+`kubectl exec -i -t my-pod --container main-app -- /bin/bash`
 
 ## SERVICE
-kubectl get Services -o wide
+kubectl get services -o wide
 ## TODO: is there a way to get Service by service name so jq don't have to use [0]
 HOST=$(kubectl get Service -o json | jq '.items[0].status.loadBalancer.ingress[].ip' -r)
 wslview http://$HOST
@@ -113,3 +112,11 @@ kubectl describe cm
 # Get Public Address
 kubectl cluster-info
 
+
+
+# RARELY USE
+# Azure Monitor for containers - https://docs.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-overview
+az provider register --namespace Microsoft.OperationsManagement
+az provider register --namespace Microsoft.OperationalInsights
+az provider show -n Microsoft.OperationsManagement -o table
+az provider show -n Microsoft.OperationalInsights -o table
