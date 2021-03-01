@@ -103,7 +103,8 @@ wslview http://"$(kubectl get Service -l $MAL -o json | jq '.items[].status.load
 
 # TODO: Learn to use label: a=b  and selector
 kubectl logs $POD1
-kubectl logs -l $MAL
+# -f realtime
+kubectl logs -f -l $MAL
 kubectl logs -f -l $MAL --all-containers
 
 ## ConfigMap
