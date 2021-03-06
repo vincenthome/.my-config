@@ -1,11 +1,14 @@
 NOW=$(date '+%y%m%d')
 # Resource Group, App Plan, Web App
-LOC="eastus"
+
+
+LOC="eastus2"
 MRG="mrg$NOW"
 MAP="map$NOW"
 MWA="mwa$NOW"
 MCR="mcr$NOW"
 MKC="mkc$NOW"
+MKC2="mkc2$NOW"
 MAL="app=angular"
 IMG=$(jq -r .name package.json)
 VER=$(jq -r .version package.json)
@@ -52,6 +55,7 @@ az acr repository delete -n $MCR --repository $IMG
 # !important --attach-acr to connect AKS to ACR https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration#create-a-new-aks-cluster-with-acr-integration
 az aks list -g $MRG -o table
 az aks create -g $MRG -n $MKC --node-count 1 --enable-addons monitoring --generate-ssh-keys --attach-acr $MCR
+az aks create -g $MRG -n $MKC2 --node-count 1 --enable-addons monitoring --generate-ssh-keys --attach-acr $MCR
 
 # ***** !!! WARNING !!! ******************************************
 # ***** !!! WARNING !!! ******************************************
@@ -92,6 +96,7 @@ kubectl exec $POD1 -- ls /
 kubectl exec $POD1 -- ls /usr/share/nginx/html/assets/k8s
 kubectl exec $POD1 -- cat /proc/1/mounts
 kubectl exec $POD1 -- cat /usr/share/nginx/html/assets/k8s/app.config.json
+kubectl exec $POD1 -- cat /usr/share/nginx/html/assets/app.env.json
 
 # Opening a shell when a Pod has more than one container
 # https://kubernetes.io/docs/tasks/debug-application-cluster/get-shell-running-container/#opening-a-shell-when-a-pod-has-more-than-one-container
