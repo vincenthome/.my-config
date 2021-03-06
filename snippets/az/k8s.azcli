@@ -66,6 +66,7 @@ az aks delete -g $MRG -n $MKC
 
 # Bring AKS cluster ssh keys to local ~.ssh
 az aks get-credentials -g $MRG -n $MKC
+az aks get-credentials -g $MRG -n $MKC2
 
 # kubectl
 
