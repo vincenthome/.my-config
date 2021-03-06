@@ -36,20 +36,21 @@ az acr list -o table
 az acr create -n $MCR -g $MRG --sku Basic --admin-enabled true
 az acr delete -n $MCR
 
-
+# ***** NON PIPELINE ************************************************
 # UPDATE IMAGE NEED NEW TIMESTAMP
 NOWHM=$(date '+%y%m%d%H%M')
 ## ACR Build + Push Image https://docs.microsoft.com/en-us/azure/container-registry/container-registry-quickstart-task-cli
 # This Dockerfile - Default to Production
 az acr build -r $MCR -t $IMG:$VER-$NOWHM .
 az acr build -r $MCR -t $IMG:$VER-$NOWHM --build-arg configuration=dev .  
-# az acr run -r $MCR --cmd '$Registry/sample/hello-world:v1' /dev/null
 
 # ACR Repo
 # !Important: delete indivdual image by tag not supported/working
 az acr repository list -n $MCR
 az acr repository show-tags -n $MCR --top 10 --orderby time_desc --repository $IMG
 az acr repository delete -n $MCR --repository $IMG
+# ***** NON PIPELINE ************************************************
+
 
 # AKS Azure Kubernetes Service https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest
 # !important --attach-acr to connect AKS to ACR https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration#create-a-new-aks-cluster-with-acr-integration
