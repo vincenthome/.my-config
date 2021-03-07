@@ -1,7 +1,5 @@
 NOW=$(date '+%y%m%d')
 # Resource Group, App Plan, Web App
-
-
 LOC="eastus2"
 MRG="mrg$NOW"
 MAP="map$NOW"
@@ -22,7 +20,6 @@ az ad signed-in-user show | jq '.mail' -r
 
 # Resource Group
 az group list -o table
-az group list -o json
 az group create -l $LOC -n $MRG
 
 # ***** !!! WARNING DEL RESOURCE GROUP !!! ***********************
@@ -68,7 +65,7 @@ az aks delete -g $MRG -n $MKC
 az aks get-credentials -g $MRG -n $MKC
 az aks get-credentials -g $MRG -n $MKC2
 
-# kubectl
+# kubectl - under Credentials Context
 
 ## NODES
 kubectl get nodes -o wide
