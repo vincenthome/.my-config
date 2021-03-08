@@ -16,3 +16,23 @@ alias explorer="explorer.exe"
 # translate from a WSL path to a Windows path, copied to clipboard
 alias pwdw="wslpath -w ."
 alias pwdwc="wslpath -w . | clip.exe"
+
+# l	ls -lFh	List files as a long list, show size, type, human-readable
+# la	ls -lAFh	List almost all files as a long list show size, type, human-readable
+# lr	ls -tRFh	List files recursively sorted by date, show type, human-readable
+# lt	ls -ltFh	List files as a long list sorted by date, show type, human-readable
+# ll	ls -l	List files as a long list
+# ldot	ls -ld .*	List dot files as a long list
+# lS	ls -1FSsh	List files showing only size and name sorted by size
+# lart	ls -1Fcart	List all files sorted in reverse of create/modification time (oldest first)
+# lrt	ls -1Fcrt	List files sorted in reverse of create/modification time(oldest first)
+
+alias l='ls -lFh'     #size,show type,human readable
+alias la='ls -lAFh'   #long list,show almost all,show type,human readable
+alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
+alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
+alias ll='ls -l'      #long list
+alias ldot='ls -ld .*'
+alias lS='ls -1FSsh'
+alias lart='ls -1Fcart'
+alias lrt='ls -1Fcrt'
