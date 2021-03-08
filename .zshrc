@@ -9,6 +9,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(git kubectl emoji  gitignore z zsh-syntax-highlighting zsh-autosuggestions)
 
+# Git Credential Setup
+export GCM_CREDENTIAL_STORE=cache
+export GCM_CREDENTIAL_CACHE_OPTIONS="--timeout 64800"
+
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.my-config/.shortcutrc" ] && source "$HOME/.my-config/.shortcutrc"
 [ -f "$HOME/.my-config/.aliasrc" ] && source "$HOME/.my-config/.aliasrc"

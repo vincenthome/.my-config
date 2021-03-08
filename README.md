@@ -211,8 +211,20 @@ function acp() {
 # Authentication Options
 
 ## PAT Personal Access Token
-- Install Git Credential Manager Core on 'Windows Side' [GCM](https://docs.microsoft.com/en-us/azure/devops/repos/git/set-up-credential-managers?view=azure-devops#install-git-credential-manager-core)
-- Reference Git Credential Manager from a WSL distro: [Ref](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup)
+- Install Git Credential Manager Core GCM on 'Windows Side' [GCM](https://docs.microsoft.com/en-us/azure/devops/repos/git/set-up-credential-managers?view=azure-devops#install-git-credential-manager-core)
+- Install GCM on Ubuntu [GCM Linux](https://github.com/microsoft/Git-Credential-Manager-Core#linux-debian-package-deb)
+  - Download: `curl -L https://xxxxxx --output gcmcore-linux_amd64.xxx.deb`
+  - Install/Setup GCM
+    ```
+    sudo dpkg -i <path-to-package>
+    git-credential-manager-core configure
+    ```
+  - Configure Git Credential Store / Cache [Ref](https://github.com/microsoft/Git-Credential-Manager-Core/blob/master/docs/linuxcredstores.md#3-gits-built-in-credential-cache)
+    ```
+    git config --global credential.credentialStore cache
+    git config --global credential.cacheOptions "--timeout 300"  
+    ```
+- Reference 'Windows' GCM from a WSL distro: [Ref](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup)
   - `git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe"`
 - Using PAT Personal Access Token 
   - Github: Profile -> Settings -> Developer Settings -> Personal Access Tokens -> Generate new token
