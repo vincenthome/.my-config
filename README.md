@@ -190,6 +190,12 @@ function acp() {
 - `az --version`
 - `az login`
 
+# Install Azure DevOps CLI
+
+- Instructions: [https://docs.microsoft.com/en-us/azure/devops/cli/?view=azure-devops](https://docs.microsoft.com/en-us/azure/devops/cli/?view=azure-devops)
+- `az extension add --name azure-devops`
+- `az devops configure --defaults organization=https://dev.azure.com/vincenthome project=angular`
+
 # Install Kubectl
 
 - Instructions: [https://kubernetes.io/docs/tasks/tools/install-kubectl/](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
