@@ -16,7 +16,7 @@ echo $MKC
 az login
 az logout
 # TODO fix this
-az ad signed-in-user show | jq '.mail' -r
+az ad signed-in-user show | jq '.userPrincipalName' -r
 
 # Resource Group
 az group list -o table
