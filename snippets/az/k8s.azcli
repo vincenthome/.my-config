@@ -4,9 +4,9 @@ LOC="eastus2"
 MRG="mrg$NOW"
 MAP="map$NOW"
 MWA="mwa$NOW"
-MCR="mcr$NOW"
-MKC="mkc$NOW"
-MKC2="mkc2$NOW"
+MKC="mkc_$NOW"
+MKC2="mkc2_$NOW"
+MCR="mcrbattlestar"
 MAL="app=angular"
 IMG=$(jq -r .name package.json)
 VER=$(jq -r .version package.json)
