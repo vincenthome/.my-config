@@ -1,18 +1,13 @@
+LOC="eastus2"
 MRGB="mrgbattlestar"
 MCRB="mcrbattlestar"
 NOW=$(date '+%y%m%d')
-# Resource Group, App Plan, Web App
-LOC="eastus2"
 MRG="mrg$NOW"
-MAP="map$NOW"
-MWA="mwa$NOW"
 MKC="mkc-$NOW"
 MKC2="mkc2-$NOW"
 MKC3="mkc3-$NOW"
 MAL="app=angular"
-IMG=$(jq -r .name package.json)
-VER=$(jq -r .version package.json)
-echo $MKC
+echo $MRGB: $MCRB / $MRG: $MKC $MKC2 $MKC3
 
 # Authentication
 az logout
@@ -32,8 +27,8 @@ az group delete -n $MRG --no-wait
 # AKS Azure Kubernetes Service https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest
 # !important --attach-acr to connect AKS to ACR https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration#create-a-new-aks-cluster-with-acr-integration
 az aks list -g $MRG -o table
-az aks create -g $MRG -n $MKC --node-count 1 --enable-addons monitoring --generate-ssh-keys --attach-acr $MCRB
-az aks create -g $MRG -n $MKC2 --node-count 1 --enable-addons monitoring --generate-ssh-keys --attach-acr $MCRB
+az aks create -g $MRG -n $MKC --node-count 1 --enable-addons monitoring --generate-ssh-keys --attach-acr $MCRB --no-wait
+az aks create -g $MRG -n $MKC2 --node-count 1 --enable-addons monitoring --generate-ssh-keys --attach-acr $MCRB --no-wait
 az aks create -g $MRG -n $MKC3 --node-count 1 --enable-addons monitoring --generate-ssh-keys --attach-acr $MCRB
 
 # ***** !!! WARNING !!! ******************************************
@@ -50,13 +45,6 @@ az aks get-credentials -g $MRG -n $MKC2
 
 ## NODES
 kubectl get nodes -o wide
-
-## Apply Yaml
-# echo $MCRB.azurecr.io/$IMG:$VER-$NOWHM
-# ***** !!! TODO !!! ******************************************
-# ***** !!! TODO !!! ******************************************
-# ***** update manifest.yaml container -> image /w above path
-# kubectl apply -f manifest.yaml
 
 ## PODS
 kubectl get pods -o wide
@@ -110,8 +98,17 @@ az acr delete -n $MCRB
 # ***** !!! ONE TIME !!! ******************************************
 
 
+## Apply Yaml
+# echo $MCRB.azurecr.io/$IMG:$VER-$NOWHM
+# ***** !!! TODO !!! ******************************************
+# ***** !!! TODO !!! ******************************************
+# ***** update manifest.yaml container -> image /w above path
+# kubectl apply -f manifest.yaml
+
 # ***** NON PIPELINE ************************************************
 # UPDATE IMAGE NEED NEW TIMESTAMP
+IMG=$(jq -r .name package.json)
+VER=$(jq -r .version package.json)
 NOWHM=$(date '+%y%m%d%H%M')
 ## ACR Build + Push Image https://docs.microsoft.com/en-us/azure/container-registry/container-registry-quickstart-task-cli
 # This Dockerfile - Default to Production
