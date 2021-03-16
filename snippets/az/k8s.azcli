@@ -130,3 +130,8 @@ az provider register --namespace Microsoft.OperationalInsights
 az provider show -n Microsoft.OperationsManagement -o table
 az provider show -n Microsoft.OperationalInsights -o table
 
+
+
+az acr login --name $MCRB --expose-token | jq .accessToken -r | docker login mcrbattlestar.azurecr.io -u 00000000-0000-0000-0000-000000000000 --password-stdin
+R=$(docker create $MCRB.azurecr.io/angular:angular_angular_master_20210316.4.binaries)
+docker cp $R:/usr/src/app/dist/docker-angular-starter ./archive
