@@ -7,7 +7,8 @@ SAVEHIST=10000
 # ZSH_THEME="agnoster"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(git kubectl emoji  gitignore z zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git kubectl emoji gitignore z zsh-autosuggestions)
+# plugins=(git kubectl emoji  gitignore z zsh-syntax-highlighting zsh-autosuggestions)
 
 # Git Credential Setup
 export GCM_CREDENTIAL_STORE=cache
