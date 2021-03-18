@@ -12,7 +12,7 @@ echo $MRGB: $MCRB / $MRG: $MKC $MKC2 $MKC3
 # Authentication
 az logout
 az login
-az ad signed-in-user show | jq '.userPrincipalName' -r
+az ad signed-in-user show | jq '.mail' -r
 
 # Resource Group
 az group list -o table
