@@ -9,9 +9,9 @@ alias cdwinc="cd /mnt/c"
 alias cdh="cd $HOME"
 
 #common
-alias er="cd /mnt/c/er"
 alias gcnn!="git commit -v --no-edit --date='now' --amend"
 alias explorer="explorer.exe"
+alias cpeg='rsync -av --progress --exclude=.git'
 
 # translate from a WSL path to a Windows path, copied to clipboard
 alias pwdw="wslpath -w ."
