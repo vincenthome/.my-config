@@ -3,6 +3,8 @@ MRGB="mrgbattlestar"
 MCRB="mcrbattlestar"
 NOW=$(date '+%y%m%d')
 MRG="mrg$NOW"
+MAP="map$NOW"
+MWA="mwa$NOW"
 MKC="mkc-$NOW"
 MKC2="mkc2-$NOW"
 MKC3="mkc3-$NOW"
@@ -23,6 +25,23 @@ az group create -l $LOC -n $MRG
 az group delete -n $MRG --no-wait
 # ***** !!! WARNING !!! ******************************************
 # ***** !!! WARNING !!! ******************************************
+
+
+
+# App Service Plan
+az appservice plan list -o table
+az appservice plan create -g $MRG -n $MAP --is-linux --sku FREE
+az appservice plan create -g $MRG -n $MAP --is-linux --sku P1V2
+
+# Web App
+az webapp list -o table
+az webapp create -g $MRG -p $MAP -n $MWA -i mcr.microsoft.com/appsvc/staticsite:latest
+
+# Slot
+az webapp deployment slot list -g $MRG -n $MWA -o table
+az webapp deployment slot create -g $MRG -n $MWA --slot staging
+
+
 
 # AKS Azure Kubernetes Service https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest
 # !important --attach-acr to connect AKS to ACR https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration#create-a-new-aks-cluster-with-acr-integration

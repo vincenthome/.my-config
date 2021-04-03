@@ -3,9 +3,15 @@
 
 # App Service Plan
 az appservice plan list -o table
-az appservice plan create -g $MRG -n $MAP --sku FREE
+az appservice plan create -g $MRG -n $MAP --is-linux --sku FREE
 
 # Web App
 az webapp list -o table
 az webapp show -g $MRG -n $MWA -o jsonc | jq '.defaultHostName' -r
-az webapp create -g $MRG -p $MAP -n $MWA
+az webapp create -g $MRG -p $MAP -n $MWA -i mcr.microsoft.com/appsvc/staticsite:latest
+
+
+# az appservice plan create --name AppSvc-DockerTutorial-plan --resource-group AppSvc-DockerTutorial-rg --is-linux
+# az webapp create --resource-group AppSvc-DockerTutorial-rg --plan AppSvc-DockerTutorial-plan --name <app-name> --deployment-container-image-name <registry-name>.azurecr.io/appsvc-tutorial-custom-image:latest
+# az webapp identity assign --resource-group AppSvc-DockerTutorial-rg --name <app-name> --query principalId --output tsv
+# az account show --query id --output tsv
