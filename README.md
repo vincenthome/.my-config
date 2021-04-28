@@ -9,7 +9,7 @@
 - wslview - open default Windows application for file extension
 - wslpath
 
-## Windows Termainl
+## Windows Terminal
 - Quick Setup
   - Install Powerline Font: `Cascadia (Code|Mono) PL` ttf [https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font](https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font)
   - git clone this repo to %USERPROFILE%
@@ -61,6 +61,7 @@
 - Via Package Manager: `sudo apt install zsh`
 - Verify installation by running `zsh --version`
 - Make it your default shell: `chsh -s $(which zsh)`
+- No need to open new shell!!!
 - Current Shell: `echo $SHELL`
 
 # Install oh-my-zsh
