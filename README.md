@@ -3,6 +3,9 @@
 [https://docs.microsoft.com/en-us/windows/terminal/](https://docs.microsoft.com/en-us/windows/terminal/)
 
 ## WSL
+- Distro now appears as Apps
+  - Reset Distro: 1. select App 2. choose Advanced Options 3. click Reset
+- [How to create multiple instances of the same Distro in WSL](https://medium.com/swlh/why-you-should-use-multiple-instances-of-same-linux-distro-on-wsl-windows-10-f6f140f8ed88)
 - Windows access Linux files: \\wsl$\Ubuntu-20.04\home\battlestar
 - Linux access Windows files: /mnt/c/
 - symlinks to make Windows paths easier to access: e.g. `ln s /mnt/c/Users/chitl/Downloads`  ~/Downloads
