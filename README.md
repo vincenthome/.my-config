@@ -3,8 +3,9 @@
 [https://docs.microsoft.com/en-us/windows/terminal/](https://docs.microsoft.com/en-us/windows/terminal/)
 
 ## WSL
-- Install New Distro: using Windows Store
-- [How to create multiple instances of the same Distro in WSL](https://medium.com/swlh/why-you-should-use-multiple-instances-of-same-linux-distro-on-wsl-windows-10-f6f140f8ed88)
+- Download & Install New Distro: using Windows Store
+- export distro to tar: wsl --export Ubuntu-20.04 Ubuntu-20.04.tar.gz
+- import distro from tar: wsl --import ub2004.1 C:\linux\ubuntu-20.04\1 C:\linux\ubuntu-20.04\tar.gz\Ubuntu-20.04.tar.gz
 - Windows access Linux files: \\wsl$\Ubuntu-20.04\home\battlestar
 - Linux access Windows files: /mnt/c/
 - symlinks to make Windows paths easier to access: e.g. `ln s /mnt/c/Users/chitl/Downloads`  ~/Downloads
