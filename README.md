@@ -4,8 +4,10 @@
 
 ## WSL
 - Download & Install New Distro: using Windows Store
+- Clean install: 1. Uninstall Distro and 2. 'Reset' Windows Terminal both via "Add or Remove Programs"
 - export distro to tar: wsl --export Ubuntu-20.04 Ubuntu-20.04.tar.gz
 - import distro from tar: wsl --import ub2004.1 C:\linux\ubuntu-20.04\1 C:\linux\ubuntu-20.04\tar.gz\Ubuntu-20.04.tar.gz
+- Settings -> Command Line: wsl.exe -d ub2004.1 --user battlestar
 - Windows access Linux files: \\wsl$\Ubuntu-20.04\home\battlestar
 - Linux access Windows files: /mnt/c/
 - symlinks to make Windows paths easier to access: e.g. `ln s /mnt/c/Users/chitl/Downloads`  ~/Downloads
