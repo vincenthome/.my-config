@@ -13,11 +13,15 @@
 - [Command Line](https://docs.microsoft.com/en-us/windows/terminal/command-line-arguments?tabs=windows#command-line-syntax) open multiple distros profiles with starting directory and split pane horizontally (-H)/vertically (-V). Move focus 1 up.
   - wt -p ub2004.1 -d /mnt/c/Users/vince ; sp -H -d /home/battlestar -p ub2004.1 ; mf up
 - File Access Path Convention
-  - Windows access Linux files: \\wsl$\Ubuntu-20.04\home\battlestar
-  - Linux access Windows files: /mnt/c/
+  - Easiest: Windows Explorer Linux Penguin Icon
+  - Windows access Linux files: `\\wsl.localhost\ub2004.1\home\battlestar` or `\\wsl$`
+  - Linux access Windows files: `/mnt/c/`
+  - Path translator wslpath: 
+    - Linux -> Windows: wslpath -w ~
+    - Windows -> Linus: wslpath "C:\Users\vince"
   - symlinks to make Windows paths easier to access: e.g. `ln s /mnt/c/Users/chitl/Downloads`  ~/Downloads
 - wslview - open default Windows application for file extension
-- wslpath
+- 
 
 ## Windows Terminal
 - Quick Setup
