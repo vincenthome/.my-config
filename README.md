@@ -20,8 +20,8 @@
     - Linux -> Windows: wslpath -w ~
     - Windows -> Linus: wslpath "C:\Users\vince"
   - symlinks to make Windows paths easier to access: e.g. `ln s /mnt/c/Users/chitl/Downloads`  ~/Downloads
-- wslview - open default Windows application for file extension
-- 
+- [WSL Utils](https://github.com/wslutilities/wslu)
+  - wslview - open default Windows application like notepad, pdf viewer, browser based on file extensions or url
 
 ## Windows Terminal
 - Quick Setup
