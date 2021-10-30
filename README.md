@@ -10,7 +10,7 @@
   - Export distro to tar: wsl --export Ubuntu-20.04 Ubuntu-20.04.tar.gz
   - Import distro from tar 1+ times: wsl --import ub2004.1 C:\linux\ubuntu-20.04\1 C:\linux\ubuntu-20.04\tar.gz\Ubuntu-20.04.tar.gz
   - Assign user: WT Settings -> Command Line: wsl.exe -d ub2004.1 `--user` battlestar
-- Command Line open multiple distros profiles with starting directory and split pane horizontally (-H)/vertically (-V). Move focus 1 up.
+- [Command Line](https://docs.microsoft.com/en-us/windows/terminal/command-line-arguments?tabs=windows#command-line-syntax) open multiple distros profiles with starting directory and split pane horizontally (-H)/vertically (-V). Move focus 1 up.
   - wt -p ub2004.1 -d /mnt/c/Users/vince ; sp -H -d /home/battlestar -p ub2004.1 ; mf up
 - File Access Path Convention
   - Windows access Linux files: \\wsl$\Ubuntu-20.04\home\battlestar
