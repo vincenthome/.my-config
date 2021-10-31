@@ -25,7 +25,7 @@
 
 ## Windows Terminal
 - Quick Setup
-  - Install Powerline Font: `Cascadia (Code|Mono) PL` ttf [https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font](https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#install-a-powerline-font)
+  - Install Powerline Font: `Cascadia (Code|Mono) PL` ttf [https://docs.microsoft.com/en-us/windows/terminal/cascadia-code](https://docs.microsoft.com/en-us/windows/terminal/cascadia-code)
   - git clone this repo to %USERPROFILE%
   - Settings Keyboard shortcut: `Ctrl + Alt + ,`
   - Customize Settings `Ctrl + Alt + ,`
