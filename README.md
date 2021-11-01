@@ -17,10 +17,10 @@
 
 - Tips
   - [Command Line](https://docs.microsoft.com/en-us/windows/terminal/command-line-arguments?tabs=windows#command-line-syntax) open multiple distros profiles with starting directory and split pane horizontally (-H)/vertically (-V). Move focus 1 up.
-    - wt -p ub2004.1 -d /mnt/c/Users/vince ; sp -H -d /home/battlestar -p ub2004.1 ; mf up
+    - wt -p ub2004.vm1 -d /mnt/c/Users/vince ; sp -H -d /home/battlestar -p ub2004.vm1 ; mf up
   - File Access Path Convention
     - Easiest: Windows Explorer Linux Penguin Icon
-    - Windows access Linux files: `\\wsl.localhost\ub2004.1\home\battlestar` or `\\wsl$`
+    - Windows access Linux files: `\\wsl.localhost\ub2004.vm1\home\battlestar` or `\\wsl$`
     - Linux access Windows files: `/mnt/c/`
     - Path translator wslpath: 
       - Linux -> Windows: wslpath -w ~
@@ -29,9 +29,10 @@
 
 ## Windows Terminal
 - Quick Setup
-  - Powerline Font (Default): `Cascadia (Code|Mono) PL` ttf 
+  - git clone this repo to %USERPROFILE% 
+  - Powerline Font (Default for ALL profiles): `Cascadia (Code|Mono) PL` ttf 
     - Download: [https://docs.microsoft.com/en-us/windows/terminal/cascadia-code](https://docs.microsoft.com/en-us/windows/terminal/cascadia-code)
-    - Install as default for ALL profiles using Windows Terminal Settings: 
+    - Install: In the settings.json settings file for Windows Terminal, set default for ALL profiles using the following: 
       ```
       "profiles":
       {
@@ -41,54 +42,27 @@
               "fontFace": "Cascadia Code PL"
           },
       ```
-
-  - MesloLGS NF Font (for linux oh-my-zsh)
+  - MesloLGS NF Font (for oh-my-zsh -> theme -> Powerlevel10k)
     - Download: [https://github.com/romkatv/powerlevel10k#manual-font-installation](https://github.com/romkatv/powerlevel10k#manual-font-installation)
-    - Install Font for specific linux profile using Windows Terminal Settings:
+    - Install: In the settings.json settings file for Windows Terminal, for specific linux profile add the following:
       ```
         "fontFace": "MesloLGS NF",
         "fontSize": 10,
       ```
-
   - Dracula Color Scheme:
     - Download: [https://draculatheme.com/windows-terminal](https://draculatheme.com/windows-terminal)
     - Install: In the settings.json settings file for Windows Terminal, find the schemes section and paste the content of dracula.json
-  - git clone this repo to %USERPROFILE%
-  - Settings Keyboard shortcut: `Ctrl + Alt + ,`
-  - Customize Settings `Ctrl + Alt + ,`
-    - Copy & paste content of [settings.json](WindowsTerminal/settings.json) to replace existing Settings
-
-- Details:
-  - Settings:
-    - Fonts, Color Scheme for non linux profiles. Requires to copy Dracula scheme to the `schemes` section.
-      ```
-      "profiles":
-      {
-          "defaults":
-          {
-              "colorScheme" : "Dracula",
-              "fontFace": "Cascadia Code PL"
-          },
-      ```
-    - Special Font for Powerlevel10k used by oh-my-zsh in linux profiles
-      ```
-        "fontFace": "MesloLGS NF",
-        "fontSize": 10,
-      ```
-    - Starting Directory
-      ```
-      "startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\battlestar\\",
-      ```
-    - ect ...
-      
-  - Color Schemes
-    - [Switching Scheme](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes)
-    - Dracula [https://draculatheme.com/windows-terminal](https://draculatheme.com/windows-terminal)
-
+    - [About Switching Scheme](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes)
   - Tab Icons
     - [Switching Icon](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/profile-general#icon)
     - Windows 10 built-in [Segoe MDL2 Icons codes for "Icon": ""](https://docs.microsoft.com/en-us/windows/uwp/design/style/segoe-ui-symbol-font#icon-list)
-
+  - Set Starting Directory in Windows Terminal Settings
+    ```
+    "startingDirectory": "\\\\wsl$\\ub2004.vm1\\home\\battlestar\\",
+    ```
+  - Customize Settings `Ctrl + Alt + ,`
+    - Copy & paste content of [settings.json](WindowsTerminal/settings.json) to replace existing Settings
+- Tips:
   - Pane
     - New Default Profile Vertical/Horizontal: `Alt + Shift + Plus` / `Alt + Shift + Minus`
     - New Current Profile (auto v/h): `Alt + Shift + D`
