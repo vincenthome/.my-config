@@ -93,7 +93,13 @@
 `~/.oh-my-zsh/custom/plugins`
 
 - `zsh-autosuggestions` Required before switching theme. [https://github.com/zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+  ```
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  ```
 - `zsh-syntax-highlighting` Required before switching theme. [https://github.com/zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+  ```
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  ```
 - `autojump`
 - `cloudapp` – uploads files and piped contents to the Cloudapp service. Outputs and copies the resultant URL to the clipboard.
 - `command-not-found` – if a command is not recognized in the $PATH, this will use Ubuntu’s command-not-found package to find it or suggest spelling mistakes (Only for Ubuntu and openSUSE).
@@ -110,8 +116,10 @@
 `~/.oh-my-zsh/custom/theme`
 
 - `Powerlevel10k` [https://github.com/romkatv/powerlevel10k](https://github.com/romkatv/powerlevel10k)
-  - Font
-  - `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
+  - Install
+    ```
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+    ```
   - Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.my-config/.zshrc`
   - Prompt Configuration wizard: `p10k configure`
   - Add package.json version to prompt: Edit .p10k.zsh -> Uncomment POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS `package` 
