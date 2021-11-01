@@ -183,11 +183,12 @@ function acp() {
 
 -  Instructions: [https://github.com/nvm-sh/nvm#installing-and-updating](https://github.com/nvm-sh/nvm#installing-and-updating)
   - available versions: `nvm ls-remote`
+  - installed versions: `nvm ls`
 
 ## Install Nodejs
 
   - Specific Version: `nvm install 12.18.3`
-    - Switch between Versions: `nvm use 8.11.1`
+  - Switch between Versions: `nvm use 8.11.1`
   - From NodeSource: [https://github.com/nodesource/distributions/blob/master/README.md#debinstall](https://github.com/nodesource/distributions/blob/master/README.md#debinstall)
     - e.g. Node 14 `curl -sL https://deb.nodesource.com/setup_14.x | sudo -E zsh -`
     - e.g. Node 12 `curl -sL https://deb.nodesource.com/setup_12.x | sudo -E zsh -`
