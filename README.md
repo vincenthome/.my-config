@@ -92,6 +92,8 @@
 
 `~/.oh-my-zsh/custom/plugins`
 
+- `zsh-autosuggestions` Required before switching theme. [https://github.com/zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+- `zsh-syntax-highlighting` Required before switching theme. [https://github.com/zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 - `autojump`
 - `cloudapp` – uploads files and piped contents to the Cloudapp service. Outputs and copies the resultant URL to the clipboard.
 - `command-not-found` – if a command is not recognized in the $PATH, this will use Ubuntu’s command-not-found package to find it or suggest spelling mistakes (Only for Ubuntu and openSUSE).
@@ -102,8 +104,6 @@
 - `sudo` – hitting ESC twice puts sudo in front of the current command, or the last one if the command line is empty.
 - `vscode` – makes interaction between the command line and the code editor easier.
 - `z` built-in [https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/z](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/z)
-- `zsh-autosuggestions` Required before switching theme. [https://github.com/zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-- `zsh-syntax-highlighting` Required before switching theme. [https://github.com/zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
   
 # Popular Themes
 
