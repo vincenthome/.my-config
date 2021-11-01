@@ -7,6 +7,7 @@
   - Factory 'Reset' then 'Uninstall': 1. `Ubuntu` and 2. `Windows Terminal` via "Add or Remove Programs" 's Advanced Options menu item.
   - Install Distro from scratch: using Windows Store and click `Install`
   - Install Distro into WSL /w profile: using Windows Store and click `Open` OR command line `wsl --install -d <distro>`
+  - Get latest Ubuntu packages: 1. `sudo apt update` 2. `sudo apt upgrade`
 - Multiple Instances of the same Distro
   - Export distro to tar: wsl --export Ubuntu-20.04 Ubuntu-20.04.tar.gz
   - Import distro from tar 1+ times: wsl --import ub2004.1 C:\linux\ubuntu-20.04\1 C:\linux\ubuntu-20.04\tar.gz\Ubuntu-20.04.tar.gz
