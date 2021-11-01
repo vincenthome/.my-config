@@ -58,7 +58,7 @@
     ```
     \\wsl$\ub2004.vm1\home\battlestar
     ```
-  - Customize Settings `Ctrl + Alt + ,`
+  - Customize Settings `Ctrl + ,`
     - Copy & paste content of [settings.json](WindowsTerminal/settings.json) to replace existing Settings
 - Tips:
   - Pane
