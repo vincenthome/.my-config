@@ -29,7 +29,30 @@
 
 ## Windows Terminal
 - Quick Setup
-  - Install Powerline Font: `Cascadia (Code|Mono) PL` ttf [https://docs.microsoft.com/en-us/windows/terminal/cascadia-code](https://docs.microsoft.com/en-us/windows/terminal/cascadia-code)
+  - Powerline Font (Default): `Cascadia (Code|Mono) PL` ttf 
+    - Download: [https://docs.microsoft.com/en-us/windows/terminal/cascadia-code](https://docs.microsoft.com/en-us/windows/terminal/cascadia-code)
+    - Install as default for ALL profiles using Windows Terminal Settings: 
+      ```
+      "profiles":
+      {
+          "defaults":
+          {
+              "colorScheme" : "Dracula",
+              "fontFace": "Cascadia Code PL"
+          },
+      ```
+
+  - MesloLGS NF Font (for linux oh-my-zsh)
+    - Download: [https://github.com/romkatv/powerlevel10k#manual-font-installation](https://github.com/romkatv/powerlevel10k#manual-font-installation)
+    - Install Font for specific linux profile using Windows Terminal Settings:
+      ```
+        "fontFace": "MesloLGS NF",
+        "fontSize": 10,
+      ```
+
+  - Dracula Color Scheme:
+    - Download: [https://draculatheme.com/windows-terminal](https://draculatheme.com/windows-terminal)
+    - Install: In the settings.json settings file for Windows Terminal, find the schemes section and paste the content of dracula.json
   - git clone this repo to %USERPROFILE%
   - Settings Keyboard shortcut: `Ctrl + Alt + ,`
   - Customize Settings `Ctrl + Alt + ,`
@@ -116,8 +139,6 @@
 
 - `Powerlevel10k` [https://github.com/romkatv/powerlevel10k](https://github.com/romkatv/powerlevel10k)
   - Font
-    - Install Font: [https://github.com/romkatv/powerlevel10k#manual-font-installation](https://github.com/romkatv/powerlevel10k#manual-font-installation)
-    - Set Font: Windows Terminal Settings - `"fontFace": "MesloLGS NF"`
   - `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
   - Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.my-config/.zshrc`
   - Prompt Configuration wizard: `p10k configure`
