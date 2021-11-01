@@ -120,8 +120,7 @@
     ```
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
     ```
-  - Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.my-config/.zshrc`
-  - Prompt Configuration wizard: `p10k configure`
+  - Open New Shell: Prompt Configuration wizard - `p10k configure`
   - Add package.json version to prompt: Edit .p10k.zsh -> Uncomment POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS `package` 
 - `agnoster`
 - `spaceship` * issue - prompt TOO slow
