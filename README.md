@@ -33,7 +33,7 @@
 
 - Details:
   - Settings:
-    - Fonts, Color Scheme
+    - Fonts, Color Scheme for non linux profiles. Requires to copy Dracula scheme to the `schemes` section.
       ```
       "profiles":
       {
@@ -43,7 +43,7 @@
               "fontFace": "Cascadia Code PL"
           },
       ```
-    - Special Font for Powerlevel10k
+    - Special Font for Powerlevel10k used by oh-my-zsh in linux profiles
       ```
         "fontFace": "MesloLGS NF",
         "fontSize": 10,
@@ -103,8 +103,8 @@
 - `sudo` – hitting ESC twice puts sudo in front of the current command, or the last one if the command line is empty.
 - `vscode` – makes interaction between the command line and the code editor easier.
 - `z` built-in [https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/z](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/z)
-- `zsh-autosuggestions` [https://github.com/zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-- `zsh-syntax-highlighting` [https://github.com/zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+- `zsh-autosuggestions` Required before switching theme. [https://github.com/zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+- `zsh-syntax-highlighting` Required before switching theme. [https://github.com/zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
   
 # Popular Themes
 
