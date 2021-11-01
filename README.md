@@ -8,22 +8,24 @@
   - Install Distro from scratch: using Windows Store and click `Install`
   - Install Distro into WSL /w profile: using Windows Store and click `Open` OR command line `wsl --install -d <distro>`
   - Get latest Ubuntu packages: 1. `sudo apt update` 2. `sudo apt upgrade`
-- Multiple Instances of the same Distro
-  - Export distro to tar: wsl --export Ubuntu-20.04 Ubuntu-20.04.tar.gz
-  - Import distro from tar 1+ times: wsl --import ub2004.vm1 C:\_wslvms\Ubuntu-20.04-112021\vm1 C:\_wslvms\Ubuntu-20.04-112021\Ubuntu-20.04.tar.gz
-  - Assign user: WT Settings -> Command Line: wsl.exe -d ub2004.vm1 --user battlestar
-- [Command Line](https://docs.microsoft.com/en-us/windows/terminal/command-line-arguments?tabs=windows#command-line-syntax) open multiple distros profiles with starting directory and split pane horizontally (-H)/vertically (-V). Move focus 1 up.
-  - wt -p ub2004.1 -d /mnt/c/Users/vince ; sp -H -d /home/battlestar -p ub2004.1 ; mf up
-- File Access Path Convention
-  - Easiest: Windows Explorer Linux Penguin Icon
-  - Windows access Linux files: `\\wsl.localhost\ub2004.1\home\battlestar` or `\\wsl$`
-  - Linux access Windows files: `/mnt/c/`
-  - Path translator wslpath: 
-    - Linux -> Windows: wslpath -w ~
-    - Windows -> Linus: wslpath "C:\Users\vince"
-  - symlinks to make Windows paths easier to access: e.g. `ln s /mnt/c/Users/chitl/Downloads`  ~/Downloads
-- [WSL Utils](https://github.com/wslutilities/wslu)
-  - wslview - open default Windows application like notepad, pdf viewer, browser based on file extensions or url
+  - Multiple Instances of the same Distro
+    - Export distro to tar: wsl --export Ubuntu-20.04 Ubuntu-20.04.tar.gz
+    - Import distro from tar 1+ times: wsl --import ub2004.vm1 C:\_wslvms\Ubuntu-20.04-112021\vm1 C:\_wslvms\Ubuntu-20.04-112021\Ubuntu-20.04.tar.gz
+    - Assign user: WT Settings -> Command Line: wsl.exe -d ub2004.vm1 --user battlestar
+  - [WSL Utils](https://github.com/wslutilities/wslu)
+    - wslview - open default Windows application like notepad, pdf viewer, browser based on file extensions or url
+
+- Tips
+  - [Command Line](https://docs.microsoft.com/en-us/windows/terminal/command-line-arguments?tabs=windows#command-line-syntax) open multiple distros profiles with starting directory and split pane horizontally (-H)/vertically (-V). Move focus 1 up.
+    - wt -p ub2004.1 -d /mnt/c/Users/vince ; sp -H -d /home/battlestar -p ub2004.1 ; mf up
+  - File Access Path Convention
+    - Easiest: Windows Explorer Linux Penguin Icon
+    - Windows access Linux files: `\\wsl.localhost\ub2004.1\home\battlestar` or `\\wsl$`
+    - Linux access Windows files: `/mnt/c/`
+    - Path translator wslpath: 
+      - Linux -> Windows: wslpath -w ~
+      - Windows -> Linus: wslpath "C:\Users\vince"
+    - symlinks to make Windows paths easier to access: e.g. `ln s /mnt/c/Users/chitl/Downloads`  ~/Downloads
 
 ## Windows Terminal
 - Quick Setup
