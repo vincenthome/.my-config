@@ -29,6 +29,10 @@
 
 ## Windows Terminal
 - Quick Setup
+  - Dracula Color Scheme:
+    - Download: [https://draculatheme.com/windows-terminal](https://draculatheme.com/windows-terminal)
+    - Install: In the settings.json settings file for Windows Terminal, find the schemes section and paste the content of dracula.json
+    - [About Switching Scheme](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes)
   - Powerline Font (Default for ALL profiles): `Cascadia (Code|Mono) PL` ttf 
     - Download: [https://docs.microsoft.com/en-us/windows/terminal/cascadia-code](https://docs.microsoft.com/en-us/windows/terminal/cascadia-code)
     - Install: In the settings.json settings file for Windows Terminal, set default for ALL profiles using the following: 
@@ -48,10 +52,6 @@
         "fontFace": "MesloLGS NF",
         "fontSize": 10,
       ```
-  - Dracula Color Scheme:
-    - Download: [https://draculatheme.com/windows-terminal](https://draculatheme.com/windows-terminal)
-    - Install: In the settings.json settings file for Windows Terminal, find the schemes section and paste the content of dracula.json
-    - [About Switching Scheme](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes)
   - Tab Icons
     - [Switching Icon](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/profile-general#icon)
     - Windows 10 built-in [Segoe MDL2 Icons codes for "Icon": ""](https://docs.microsoft.com/en-us/windows/uwp/design/style/segoe-ui-symbol-font#icon-list)
