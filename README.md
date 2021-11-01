@@ -35,29 +35,28 @@
     - [About Switching Scheme](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes)
   - Powerline Font (Default for ALL profiles): `Cascadia (Code|Mono) PL` ttf 
     - Download: [https://docs.microsoft.com/en-us/windows/terminal/cascadia-code](https://docs.microsoft.com/en-us/windows/terminal/cascadia-code)
-    - Install: In the settings.json settings file for Windows Terminal, set default for ALL profiles using the following: 
+    - In UI Set `Color Schema` `Font face` in Windows Terminal Settings Default Profile:
       ```
-      "profiles":
-      {
-          "defaults":
-          {
-              "colorScheme" : "Dracula",
-              "fontFace": "Cascadia Code PL"
-          },
+      Dracula
+      ```
+      ```
+      Cascadia Code PL
       ```
   - MesloLGS NF Font (for oh-my-zsh -> theme -> Powerlevel10k)
     - Download: [https://github.com/romkatv/powerlevel10k#manual-font-installation](https://github.com/romkatv/powerlevel10k#manual-font-installation)
-    - Install: In the settings.json settings file for Windows Terminal, for specific linux profile add the following:
-      ```
-        "fontFace": "MesloLGS NF",
-        "fontSize": 10,
-      ```
+    - In UI set `Font face`, `Font size` in Windows Terminal Settings Profile/Appearance:
+        ```
+        MesloLGS NF
+        ```
+        ```
+        10
+        ```
   - Tab Icons
     - [Switching Icon](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/profile-general#icon)
     - Windows 10 built-in [Segoe MDL2 Icons codes for "Icon": ""](https://docs.microsoft.com/en-us/windows/uwp/design/style/segoe-ui-symbol-font#icon-list)
-  - Set Starting Directory in Windows Terminal Settings
+  - In UI set `Starting Directory` in Windows Terminal Settings Profile/General: 
     ```
-    "startingDirectory": "\\\\wsl$\\ub2004.vm1\\home\\battlestar\\",
+    \\wsl$\ub2004.vm1\home\battlestar
     ```
   - Customize Settings `Ctrl + Alt + ,`
     - Copy & paste content of [settings.json](WindowsTerminal/settings.json) to replace existing Settings
