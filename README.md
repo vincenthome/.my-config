@@ -74,7 +74,7 @@
 - Via Package Manager: `sudo apt install zsh`
 - Verify installation by running `zsh --version`
 - Make it your default shell: `chsh -s $(which zsh)`
-- No need to open new shell!!!
+- Open new shell and choose option (2) - Recommended by System Admin
 - Current Shell: `echo $SHELL`
 
 # Install oh-my-zsh
