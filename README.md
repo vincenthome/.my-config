@@ -29,7 +29,6 @@
 
 ## Windows Terminal
 - Quick Setup
-  - git clone this repo to %USERPROFILE% 
   - Powerline Font (Default for ALL profiles): `Cascadia (Code|Mono) PL` ttf 
     - Download: [https://docs.microsoft.com/en-us/windows/terminal/cascadia-code](https://docs.microsoft.com/en-us/windows/terminal/cascadia-code)
     - Install: In the settings.json settings file for Windows Terminal, set default for ALL profiles using the following: 
