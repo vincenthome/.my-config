@@ -64,6 +64,10 @@
         ```
         10
         ```
+  - Sample [settings.json](WindowsTerminal/settings.json)
+    - useful fields:
+      - `"confirmCloseAllTabs": false`
+
 - Tips:
   - Pane
     - New Default Profile Vertical/Horizontal: `Alt + Shift + Plus` / `Alt + Shift + Minus`
