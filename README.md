@@ -5,6 +5,7 @@
 ## WSL
 - Setup  
   - Factory 'Reset' then 'Uninstall': 1. `Ubuntu` and 2. `Windows Terminal` via "Add or Remove Programs" 's Advanced Options menu item.
+  - Delete Distro: `wsl --unregister <distro>`
   - Install Distro from scratch: using Windows Store and click `Install`
   - Install Distro into WSL /w profile: using Windows Store and click `Open` OR command line `wsl --install -d <distro>`
   - Get latest Ubuntu packages: 1. `sudo apt update` 2. `sudo apt upgrade`
