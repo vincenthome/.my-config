@@ -1,11 +1,13 @@
 # WSL + Windows Terminal Configurations + 2
 
 TOC
-- 
+- [WSL](https://github.com/vincenthome/.my-config#wsl)
+- [Windows Terminal](https://github.com/vincenthome/.my-config#windows-terminal)
+- [Oh My Zsh](https://github.com/vincenthome/.my-config#oh-my-zsh)
+- [Install NVM, Nodejs/Npm on Ubuntu](https://github.com/vincenthome/.my-config#install-nvm-nodejsnpm-on-ubuntu)
+- [VS Code Integrated Terminal](https://github.com/vincenthome/.my-config#vs-code-integrated-terminal)
 
-[https://docs.microsoft.com/en-us/windows/terminal/](https://docs.microsoft.com/en-us/windows/terminal/)
-
-## WSL
+## [WSL](https://docs.microsoft.com/en-us/windows/terminal)
 - Setup  
   - Factory 'Reset' then 'Uninstall': 1. `Ubuntu` and 2. `Windows Terminal` via "Add or Remove Programs" 's Advanced Options menu item.
   - [Delete Distro](https://docs.microsoft.com/en-us/windows/wsl/wsl-config#unregister-and-reinstall-a-distribution): `wsl --unregister <distro>`
