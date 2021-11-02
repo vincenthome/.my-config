@@ -67,6 +67,7 @@
   - Sample [settings.json](WindowsTerminal/settings.json)
     - useful fields:
       - `"confirmCloseAllTabs": false`
+      - `"tabColor": "#DD4814",`
 
 - Tips:
   - Pane
