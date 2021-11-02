@@ -42,13 +42,13 @@
     ```
     \\wsl.localhost\ub2004.vm1\home\battlestar
     ```
-  - Dracula Color Scheme:
+  - Dracula Color Scheme
     - Download: [https://draculatheme.com/windows-terminal](https://draculatheme.com/windows-terminal)
     - Install: In the settings.json settings file for Windows Terminal, find the schemes section and paste the content of dracula.json
     - [About Switching Scheme](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes)
   - Powerline Font (Default for ALL profiles): `Cascadia (Code|Mono) PL` ttf 
     - Download: [https://docs.microsoft.com/en-us/windows/terminal/cascadia-code](https://docs.microsoft.com/en-us/windows/terminal/cascadia-code)
-    - In UI Set `Color Schema` `Font face` in Windows Terminal Settings Default Profile:
+    - Default Profile `Color Schema`, `Font face` (Settings UI):
       ```
       Dracula
       ```
@@ -57,22 +57,13 @@
       ```
   - MesloLGS NF Font (for oh-my-zsh -> theme -> Powerlevel10k)
     - Download: [https://github.com/romkatv/powerlevel10k#manual-font-installation](https://github.com/romkatv/powerlevel10k#manual-font-installation)
-    - In UI set `Font face`, `Font size` in Windows Terminal Settings Profile/Appearance:
+    - Distro `Font face`, `Font size` (Settings UI):
         ```
         MesloLGS NF
         ```
         ```
         10
         ```
-  - Tab Icons
-    - [Switching Icon](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/profile-general#icon)
-    - Windows 10 built-in [Segoe MDL2 Icons codes for "Icon": ""](https://docs.microsoft.com/en-us/windows/uwp/design/style/segoe-ui-symbol-font#icon-list)
-  - In UI set `Starting Directory` in Windows Terminal Settings Profile/General: 
-    ```
-    \\wsl$\ub2004.vm1\home\battlestar
-    ```
-  - Customize Settings `Ctrl + ,`
-    - Copy & paste content of [settings.json](WindowsTerminal/settings.json) to replace existing Settings
 - Tips:
   - Pane
     - New Default Profile Vertical/Horizontal: `Alt + Shift + Plus` / `Alt + Shift + Minus`
