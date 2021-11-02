@@ -1,5 +1,8 @@
 # WSL + Windows Terminal Configurations + 2
 
+TOC
+- 
+
 [https://docs.microsoft.com/en-us/windows/terminal/](https://docs.microsoft.com/en-us/windows/terminal/)
 
 ## WSL
@@ -284,7 +287,8 @@ Finally, right click on the terminal’s title bar, choose Properties > Font and
  - … | less  // keystroke: 'b' back / 'spacebar' forward / 'q' quit
 
 
-## Tips and Tricks
+## VS Code Integrated Terminal
+- [https://code.visualstudio.com/docs/editor/integrated-terminal](https://code.visualstudio.com/docs/editor/integrated-terminal)
 
 
 
