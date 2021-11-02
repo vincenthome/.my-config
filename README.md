@@ -192,6 +192,12 @@
 - [Doc](https://stedolan.github.io/jq/manual/#Basicfilters)
 
 
+## Install Angular Global
+  ```
+  npm install -g @angular/cli
+  ```
+  - for specific version: `npm install -g @angular/cli@x.x.x`
+
 ## Install GCC on Ubuntu 20.04
 
 `sudo apt install build-essential`
@@ -221,11 +227,6 @@
 ## Install Python2 on Ubuntu
 
 `sudo apt install python2`
-
-## Install Angular Global
-
-`npm install -g @angular/cli@x.x.x`
-
 
 ## Authentication Options
 
