@@ -170,11 +170,11 @@
 ## Install NVM, Nodejs/Npm on Ubuntu
 
 - NVM
-  - Install then restart shell
+  - [Install](https://github.com/nvm-sh/nvm#installing-and-updating) then restart shell
     ```
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | zsh
     ```
-  - [https://github.com/nvm-sh/nvm#installing-and-updating](https://github.com/nvm-sh/nvm#installing-and-updating)
+  - Usage: [https://github.com/nvm-sh/nvm#usage](https://github.com/nvm-sh/nvm#usage)
 
 - Install Nodejs
   - available node versions: `nvm ls-remote`
