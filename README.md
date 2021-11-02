@@ -15,7 +15,7 @@
       ```
       wsl --import ub2004.vm1 C:\_wslvms\Ubuntu-20.04-112021\vm1 C:\_wslvms\Ubuntu-20.04-112021\Ubuntu-20.04.tar.gz
       ```
-    - Assign user
+    - Assign an existing non-root user to distro
       - w/o rely on WT setting (recommend):  [Registry](https://github.com/microsoft/WSL/issues/4276#issuecomment-509364493)
         1. UID: `id -u <yourUserName>`
         1. HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{MY-UUID} DefaultUid : UID (decimal)
