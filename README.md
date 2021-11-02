@@ -32,11 +32,15 @@
     - Linux access Windows files: `/mnt/c/`
     - Path translator wslpath: 
       - Linux -> Windows: wslpath -w ~
-      - Windows -> Linus: wslpath "C:\Users\vince"
+      - Windows -> Linux: wslpath "C:\Users\vince"
     - symlinks to make Windows paths easier to access: e.g. `ln s /mnt/c/Users/chitl/Downloads`  ~/Downloads
 
 ## Windows Terminal
 - Quick Setup
+  - Distro Starting Directory (Settings UI): 
+    ```
+    \\wsl.localhost\ub2004.vm1\home\battlestar
+    ```
   - Dracula Color Scheme:
     - Download: [https://draculatheme.com/windows-terminal](https://draculatheme.com/windows-terminal)
     - Install: In the settings.json settings file for Windows Terminal, find the schemes section and paste the content of dracula.json
