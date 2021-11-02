@@ -2,6 +2,7 @@
 
 TOC
 - [WSL](https://github.com/vincenthome/.my-config#wsl)
+- [WSL](README.md#wsl)
 - [Windows Terminal](https://github.com/vincenthome/.my-config#windows-terminal)
 - [Oh My Zsh](https://github.com/vincenthome/.my-config#oh-my-zsh)
 - [Install NVM, Nodejs/Npm on Ubuntu](https://github.com/vincenthome/.my-config#install-nvm-nodejsnpm-on-ubuntu)
