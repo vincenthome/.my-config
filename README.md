@@ -167,12 +167,13 @@
 
 
 
-## Install Nodejs/Npm on Ubuntu
+## Install NVM, Nodejs/Npm on Ubuntu
 
-- Install nvm
-  ```
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | zsh
-  ```
+- NVM
+  - Install then restart shell
+    ```
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | zsh
+    ```
   - [https://github.com/nvm-sh/nvm#installing-and-updating](https://github.com/nvm-sh/nvm#installing-and-updating)
 
 - Install Nodejs
