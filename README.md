@@ -82,14 +82,18 @@
 - Current Shell: `echo $SHELL`
 
 # Install oh-my-zsh
-
-- `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+  ```
+  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  ```
 
 # Install .my-config
 
-- Clone: `git clone https://github.com/vincenthome/.my-config.git ~/.my-config`
+- Clone this repo .my-config in ~
 - edit ~/.zshrc: 
-  - near front add: `[ -f "$HOME/.my-config/.zshrc" ] && source "$HOME/.my-config/.zshrc"` 
+  - near front add:
+    ```
+    [ -f "$HOME/.my-config/.zshrc" ] && source "$HOME/.my-config/.zshrc"
+    ```
   - comment out `ZSH_THEME=`, `plugins=`. They are coming from `$HOME/.my-config/.zshrc`
   
 # Popular Plugins
