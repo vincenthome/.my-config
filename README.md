@@ -17,7 +17,7 @@
       ```
     - Assign user
       - w/o rely on WT setting (recommend):  [Registry](https://github.com/microsoft/WSL/issues/4276#issuecomment-509364493)
-        1. UID: id -u <yourUserName>
+        1. UID: `id -u <yourUserName>`
         1. HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{MY-UUID} DefaultUid : UID (decimal)
       - WT Settings: Command Line: wsl.exe -d ub2004.vm1 --user battlestar
   - [WSL Utils - preinstalled by Ubuntu](https://github.com/wslutilities/wslu)
