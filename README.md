@@ -10,7 +10,10 @@
   - Get latest Ubuntu packages: 1. `sudo apt update` 2. `sudo apt upgrade`
   - Multiple Instances of the same Distro
     - Export distro to tar: wsl --export Ubuntu-20.04 Ubuntu-20.04.tar.gz
-    - Import distro from tar 1+ times: wsl --import ub2004.vm1 C:\_wslvms\Ubuntu-20.04-112021\vm1 C:\_wslvms\Ubuntu-20.04-112021\Ubuntu-20.04.tar.gz
+    - Import distro from tar 1+ times: 
+      ```
+      wsl --import ub2004.vm1 C:\_wslvms\Ubuntu-20.04-112021\vm1 C:\_wslvms\Ubuntu-20.04-112021\Ubuntu-20.04.tar.gz
+      ```
     - Assign user
       - w/o rely on WT setting (recommend):  [Registry](https://github.com/microsoft/WSL/issues/4276#issuecomment-509364493)
         1. UID: id -u <yourUserName>
