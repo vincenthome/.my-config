@@ -289,8 +289,8 @@ Finally, right click on the terminal’s title bar, choose Properties > Font and
  - … | less  // keystroke: 'b' back / 'spacebar' forward / 'q' quit
 
 
-## VS Code Integrated Terminal
-- [https://code.visualstudio.com/docs/editor/integrated-terminal](https://code.visualstudio.com/docs/editor/integrated-terminal)
+## VS Code
+- [Integrated Terminal](https://code.visualstudio.com/docs/editor/integrated-terminal)
 
 
 
