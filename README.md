@@ -1,12 +1,11 @@
 # WSL + Windows Terminal Configurations + 2
 
 TOC
-- [WSL](https://github.com/vincenthome/.my-config#wsl)
 - [WSL](README.md#wsl)
-- [Windows Terminal](https://github.com/vincenthome/.my-config#windows-terminal)
-- [Oh My Zsh](https://github.com/vincenthome/.my-config#oh-my-zsh)
-- [Install NVM, Nodejs/Npm on Ubuntu](https://github.com/vincenthome/.my-config#install-nvm-nodejsnpm-on-ubuntu)
-- [VS Code Integrated Terminal](https://github.com/vincenthome/.my-config#vs-code-integrated-terminal)
+- [Windows Terminal](README.md#windows-terminal)
+- [Oh My Zsh](README.md#oh-my-zsh)
+- [Install NVM, Nodejs/Npm on Ubuntu](README.md#install-nvm-nodejsnpm-on-ubuntu)
+- [VS Code Integrated Terminal](README.md#vs-code-integrated-terminal)
 
 ## [WSL](https://docs.microsoft.com/en-us/windows/terminal)
 - Setup  
