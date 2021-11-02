@@ -7,7 +7,7 @@ TOC
 - [Install NVM, Nodejs/Npm on Ubuntu](README.md#install-nvm-nodejsnpm-on-ubuntu)
 - [VS Code Integrated Terminal](README.md#vs-code-integrated-terminal)
 
-## [WSL](https://docs.microsoft.com/en-us/windows/terminal)
+## [WSL](https://docs.microsoft.com/en-us/windows/wsl/setup/environment)
 - Setup  
   - Factory 'Reset' then 'Uninstall': 1. `Ubuntu` and 2. `Windows Terminal` via "Add or Remove Programs" 's Advanced Options menu item.
   - [Delete Distro](https://docs.microsoft.com/en-us/windows/wsl/wsl-config#unregister-and-reinstall-a-distribution): `wsl --unregister <distro>`
