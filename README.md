@@ -40,7 +40,7 @@ TOC
       - Windows -> Linux: wslpath "C:\Users\vince"
     - symlinks to make Windows paths easier to access: e.g. `ln s /mnt/c/Users/chitl/Downloads`  ~/Downloads
 
-## Windows Terminal
+## [Windows Terminal](https://docs.microsoft.com/en-us/windows/terminal/)
 - Quick Setup
   - git clone this repo to `C:\_wslvms`, allows setting up WT to reference icons, background images from `C:\_wslvms\.my-config`
   - Distro Starting Directory (Settings UI): 
