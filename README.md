@@ -37,8 +37,6 @@ TOC
     - wslview - open default Windows application like notepad, pdf viewer, browser based on file extensions or url
 
 - Tips
-  - [Command Line](https://docs.microsoft.com/en-us/windows/terminal/command-line-arguments?tabs=windows#command-line-syntax) open multiple distros profiles with starting directory and split pane horizontally (-H)/vertically (-V). Move focus 1 up.
-    - wt -p ub2004.vm1 -d /mnt/c/Users/vince ; sp -H -d /home/battlestar -p ub2004.vm1 ; mf up
   - File Access Path Convention
     - Easiest: Windows Explorer Linux Penguin Icon
     - Windows access Linux files: `\\wsl.localhost\ub2004.vm1\home\battlestar` or `\\wsl$`
@@ -83,6 +81,8 @@ TOC
       - `"tabColor": "#DD4814",`
 
 - Tips:
+  - [Command Line](https://docs.microsoft.com/en-us/windows/terminal/command-line-arguments?tabs=windows#command-line-syntax) open multiple distros profiles with starting directory and split pane horizontally (-H)/vertically (-V). Move focus 1 up.
+    - wt -p ub2004.vm1 -d /mnt/c/Users/vince ; sp -H -d /home/battlestar -p ub2004.vm1 ; mf up
   - Pane
     - New Default Profile Vertical/Horizontal: `Alt + Shift + Plus` / `Alt + Shift + Minus`
     - New Current Profile (auto v/h): `Alt + Shift + D`
