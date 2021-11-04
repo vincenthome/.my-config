@@ -162,11 +162,15 @@ TOC
     - Skip `cd`
     - `..` `...` `....` `.....` to move up x directories
     - `/` `~`
-    - `take` Create a new directory and change to it
-    - `rd`
     - partialDirectory `TAB` / some path `TAB`
     - `z` from most frequent diretory list
+    - `take` Create a new directory and change to it
+    - `rd`
+  - Commands
+    - .zsh_history: as you type a command, press `↑` to cycle through matching entries.
+    - zsh-autosuggestions plugin: as you type a command,, press `→` to accept
   - Others
+    - [git plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)
     - `x` Extract an archive
     - `alias` list all aliases
     - `zsh_stats` Get a list of the top 20 commands and how many times they have been run.
