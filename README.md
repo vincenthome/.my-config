@@ -182,6 +182,9 @@ TOC
 1. Install on Windows Side
 2. WSL Side: `code .`
 
+  ![image](https://user-images.githubusercontent.com/1560643/140314221-1d2dbb0f-e3ed-4d71-8126-a68e91821385.png)
+
+
 ## Install NVM, Nodejs/Npm on Ubuntu
 
 - NVM
