@@ -151,6 +151,12 @@ TOC
   
   - Example: activate Themes: `ZSH_THEME="powerlevel10k/powerlevel10k"`  
 
+- File Managers
+  - Midnight Commander: `sudo apt-get install mc`
+  - [lf](https://github.com/gokcehan/lf) (as in "list files")
+    - `sudo curl -L https://github.com/gokcehan/lf/releases/latest/download/lf-linux-amd64.tar.gz | sudo tar xzC /usr/local/bin`
+    - Tutorial: [https://github.com/gokcehan/lf/wiki/Tutorial](https://github.com/gokcehan/lf/wiki/Tutorial)
+
 - Tips
   - Directory
     - Skip `cd`
@@ -173,12 +179,6 @@ TOC
   - Articles
     - [https://www.sitepoint.com/zsh-tips-tricks/](https://www.sitepoint.com/zsh-tips-tricks/)
     - Bindkey Tutorial [https://jdhao.github.io/2019/06/13/zsh_bind_keys/](https://jdhao.github.io/2019/06/13/zsh_bind_keys/)
-
-- File Manager
-  - Midnight Commander: `sudo apt-get install mc`
-  - [lf](https://github.com/gokcehan/lf) (as in "list files")
-    - `sudo curl -L https://github.com/gokcehan/lf/releases/latest/download/lf-linux-amd64.tar.gz | sudo tar xzC /usr/local/bin`
-    - Tutorial: [https://github.com/gokcehan/lf/wiki/Tutorial](https://github.com/gokcehan/lf/wiki/Tutorial)
 
 ## Install VS Code
 1. Install on Windows Side
