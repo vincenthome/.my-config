@@ -169,6 +169,12 @@ TOC
   - Commands
     - .zsh_history: as you type a command, press `↑` to cycle through matching entries.
     - zsh-autosuggestions plugin: as you type a command,, press `→` to accept
+  - Keys
+    - `Ctrl + L` – clear the terminal.
+    - `Ctrl + U` – delete from the cursor to the start of the _line_.
+    - `Ctrl + K` – delete from the cursor to the end of the _line_.
+    - `Ctrl + W` – delete from the cursor to the start of the preceding _word_.
+    - `Alt + D` – delete from the cursor to the end of the next _word_.
   - Others
     - [git plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)
     - `x` Extract an archive
