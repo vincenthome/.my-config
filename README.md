@@ -178,7 +178,9 @@ TOC
   - `sudo curl -L https://github.com/gokcehan/lf/releases/latest/download/lf-linux-amd64.tar.gz | sudo tar xzC /usr/local/bin`
   - Tutorial: [https://github.com/gokcehan/lf/wiki/Tutorial](https://github.com/gokcehan/lf/wiki/Tutorial)
 
-
+## Install VS Code
+1. Install on Windows Side
+2. WSL Side: `code .`
 
 ## Install NVM, Nodejs/Npm on Ubuntu
 
@@ -211,9 +213,23 @@ TOC
   ```
   - for specific version: `npm install -g @angular/cli@x.x.x`
 
-## Install GCC on Ubuntu 20.04
-
-`sudo apt install build-essential`
+## Languages
+- Java: `sudo apt install openjdk-11-jre-headless`
+- Go: `sudo apt install golang-go`
+- Rust: `sudo apt install rustc`
+- [C++](https://linuxconfig.org/how-to-install-g-the-c-compiler-on-ubuntu-20-04-lts-focal-fossa-linux): `sudo apt install build-essential`
+- [Python 3](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-local-programming-environment-on-ubuntu-20-04): 
+  - python3: preinstalled on ubuntu 20.04. Check: python3 --version
+  - PIP: `sudo apt install -y python3-pip`
+  - Development tools: `sudo apt install build-essential libssl-dev libffi-dev python-dev`
+  - Virtual Environment venv: `sudo apt install -y python3-venv`
+  - Create Environment
+    ```
+    mkdir environments
+    cd environments
+    python3 -m venv my_env
+    source my_env/bin/activate
+    ```
 
 ## Install Azure CLI
 
