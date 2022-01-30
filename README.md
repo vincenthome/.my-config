@@ -7,7 +7,7 @@ TOC
 - [Install NVM, Nodejs/Npm on Ubuntu](README.md#install-nvm-nodejsnpm-on-ubuntu)
 - [VS Code Integrated Terminal](README.md#vs-code-integrated-terminal)
 
-## [WSL](https://docs.microsoft.com/en-us/windows/wsl/setup/environment)
+## [WSL](https://docs.microsoft.com/en-us/windows/wsl)
 - Setup  
   - Factory 'Reset' then 'Uninstall': 1. `Ubuntu` and 2. `Windows Terminal` via "Add or Remove Programs" 's Advanced Options menu item.
   - [Delete Distro](https://docs.microsoft.com/en-us/windows/wsl/wsl-config#unregister-and-reinstall-a-distribution): `wsl --unregister <distro>`
@@ -151,16 +151,32 @@ TOC
   
   - Example: activate Themes: `ZSH_THEME="powerlevel10k/powerlevel10k"`  
 
+- File Managers
+  - Midnight Commander: `sudo apt-get install mc`
+  - [lf](https://github.com/gokcehan/lf) (as in "list files")
+    - `sudo curl -L https://github.com/gokcehan/lf/releases/latest/download/lf-linux-amd64.tar.gz | sudo tar xzC /usr/local/bin`
+    - Tutorial: [https://github.com/gokcehan/lf/wiki/Tutorial](https://github.com/gokcehan/lf/wiki/Tutorial)
+
 - Tips
   - Directory
     - Skip `cd`
     - `..` `...` `....` `.....` to move up x directories
     - `/` `~`
-    - `take` Create a new directory and change to it
-    - `rd`
     - partialDirectory `TAB` / some path `TAB`
     - `z` from most frequent diretory list
+    - `take` Create a new directory and change to it
+    - `rd`
+  - Commands
+    - .zsh_history: as you type a command, press `↑` to cycle through matching entries.
+    - zsh-autosuggestions plugin: as you type a command,, press `→` to accept
+  - Keys
+    - `Ctrl + L` – clear the terminal.
+    - `Ctrl + U` – delete from the cursor to the start of the _line_.
+    - `Ctrl + K` – delete from the cursor to the end of the _line_.
+    - `Ctrl + W` – delete from the cursor to the start of the preceding _word_.
+    - `Alt + D` – delete from the cursor to the end of the next _word_.
   - Others
+    - [git plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)
     - `x` Extract an archive
     - `alias` list all aliases
     - `zsh_stats` Get a list of the top 20 commands and how many times they have been run.
@@ -174,10 +190,11 @@ TOC
     - [https://www.sitepoint.com/zsh-tips-tricks/](https://www.sitepoint.com/zsh-tips-tricks/)
     - Bindkey Tutorial [https://jdhao.github.io/2019/06/13/zsh_bind_keys/](https://jdhao.github.io/2019/06/13/zsh_bind_keys/)
 
-- Install Terminal File Manager [lf](https://github.com/gokcehan/lf) (as in "list files")
-  - `sudo curl -L https://github.com/gokcehan/lf/releases/latest/download/lf-linux-amd64.tar.gz | sudo tar xzC /usr/local/bin`
-  - Tutorial: [https://github.com/gokcehan/lf/wiki/Tutorial](https://github.com/gokcehan/lf/wiki/Tutorial)
+## Install VS Code
+1. Install on Windows Side
+2. WSL Side: `code .`
 
+  ![image](https://user-images.githubusercontent.com/1560643/140314221-1d2dbb0f-e3ed-4d71-8126-a68e91821385.png)
 
 
 ## Install NVM, Nodejs/Npm on Ubuntu
@@ -211,9 +228,23 @@ TOC
   ```
   - for specific version: `npm install -g @angular/cli@x.x.x`
 
-## Install GCC on Ubuntu 20.04
-
-`sudo apt install build-essential`
+## Languages
+- Java: `sudo apt install openjdk-11-jre-headless`
+- Go: `sudo apt install golang-go`
+- Rust: `sudo apt install rustc`
+- [C++](https://linuxconfig.org/how-to-install-g-the-c-compiler-on-ubuntu-20-04-lts-focal-fossa-linux): `sudo apt install build-essential`
+- [Python 3](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-local-programming-environment-on-ubuntu-20-04): 
+  - python3: preinstalled on ubuntu 20.04. Check: python3 --version
+  - PIP: `sudo apt install -y python3-pip`
+  - Development tools: `sudo apt install build-essential libssl-dev libffi-dev python-dev`
+  - Virtual Environment venv: `sudo apt install -y python3-venv`
+  - Create Environment
+    ```
+    mkdir environments
+    cd environments
+    python3 -m venv my_env
+    source my_env/bin/activate
+    ```
 
 ## Install Azure CLI
 
