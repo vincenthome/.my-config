@@ -30,16 +30,14 @@ TOC
         default=battlestar
         ```
         - 1. exit distro 2. Command Prompt: wsl --shutdown
-      - Method 2: w/o rely on WT setting :  [Registry](https://github.com/microsoft/WSL/issues/4276#issuecomment-509364493)
-        1. UID: `id -u <yourUserName>`
-        1. HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{MY-UUID} DefaultUid : UID (decimal)
+
   - [WSL Utils - preinstalled by Ubuntu](https://github.com/wslutilities/wslu)
     - wslview - open default Windows application like notepad, pdf viewer, browser based on file extensions or url
 
 - Tips
   - File Access Path Convention
     - Easiest: Windows Explorer Linux Penguin Icon
-    - Windows access Linux files: `\\wsl.localhost\ub2004.vm1\home\battlestar` or `\\wsl$`
+    - Windows access Linux files: `\\wsl$`
     - Linux access Windows files: `/mnt/c/`
     - Path translator wslpath: 
       - Linux -> Windows: wslpath -w ~
