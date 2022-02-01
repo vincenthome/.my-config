@@ -14,6 +14,7 @@ TOC
   - Install Distro from scratch: using Windows Store and click `Install`
   - Install Distro into WSL /w profile: using Windows Store and click `Open` OR command line `wsl --install -d <distro>`
   - Check Ubuntu Version: `lsb_release -a`
+  - Get current username: `whoami` or `echo $USER`
   - Get latest Ubuntu packages: 1. `sudo apt update` 2. `sudo apt upgrade`
   - Multiple Instances of the same Distro
     - Export distro to tar: wsl --export Ubuntu-20.04 Ubuntu-20.04.tar.gz
