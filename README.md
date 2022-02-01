@@ -46,6 +46,22 @@ TOC
       - Windows -> Linux: wslpath "C:\Users\vince"
     - symlinks to make Windows paths easier to access: e.g. `ln s /mnt/c/Users/chitl/Downloads`  ~/Downloads
 
+## Use Git Credential Manager (GCM) to authenticate.
+Supports [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/repos/git/set-up-credential-managers?view=azure-devops), GitHub, Bitbucket.
+  
+- [Install](https://docs.microsoft.com/en-us/azure/devops/repos/git/set-up-credential-managers?view=azure-devops#windows)  GCM on 'Windows Side' for interop with WSL
+- [Configure](https://github.com/GitCredentialManager/git-credential-manager/blob/main/docs/wsl.md#configuring-wsl-with-git-for-windows-recommended) WSL git client to use GCM
+  ```
+    git config --global credential.helper "/mnt/c/Program\ Files\ \(x86\)/Git\ Credential\ Manager\ Core/git-credential-manager-core.exe"
+
+    # For Azure DevOps support only
+    git config --global credential.https://dev.azure.com.useHttpPath true  
+  ```  
+- Using GCM: When you connect to a Git repository from your Git client for the first time, the credential manager prompts for credentials. Provide your Azure AD credentials. Once authenticated, the credential manager creates and caches a personal access token for future connections to the repo. Git commands that connect to this account won't prompt for user credentials until the token expires. A token can be revoked through Azure Repos.
+- How it works inside WSL: GCM leverages the built-in interop between Windows and WSL. Git inside of a WSL can launch the GCM Windows application transparently to acquire credentials. Using the host operating system (Windows) to store credentials also means that your Windows applications and WSL can all share those credentials.
+  
+
+
 ## [Windows Terminal](https://docs.microsoft.com/en-us/windows/terminal/)
 - Quick Setup
   - git clone this repo .my-config in `C:\_wslvms`, allows setting up WT to reference icons, background images.
@@ -196,6 +212,8 @@ TOC
 
   ![image](https://user-images.githubusercontent.com/1560643/140314221-1d2dbb0f-e3ed-4d71-8126-a68e91821385.png)
 
+- [Integrated Terminal](https://code.visualstudio.com/docs/editor/integrated-terminal)
+
 
 ## Install NVM, Nodejs/Npm on Ubuntu
 
@@ -216,23 +234,17 @@ TOC
     - e.g. Node 12 `curl -sL https://deb.nodesource.com/setup_12.x | sudo -E zsh -`
     - `sudo apt-get install -y nodejs`
 
-## Install JSON processor jq 
+## Install JSON processor [jq](https://stedolan.github.io/jq/manual/#Basicfilters) 
 
-- `sudo apt-get install jq`
-- [Doc](https://stedolan.github.io/jq/manual/#Basicfilters)
+```
+sudo apt-get install jq
+```
 
-
-## Install Angular Global
+## Install Angular
   ```
-  npm install -g @angular/cli
+  npm install -g @angular/cli@x.x.x
   ```
-  - for specific version: `npm install -g @angular/cli@x.x.x`
-
 ## Languages
-- Java: `sudo apt install openjdk-11-jre-headless`
-- Go: `sudo apt install golang-go`
-- Rust: `sudo apt install rustc`
-- [C++](https://linuxconfig.org/how-to-install-g-the-c-compiler-on-ubuntu-20-04-lts-focal-fossa-linux): `sudo apt install build-essential`
 - [Python 3](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-local-programming-environment-on-ubuntu-20-04): 
   - python3: preinstalled on ubuntu 20.04. Check: python3 --version
   - PIP: `sudo apt install -y python3-pip`
@@ -245,7 +257,11 @@ TOC
     python3 -m venv my_env
     source my_env/bin/activate
     ```
-
+- Python 2 `sudo apt install python2`
+- Java: `sudo apt install openjdk-11-jre-headless`
+- Go: `sudo apt install golang-go`
+- Rust: `sudo apt install rustc`
+- [C++](https://linuxconfig.org/how-to-install-g-the-c-compiler-on-ubuntu-20-04-lts-focal-fossa-linux): `sudo apt install build-essential`
 ## Install Azure CLI
 
 - Instructions: [https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt#option-1-install-with-one-command](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt#option-1-install-with-one-command)
@@ -268,38 +284,31 @@ TOC
 3. Test: `kubectl version --client` 
 4. Cleanup: `rm kubectl`
 
-## Install Python2 on Ubuntu
-
-`sudo apt install python2`
-
 ## Authentication Options
+- GCM on Ubuntu
+  - Install GCM on Ubuntu [GCM Linux](https://github.com/GitCredentialManager/git-credential-manager#linux)
+    - Download: `curl -LO https://xxxxxx`
+    - Install/Setup GCM
+      ```
+      sudo dpkg -i <path-to-package>
+      git-credential-manager-core configure
+      ```
+    - Configure Git Credential Store / Cache [Ref](https://github.com/microsoft/Git-Credential-Manager-Core/blob/master/docs/linuxcredstores.md#3-gits-built-in-credential-cache)
+      ```
+      git config --global credential.credentialStore cache
+      git config --global credential.cacheOptions "--timeout 300"  
+      ```
 
-### PAT Personal Access Token
-- Install Git Credential Manager Core GCM on 'Windows Side' [GCM](https://docs.microsoft.com/en-us/azure/devops/repos/git/set-up-credential-managers?view=azure-devops#install-git-credential-manager-core)
-- Install GCM on Ubuntu [GCM Linux](https://github.com/GitCredentialManager/git-credential-manager#linux)
-  - Download: `curl -LO https://xxxxxx`
-  - Install/Setup GCM
-    ```
-    sudo dpkg -i <path-to-package>
-    git-credential-manager-core configure
-    ```
-  - Configure Git Credential Store / Cache [Ref](https://github.com/microsoft/Git-Credential-Manager-Core/blob/master/docs/linuxcredstores.md#3-gits-built-in-credential-cache)
-    ```
-    git config --global credential.credentialStore cache
-    git config --global credential.cacheOptions "--timeout 300"  
-    ```
-- Reference 'Windows' GCM from a WSL distro: [Ref](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup)
-  - `git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe"`
-- Using PAT Personal Access Token 
-  - Github: Profile -> Settings -> Developer Settings -> Personal Access Tokens -> Generate new token
-  - Azure: ???
+- PAT Personal Access Token
+  - Using PAT Personal Access Token 
+    - Github: Profile -> Settings -> Developer Settings -> Personal Access Tokens -> Generate new token
+    - Azure: ???
 
-### SSH
-
-- Create SSH Key Pair in Ubuntu
-  - `ssh-keygen` when prompted, provide custom filename e.g. `~/.ssh/xyz_id_rsa`
-  - Set premission: `chmod 400 ~/.ssh/xyz_id_rsa` `chmod 400 ~/.ssh/xyz_id_rsa.pub` 
-- For Windows: copy above files `cp ~/.ssh/xyz_id_rsa /mnt/c/.ssh` `cp ~/.ssh/xyz_id_rsa.pub /mnt/c/.ssh`
+-SSH
+  - Create SSH Key Pair in Ubuntu
+    - `ssh-keygen` when prompted, provide custom filename e.g. `~/.ssh/xyz_id_rsa`
+    - Set premission: `chmod 400 ~/.ssh/xyz_id_rsa` `chmod 400 ~/.ssh/xyz_id_rsa.pub` 
+  - For Windows: copy above files `cp ~/.ssh/xyz_id_rsa /mnt/c/.ssh` `cp ~/.ssh/xyz_id_rsa.pub /mnt/c/.ssh`
 
 ## Fonts
 p.s. In WSL, if we are seeing broken characters in terminal, as soon as installed Oh My Zsh. To remedy this we need to install the Powerline fonts and tell our terminal to use them. fira-code-nerdfont
@@ -328,8 +337,6 @@ Finally, right click on the terminal’s title bar, choose Properties > Font and
  - … | less  // keystroke: 'b' back / 'spacebar' forward / 'q' quit
 
 
-## VS Code
-- [Integrated Terminal](https://code.visualstudio.com/docs/editor/integrated-terminal)
 
 
 
