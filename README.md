@@ -25,7 +25,7 @@ TOC
         ```
         [automount]
         enabled=false
-        root=//wsl.localhost/ub2004.vm1/home/battlestar
+        root=//wsl$/ub2004.vm1/home/battlestar
         [user]
         default=battlestar
         ```
