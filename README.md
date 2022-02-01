@@ -276,8 +276,8 @@ TOC
 
 ### PAT Personal Access Token
 - Install Git Credential Manager Core GCM on 'Windows Side' [GCM](https://docs.microsoft.com/en-us/azure/devops/repos/git/set-up-credential-managers?view=azure-devops#install-git-credential-manager-core)
-- Install GCM on Ubuntu [GCM Linux](https://github.com/microsoft/Git-Credential-Manager-Core#linux-debian-package-deb)
-  - Download: `curl -L https://xxxxxx --output gcmcore-linux_amd64.xxx.deb`
+- Install GCM on Ubuntu [GCM Linux](https://github.com/GitCredentialManager/git-credential-manager#linux)
+  - Download: `curl -LO https://xxxxxx`
   - Install/Setup GCM
     ```
     sudo dpkg -i <path-to-package>
