@@ -49,7 +49,7 @@ TOC
   - git clone this repo to `C:\_wslvms`, allows setting up WT to reference icons, background images from `C:\_wslvms\.my-config`
   - Distro Starting Directory (Settings UI): 
     ```
-    \\wsl.localhost\ub2004.vm1\home\battlestar
+    \\wsl$\Ubuntu\home\battlestar\
     ```
   - Dracula Color Scheme
     - Download: [https://draculatheme.com/windows-terminal](https://draculatheme.com/windows-terminal)
