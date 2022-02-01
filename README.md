@@ -46,7 +46,7 @@ TOC
 
 ## [Windows Terminal](https://docs.microsoft.com/en-us/windows/terminal/)
 - Quick Setup
-  - git clone this repo to `C:\_wslvms`, allows setting up WT to reference icons, background images from `C:\_wslvms\.my-config`
+  - git clone this repo .my-config in `C:\_wslvms`, allows setting up WT to reference icons, background images.
   - Distro Starting Directory (Settings UI): 
     ```
     \\wsl$\Ubuntu\home\battlestar\
@@ -103,7 +103,7 @@ TOC
   ```
 
 - Install .my-config (custom oh-my-zsh config)
-  - Clone this repo .my-config in ~
+  - git clone this repo .my-config in `~`
   - edit ~/.zshrc: 
     - near front add:
       ```
