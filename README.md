@@ -7,6 +7,11 @@ TOC
 - [Install NVM, Nodejs/Npm on Ubuntu](README.md#install-nvm-nodejsnpm-on-ubuntu)
 - [VS Code Integrated Terminal](README.md#vs-code-integrated-terminal)
 
+## Prequisites
+
+- [Install](https://docs.microsoft.com/en-us/azure/devops/repos/git/set-up-credential-managers?view=azure-devops#windows)  GCM on 'Windows Side' for interop with WSL
+
+
 ## [WSL](https://docs.microsoft.com/en-us/windows/wsl)
 - Setup  
   - Factory 'Reset' then 'Uninstall': 1. `Ubuntu` and 2. `Windows Terminal` via "Add or Remove Programs" 's Advanced Options menu item.
@@ -49,7 +54,6 @@ TOC
 ## Use Git Credential Manager (GCM) to authenticate.
 Supports [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/repos/git/set-up-credential-managers?view=azure-devops), GitHub, Bitbucket.
   
-- [Install](https://docs.microsoft.com/en-us/azure/devops/repos/git/set-up-credential-managers?view=azure-devops#windows)  GCM on 'Windows Side' for interop with WSL
 - [Configure](https://github.com/GitCredentialManager/git-credential-manager/blob/main/docs/wsl.md#configuring-wsl-with-git-for-windows-recommended) WSL git client to use GCM
   ```
     git config --global credential.helper "/mnt/c/Program\ Files\ \(x86\)/Git\ Credential\ Manager\ Core/git-credential-manager-core.exe"
