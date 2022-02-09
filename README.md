@@ -132,6 +132,14 @@ Supports [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/repos/git/
       [ -f "$HOME/.my-config/.zshrc" ] && source "$HOME/.my-config/.zshrc"
       ```
     - comment out `ZSH_THEME=`, `plugins=`. They are coming from `$HOME/.my-config/.zshrc`
+  - Custom
+    - Evironment Variables Global/Local
+      - custom environment variables in `$HOME/.my-config/.zshrc`
+      - `set` list all global variables
+      - `env` list all global AND local variables
+    - Alias
+      - custom alias in `$HOME/.my-config/.aliasrc`
+      - `alias` list all aliases
   
 - Popular Plugins for `~/.oh-my-zsh/custom/plugins`
   - `zsh-autosuggestions` Required before switching theme. [https://github.com/zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
@@ -183,7 +191,7 @@ Supports [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/repos/git/
 - Tips
   - Directory
     - Skip `cd`
-    - `..` `...` `....` `.....` to move up x directories
+    - `..` `...` `....` `.....` to move up max 6 directories
     - `/` `~`
     - partialDirectory `TAB` / some path `TAB`
     - `z` from most frequent diretory list
@@ -196,9 +204,11 @@ Supports [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/repos/git/
     - `set MY_GLOBAL_VAR=xyz` set global variable
       - alternative: `export` MY_GLOBAL_VAR=xyz set global variable
     - `MY_LOCAL_VAR=xyz` set local variable
-  - Commands
-    - .zsh_history: as you type a command, press `↑` to cycle through matching entries.
-    - zsh-autosuggestions plugin: as you type a command,, press `→` to accept
+  - Command Helpers
+    - `→` zsh-autosuggestions plugin: as you type a command, press `→` to accept
+    - `↑↓` zsh_history plugin: as you type a command, press `↑↓` to cycle through matching entries
+    - XYZ_COMMAND `-(tab)` list command options (concise)
+    - `zsh_stats` Analytic: list top commands and how many times used.
   - Keys
     - `Ctrl + L` – clear the terminal.
     - `Ctrl + U` – delete from the cursor to the start of the _line_.
@@ -207,12 +217,9 @@ Supports [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/repos/git/
     - `Alt + D` – delete from the cursor to the end of the next _word_.
   - Others
     - [git plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)
-    - `ls -(tab)`
-    - `alias` list all aliases
-    - `zsh_stats` Get a list of the top 20 commands and how many times they have been run.
+    
     - `uninstall_oh_my_zsh`
     - `omz update` Upgrade Oh-my-zsh
-    
 
   - Articles
     - [https://www.sitepoint.com/zsh-tips-tricks/](https://www.sitepoint.com/zsh-tips-tricks/)
