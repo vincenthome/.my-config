@@ -189,6 +189,13 @@ Supports [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/repos/git/
     - `z` from most frequent diretory list
     - `take` Create a new directory and change to it
     - `rd`
+  - Environment Variable
+    - `set` display all the ENVs(global as well as local)
+    - `env` display all the global ENVs
+    - `echo $MY_VAR` display single variable
+    - `set MY_GLOBAL_VAR=xyz` set global variable
+      - alternative: `export` MY_GLOBAL_VAR=xyz set global variable
+    - `MY_LOCAL_VAR=xyz` set local variable
   - Commands
     - .zsh_history: as you type a command, press `↑` to cycle through matching entries.
     - zsh-autosuggestions plugin: as you type a command,, press `→` to accept
@@ -200,14 +207,12 @@ Supports [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/repos/git/
     - `Alt + D` – delete from the cursor to the end of the next _word_.
   - Others
     - [git plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)
-    - `x` Extract an archive
+    - `ls -(tab)`
     - `alias` list all aliases
     - `zsh_stats` Get a list of the top 20 commands and how many times they have been run.
     - `uninstall_oh_my_zsh`
     - `omz update` Upgrade Oh-my-zsh
-    - `ls -(tab)`
-    - `ssh (tab)`
-    - `unrar (tab)`
+    
 
   - Articles
     - [https://www.sitepoint.com/zsh-tips-tricks/](https://www.sitepoint.com/zsh-tips-tricks/)
