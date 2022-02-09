@@ -1,22 +1,26 @@
 # https://blog.lftechnology.com/command-line-productivity-with-zsh-aliases-28b7cebfdff9
 
 # system
-alias cdmcfg="cd $HOME/.my-config"
-alias cdzshc="cd $ZSH_CUSTOM"
-alias cdlocalbin="cd /usr/local/bin"
-alias cdssh="cd $HOME/.ssh"
-alias cdwinc="cd /mnt/c"
-alias cdh="cd $HOME"
+alias cdmycfg='cd $HOME/.my-config'
+alias cdwinc='cd /mnt/c'
+alias cdh='cd $HOME'
+alias cdzshc='cd $ZSH_CUSTOM'
+alias cdlocalbin='cd /usr/local/bin'
+alias cdssh='cd $HOME/.ssh'
+
+# archive
+alias tarc='tar -czvf' # create gzip archive
+alias tarx='tar -xzvf' # extract gzip archive
 
 #common
-alias gcnn!="git commit -v --no-edit --date='now' --amend"
-alias explorer="explorer.exe"
-alias nppp="notepad++.exe"
+alias gcnn!='git commit -v --no-edit --date='now' --amend'
+alias explorer='explorer.exe'
+alias nppp='notepad++.exe'
 alias cpeg='rsync -av --progress --exclude=.git'
 
 # translate from a WSL path to a Windows path, copied to clipboard
-alias pwdw="wslpath -w ."
-alias pwdwc="wslpath -w . | clip.exe"
+alias pwdw='wslpath -w .'
+alias pwdwc='wslpath -w . | clip.exe'
 
 # l	ls -lFh	List files as a long list, show size, type, human-readable
 # la	ls -lAFh	List almost all files as a long list show size, type, human-readable
