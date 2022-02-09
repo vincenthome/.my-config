@@ -162,14 +162,17 @@ Supports [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/repos/git/
       git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
       ```
     - Open New Shell: Prompt Configuration wizard - `p10k configure`
-    - Add package.json version to prompt: Edit .p10k.zsh -> Uncomment POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS `package` 
-  - `agnoster`
-  - `spaceship` * issue - prompt TOO slow
-    - `git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1`
-    - Symlink `ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"`
-    - Set `ZSH_THEME="spaceship"` in your .zshrc
-  
+    - Add package.json version to prompt: Edit .p10k.zsh -> Uncomment POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS e.g.
+      - `package`
+      - `node_version`
   - Example: activate Themes: `ZSH_THEME="powerlevel10k/powerlevel10k"`  
+  - ~~`agnoster`~~
+  - ~~`spaceship` * issue - prompt TOO slow~~
+    - ~~`git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1`~~
+    - ~~Symlink `ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"`~~
+    - ~~Set `ZSH_THEME="spaceship"` in your .zshrc~~
+  
+  
 
 - File Managers
   - Midnight Commander: `sudo apt-get install mc`
