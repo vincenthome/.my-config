@@ -131,6 +131,10 @@ Supports [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/repos/git/
       ```
       [ -f "$HOME/.my-config/.zshrc" ] && source "$HOME/.my-config/.zshrc"
       ```
+    - near end add:
+      ```
+      [ -f "$HOME/.my-config/.p10k.zsh" ] && source "$HOME/.my-config/.p10k.zsh"
+      ```
     - comment out `ZSH_THEME=`, `plugins=`. They are coming from `$HOME/.my-config/.zshrc`
   - Custom
     - Evironment Variables Global/Local
@@ -140,6 +144,9 @@ Supports [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/repos/git/
     - Alias
       - custom alias in `$HOME/.my-config/.aliasrc`
       - `alias` list all aliases
+    - Prompt Elements
+      - custom Right Prompt Elements in `$HOME/.my-config/.p10k.zsh`
+        - e.g. POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS ↦ package/node_version
   
 - Popular Plugins for `~/.oh-my-zsh/custom/plugins`
   - `zsh-autosuggestions` Required before switching theme. [https://github.com/zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
