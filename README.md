@@ -310,6 +310,13 @@ sudo apt-get install jq
 3. Test: `kubectl version --client` 
 4. Cleanup: `rm kubectl`
 
+## Install Azure Data Studio
+- [Azure Data Studio user installer for Windows](https://docs.microsoft.com/en-us/sql/azure-data-studio/download-azure-data-studio?view=sql-server-ver15#windows-installation)
+- [WSL integration](https://docs.microsoft.com/en-us/sql/azure-data-studio/download-azure-data-studio?view=sql-server-ver15#windows-subsystem-for-linux)
+- run `azuredatastudio .` or Alias ads
+- Font for integrated terminal - [MesloLGS NF](https://github.com/romkatv/powerlevel10k/blob/master/font.md)
+- [Documentation](https://docs.microsoft.com/en-us/sql/azure-data-studio/?view=sql-server-ver15)
+
 ## Authentication Options
 - GCM on Ubuntu
   - Install GCM on Ubuntu [GCM Linux](https://github.com/GitCredentialManager/git-credential-manager#linux)
