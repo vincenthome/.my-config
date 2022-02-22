@@ -3,6 +3,8 @@
 # system
 alias cdmycfg='cd $HOME/.my-config'
 alias cdwinc='cd /mnt/c'
+alias cdwindl='cd $(wslpath "$(wslvar USERPROFILE)/Downloads")'
+alias cdwindoc='cd $(wslpath "$(wslvar USERPROFILE)/Documents")'
 alias cdh='cd $HOME'
 alias cdzshc='cd $ZSH_CUSTOM'
 alias cdlocalbin='cd /usr/local/bin'
