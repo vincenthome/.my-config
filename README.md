@@ -7,12 +7,19 @@ TOC
 - [Install NVM, Nodejs/Npm on Ubuntu](README.md#install-nvm-nodejsnpm-on-ubuntu)
 - [VS Code Integrated Terminal](README.md#vs-code-integrated-terminal)
 
+## Prequisites
+
+- [Install](https://docs.microsoft.com/en-us/azure/devops/repos/git/set-up-credential-managers?view=azure-devops#windows)  GCM on 'Windows Side' for interop with WSL
+
+
 ## [WSL](https://docs.microsoft.com/en-us/windows/wsl)
 - Setup  
   - Factory 'Reset' then 'Uninstall': 1. `Ubuntu` and 2. `Windows Terminal` via "Add or Remove Programs" 's Advanced Options menu item.
   - [Delete Distro](https://docs.microsoft.com/en-us/windows/wsl/wsl-config#unregister-and-reinstall-a-distribution): `wsl --unregister <distro>`
   - Install Distro from scratch: using Windows Store and click `Install`
   - Install Distro into WSL /w profile: using Windows Store and click `Open` OR command line `wsl --install -d <distro>`
+  - Check Ubuntu Version: `lsb_release -a`
+  - Get current username: `whoami` or `echo $USER`
   - Get latest Ubuntu packages: 1. `sudo apt update` 2. `sudo apt upgrade`
   - Multiple Instances of the same Distro
     - Export distro to tar: wsl --export Ubuntu-20.04 Ubuntu-20.04.tar.gz
@@ -21,37 +28,50 @@ TOC
       wsl --import ub2004.vm1 C:\_wslvms\Ubuntu-20.04-112021\vm1 C:\_wslvms\Ubuntu-20.04-112021\Ubuntu-20.04.tar.gz
       ```
     - Assign an existing non-root user to distro
-      - Method 1 (recommend): Add file to distro /etc/wsl.conf
+      - Add file to distro /etc/wsl.conf
         ```
         [automount]
         enabled=false
-        root=//wsl.localhost/ub2004.vm1/home/battlestar
+        root=//wsl$/ub2004.vm1/home/battlestar
         [user]
         default=battlestar
         ```
         - 1. exit distro 2. Command Prompt: wsl --shutdown
-      - Method 2: w/o rely on WT setting :  [Registry](https://github.com/microsoft/WSL/issues/4276#issuecomment-509364493)
-        1. UID: `id -u <yourUserName>`
-        1. HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{MY-UUID} DefaultUid : UID (decimal)
+
   - [WSL Utils - preinstalled by Ubuntu](https://github.com/wslutilities/wslu)
     - wslview - open default Windows application like notepad, pdf viewer, browser based on file extensions or url
 
 - Tips
   - File Access Path Convention
     - Easiest: Windows Explorer Linux Penguin Icon
-    - Windows access Linux files: `\\wsl.localhost\ub2004.vm1\home\battlestar` or `\\wsl$`
+    - Windows access Linux files: `\\wsl$`
     - Linux access Windows files: `/mnt/c/`
     - Path translator wslpath: 
       - Linux -> Windows: wslpath -w ~
       - Windows -> Linux: wslpath "C:\Users\vince"
     - symlinks to make Windows paths easier to access: e.g. `ln s /mnt/c/Users/chitl/Downloads`  ~/Downloads
 
+## Use Git Credential Manager (GCM) to authenticate.
+Supports [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/repos/git/set-up-credential-managers?view=azure-devops), GitHub, Bitbucket.
+  
+- [Configure](https://github.com/GitCredentialManager/git-credential-manager/blob/main/docs/wsl.md#configuring-wsl-with-git-for-windows-recommended) WSL git client to use GCM
+  ```
+    git config --global credential.helper "/mnt/c/Program\ Files\ \(x86\)/Git\ Credential\ Manager\ Core/git-credential-manager-core.exe"
+
+    # For Azure DevOps support only
+    git config --global credential.https://dev.azure.com.useHttpPath true  
+  ```  
+- Using GCM: When you connect to a Git repository from your Git client for the first time, the credential manager prompts for credentials. Provide your Azure AD credentials. Once authenticated, the credential manager creates and caches a personal access token for future connections to the repo. Git commands that connect to this account won't prompt for user credentials until the token expires. A token can be revoked through Azure Repos.
+- How it works inside WSL: GCM leverages the built-in interop between Windows and WSL. Git inside of a WSL can launch the GCM Windows application transparently to acquire credentials. Using the host operating system (Windows) to store credentials also means that your Windows applications and WSL can all share those credentials.
+  
+
+
 ## [Windows Terminal](https://docs.microsoft.com/en-us/windows/terminal/)
 - Quick Setup
-  - git clone this repo to `C:\_wslvms`, allows setting up WT to reference icons, background images from `C:\_wslvms\.my-config`
+  - git clone this repo .my-config in `C:\_wslvms`, allows setting up WT to reference icons, background images.
   - Distro Starting Directory (Settings UI): 
     ```
-    \\wsl.localhost\ub2004.vm1\home\battlestar
+    \\wsl$\Ubuntu\home\battlestar\
     ```
   - Dracula Color Scheme
     - Download: [https://draculatheme.com/windows-terminal](https://draculatheme.com/windows-terminal)
@@ -105,13 +125,28 @@ TOC
   ```
 
 - Install .my-config (custom oh-my-zsh config)
-  - Clone this repo .my-config in ~
+  - git clone this repo .my-config in `~`
   - edit ~/.zshrc: 
     - near front add:
       ```
       [ -f "$HOME/.my-config/.zshrc" ] && source "$HOME/.my-config/.zshrc"
       ```
+    - near end add:
+      ```
+      [ -f "$HOME/.my-config/.p10k.zsh" ] && source "$HOME/.my-config/.p10k.zsh"
+      ```
     - comment out `ZSH_THEME=`, `plugins=`. They are coming from `$HOME/.my-config/.zshrc`
+  - Custom
+    - Evironment Variables Global/Local
+      - custom environment variables in `$HOME/.my-config/.zshrc`
+      - `set` list all global variables
+      - `env` list all global AND local variables
+    - Alias
+      - custom alias in `$HOME/.my-config/.aliasrc`
+      - `alias` list all aliases
+    - Prompt Elements
+      - custom Right Prompt Elements in `$HOME/.my-config/.p10k.zsh`
+        - e.g. POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS ↦ package/node_version
   
 - Popular Plugins for `~/.oh-my-zsh/custom/plugins`
   - `zsh-autosuggestions` Required before switching theme. [https://github.com/zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
@@ -142,14 +177,17 @@ TOC
       git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
       ```
     - Open New Shell: Prompt Configuration wizard - `p10k configure`
-    - Add package.json version to prompt: Edit .p10k.zsh -> Uncomment POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS `package` 
-  - `agnoster`
-  - `spaceship` * issue - prompt TOO slow
-    - `git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1`
-    - Symlink `ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"`
-    - Set `ZSH_THEME="spaceship"` in your .zshrc
-  
+    - Add package.json version to prompt: Edit .p10k.zsh -> Uncomment POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS e.g.
+      - `package`
+      - `node_version`
   - Example: activate Themes: `ZSH_THEME="powerlevel10k/powerlevel10k"`  
+  - ~~`agnoster`~~
+  - ~~`spaceship` * issue - prompt TOO slow~~
+    - ~~`git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1`~~
+    - ~~Symlink `ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"`~~
+    - ~~Set `ZSH_THEME="spaceship"` in your .zshrc~~
+  
+  
 
 - File Managers
   - Midnight Commander: `sudo apt-get install mc`
@@ -160,15 +198,24 @@ TOC
 - Tips
   - Directory
     - Skip `cd`
-    - `..` `...` `....` `.....` to move up x directories
+    - `..` `...` `....` `.....` to move up max 6 directories
     - `/` `~`
     - partialDirectory `TAB` / some path `TAB`
     - `z` from most frequent diretory list
     - `take` Create a new directory and change to it
     - `rd`
-  - Commands
-    - .zsh_history: as you type a command, press `↑` to cycle through matching entries.
-    - zsh-autosuggestions plugin: as you type a command,, press `→` to accept
+  - Environment Variable
+    - `set` display all the ENVs(global as well as local)
+    - `env` display all the global ENVs
+    - `echo $MY_VAR` display single variable
+    - `set MY_GLOBAL_VAR=xyz` set global variable
+      - alternative: `export` MY_GLOBAL_VAR=xyz set global variable
+    - `MY_LOCAL_VAR=xyz` set local variable
+  - Command Helpers
+    - `→` zsh-autosuggestions plugin: as you type a command, press `→` to accept
+    - `↑↓` zsh_history plugin: as you type a command, press `↑↓` to cycle through matching entries
+    - XYZ_COMMAND `-(tab)` list command options (concise)
+    - `zsh_stats` Analytic: list top commands and how many times used.
   - Keys
     - `Ctrl + L` – clear the terminal.
     - `Ctrl + U` – delete from the cursor to the start of the _line_.
@@ -177,14 +224,9 @@ TOC
     - `Alt + D` – delete from the cursor to the end of the next _word_.
   - Others
     - [git plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)
-    - `x` Extract an archive
-    - `alias` list all aliases
-    - `zsh_stats` Get a list of the top 20 commands and how many times they have been run.
+    
     - `uninstall_oh_my_zsh`
     - `omz update` Upgrade Oh-my-zsh
-    - `ls -(tab)`
-    - `ssh (tab)`
-    - `unrar (tab)`
 
   - Articles
     - [https://www.sitepoint.com/zsh-tips-tricks/](https://www.sitepoint.com/zsh-tips-tricks/)
@@ -195,6 +237,8 @@ TOC
 2. WSL Side: `code .`
 
   ![image](https://user-images.githubusercontent.com/1560643/140314221-1d2dbb0f-e3ed-4d71-8126-a68e91821385.png)
+
+- [Integrated Terminal](https://code.visualstudio.com/docs/editor/integrated-terminal)
 
 
 ## Install NVM, Nodejs/Npm on Ubuntu
@@ -216,23 +260,17 @@ TOC
     - e.g. Node 12 `curl -sL https://deb.nodesource.com/setup_12.x | sudo -E zsh -`
     - `sudo apt-get install -y nodejs`
 
-## Install JSON processor jq 
+## Install JSON processor [jq](https://stedolan.github.io/jq/manual/#Basicfilters) 
 
-- `sudo apt-get install jq`
-- [Doc](https://stedolan.github.io/jq/manual/#Basicfilters)
+```
+sudo apt-get install jq
+```
 
-
-## Install Angular Global
+## Install Angular
   ```
-  npm install -g @angular/cli
+  npm install -g @angular/cli@x.x.x
   ```
-  - for specific version: `npm install -g @angular/cli@x.x.x`
-
 ## Languages
-- Java: `sudo apt install openjdk-11-jre-headless`
-- Go: `sudo apt install golang-go`
-- Rust: `sudo apt install rustc`
-- [C++](https://linuxconfig.org/how-to-install-g-the-c-compiler-on-ubuntu-20-04-lts-focal-fossa-linux): `sudo apt install build-essential`
 - [Python 3](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-local-programming-environment-on-ubuntu-20-04): 
   - python3: preinstalled on ubuntu 20.04. Check: python3 --version
   - PIP: `sudo apt install -y python3-pip`
@@ -245,7 +283,11 @@ TOC
     python3 -m venv my_env
     source my_env/bin/activate
     ```
-
+- Python 2 `sudo apt install python2`
+- Java: `sudo apt install openjdk-11-jre-headless`
+- Go: `sudo apt install golang-go`
+- Rust: `sudo apt install rustc`
+- [C++](https://linuxconfig.org/how-to-install-g-the-c-compiler-on-ubuntu-20-04-lts-focal-fossa-linux): `sudo apt install build-essential`
 ## Install Azure CLI
 
 - Instructions: [https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt#option-1-install-with-one-command](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt#option-1-install-with-one-command)
@@ -268,38 +310,38 @@ TOC
 3. Test: `kubectl version --client` 
 4. Cleanup: `rm kubectl`
 
-## Install Python2 on Ubuntu
-
-`sudo apt install python2`
+## Install Azure Data Studio
+- [Azure Data Studio user installer for Windows](https://docs.microsoft.com/en-us/sql/azure-data-studio/download-azure-data-studio?view=sql-server-ver15#windows-installation)
+- [WSL integration](https://docs.microsoft.com/en-us/sql/azure-data-studio/download-azure-data-studio?view=sql-server-ver15#windows-subsystem-for-linux)
+- run `azuredatastudio .` or Alias ads
+- Font for integrated terminal - [MesloLGS NF](https://github.com/romkatv/powerlevel10k/blob/master/font.md)
+- [Documentation](https://docs.microsoft.com/en-us/sql/azure-data-studio/?view=sql-server-ver15)
 
 ## Authentication Options
+- GCM on Ubuntu
+  - Install GCM on Ubuntu [GCM Linux](https://github.com/GitCredentialManager/git-credential-manager#linux)
+    - Download: `curl -LO https://xxxxxx`
+    - Install/Setup GCM
+      ```
+      sudo dpkg -i <path-to-package>
+      git-credential-manager-core configure
+      ```
+    - Configure Git Credential Store / Cache [Ref](https://github.com/microsoft/Git-Credential-Manager-Core/blob/master/docs/linuxcredstores.md#3-gits-built-in-credential-cache)
+      ```
+      git config --global credential.credentialStore cache
+      git config --global credential.cacheOptions "--timeout 300"  
+      ```
 
-### PAT Personal Access Token
-- Install Git Credential Manager Core GCM on 'Windows Side' [GCM](https://docs.microsoft.com/en-us/azure/devops/repos/git/set-up-credential-managers?view=azure-devops#install-git-credential-manager-core)
-- Install GCM on Ubuntu [GCM Linux](https://github.com/microsoft/Git-Credential-Manager-Core#linux-debian-package-deb)
-  - Download: `curl -L https://xxxxxx --output gcmcore-linux_amd64.xxx.deb`
-  - Install/Setup GCM
-    ```
-    sudo dpkg -i <path-to-package>
-    git-credential-manager-core configure
-    ```
-  - Configure Git Credential Store / Cache [Ref](https://github.com/microsoft/Git-Credential-Manager-Core/blob/master/docs/linuxcredstores.md#3-gits-built-in-credential-cache)
-    ```
-    git config --global credential.credentialStore cache
-    git config --global credential.cacheOptions "--timeout 300"  
-    ```
-- Reference 'Windows' GCM from a WSL distro: [Ref](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup)
-  - `git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe"`
-- Using PAT Personal Access Token 
-  - Github: Profile -> Settings -> Developer Settings -> Personal Access Tokens -> Generate new token
-  - Azure: ???
+- PAT Personal Access Token
+  - Using PAT Personal Access Token 
+    - Github: Profile -> Settings -> Developer Settings -> Personal Access Tokens -> Generate new token
+    - Azure: ???
 
-### SSH
-
-- Create SSH Key Pair in Ubuntu
-  - `ssh-keygen` when prompted, provide custom filename e.g. `~/.ssh/xyz_id_rsa`
-  - Set premission: `chmod 400 ~/.ssh/xyz_id_rsa` `chmod 400 ~/.ssh/xyz_id_rsa.pub` 
-- For Windows: copy above files `cp ~/.ssh/xyz_id_rsa /mnt/c/.ssh` `cp ~/.ssh/xyz_id_rsa.pub /mnt/c/.ssh`
+-SSH
+  - Create SSH Key Pair in Ubuntu
+    - `ssh-keygen` when prompted, provide custom filename e.g. `~/.ssh/xyz_id_rsa`
+    - Set premission: `chmod 400 ~/.ssh/xyz_id_rsa` `chmod 400 ~/.ssh/xyz_id_rsa.pub` 
+  - For Windows: copy above files `cp ~/.ssh/xyz_id_rsa /mnt/c/.ssh` `cp ~/.ssh/xyz_id_rsa.pub /mnt/c/.ssh`
 
 ## Fonts
 p.s. In WSL, if we are seeing broken characters in terminal, as soon as installed Oh My Zsh. To remedy this we need to install the Powerline fonts and tell our terminal to use them. fira-code-nerdfont
@@ -328,8 +370,6 @@ Finally, right click on the terminal’s title bar, choose Properties > Font and
  - … | less  // keystroke: 'b' back / 'spacebar' forward / 'q' quit
 
 
-## VS Code
-- [Integrated Terminal](https://code.visualstudio.com/docs/editor/integrated-terminal)
 
 
 

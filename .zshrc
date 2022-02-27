@@ -4,12 +4,12 @@ ZSH_DISABLE_COMPFIX="true"
 HISTSIZE=10000
 SAVEHIST=10000
 
-# ZSH_THEME="agnoster"
+# LOCAL Environment Variables
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# plugins=(git kubectl emoji gitignore z zsh-autosuggestions)
-plugins=(git kubectl emoji  gitignore z zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(emoji git gitignore kubectl vscode z zsh-syntax-highlighting zsh-autosuggestions)
 
+# GLOBAL Environment Variables
 # Git Credential Setup
 export GCM_CREDENTIAL_STORE=cache
 export GCM_CREDENTIAL_CACHE_OPTIONS="--timeout 64800"
