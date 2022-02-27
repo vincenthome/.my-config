@@ -1,5 +1,7 @@
-
-
+NOW=$(date '+%y%m%d')
+MRG="mrg$NOW"
+MAP="map$NOW"
+MWA="mwa$NOW"
 
 # App Service Plan
 az appservice plan list -o table

@@ -1,0 +1,60 @@
+LOC="eastus2"
+NOW=$(date '+%y%m%d')
+MRG="mrg$NOW"
+MACCNT="maccnt$NOW" #needs to be lower case
+MFOLOC="South Central US"
+MDBSQLAPI="mdbsqlapi$NOW"
+MCNTR="mcntr$NOW"
+MPK="/id"
+
+MSUB="5cca154e-78de-41f0-b81b-5e1ca4b22ce7" # IMM Visual Studio Enterprise Subscription
+#MSUB="b96b3650-2813-4e14-bc2a-334768b847b4" # eReceipts Dev
+
+az account set -s $MSUB # ...or use 'az login'
+
+# Resource Group
+az group list -o table
+az group create -l $LOC -n $MRG
+
+# Create a SQL API database and container
+# Create a Cosmos account for SQL API
+# --capabilities EnableServerless # Serverless accounts do not support multiple regions.
+az cosmosdb create -n $MACCNT -g $MRG --default-consistency-level Eventual --locations regionName="$LOC" failoverPriority=0 isZoneRedundant=False --locations regionName="$MFOLOC" failoverPriority=1 isZoneRedundant=False
+
+# Create a SQL API database
+az cosmosdb sql database create --account-name $MACCNT --resource-group $MRG --name $MDBSQLAPI
+
+# Define the index policy for the container, include spatial and composite indexes
+# Optional
+# printf ' 
+# {
+#     "indexingMode": "consistent", 
+#     "includedPaths": [
+#         {"path": "/*"}
+#     ],
+#     "excludedPaths": [
+#         { "path": "/headquarters/employees/?"}
+#     ],
+#     "spatialIndexes": [
+#         {"path": "/*", "types": ["Point"]}
+#     ],
+#     "compositeIndexes":[
+#         [
+#             { "path":"/name", "order":"ascending" },
+#             { "path":"/age", "order":"descending" }
+#         ]
+#     ]
+# }' > "idxpolicy-$NOW.json"
+
+
+# Create a SQL API container
+echo "Creating $container with $maxThroughput"
+# optional:  --idx @idxpolicy-$NOW.json
+az cosmosdb sql container create --account-name $MACCNT --resource-group $MRG --database-name $MDBSQLAPI --name $MCNTR --partition-key-path $MPK --throughput 400
+
+# Clean up temporary index policy file
+# rm -f "idxpolicy-$NOW.json"
+
+az cosmosdb sql container list -a $MACCNT -g $MRG -d $MDBSQLAPI -o table
+
+
