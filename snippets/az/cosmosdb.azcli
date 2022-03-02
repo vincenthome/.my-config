@@ -57,4 +57,6 @@ az cosmosdb sql container create --account-name $MACCNT --resource-group $MRG --
 
 az cosmosdb sql container list -a $MACCNT -g $MRG -d $MDBSQLAPI -o table
 
-
+# authentication info
+az cosmosdb show -g $MRG -n $MACCNT --query documentEndpoint --output tsv
+az cosmosdb keys list -g $MRG -n $MACCNT --type keys
