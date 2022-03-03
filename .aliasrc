@@ -45,5 +45,11 @@ alias ldot='ls -ld .*'
 # alias lart='ls -1Fcart'
 # alias lrt='ls -1Fcrt'
 
+# git
+alias gta='git tag -a'  # add tag e.g. gta v1.1 -m 'v1.1'
+alias gtd='git tag -d'  # delete tag e.g. gtd v1.1
+alias gpt='git push origin --tags' # add tags to remote
+alias gptd='git push origin -d' # delete tag on remote e.g. gptd v1.1
+
 # azure data studio
 alias ads='azuredatastudio'
