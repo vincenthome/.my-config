@@ -46,6 +46,7 @@ alias ldot='ls -ld .*'
 # alias lrt='ls -1Fcrt'
 
 # git
+alias gtls='git tag --sort=-creatordate' 
 alias gta='git tag -a'  # add tag e.g. gta v1.1 -m 'v1.1'
 alias gtd='git tag -d'  # delete tag e.g. gtd v1.1
 alias gpt='git push origin --tags' # add tags to remote
