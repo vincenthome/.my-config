@@ -157,6 +157,10 @@ Supports [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/repos/git/
     ```
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
     ```
+  - `zsh-docker-aliases` [https://github.com/akarzim/zsh-docker-aliases](https://github.com/akarzim/zsh-docker-aliases)
+    ```
+    git clone https://github.com/akarzim/zsh-docker-aliases.git  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-docker-aliases
+    ```
   - `autojump`
   - `cloudapp` – uploads files and piped contents to the Cloudapp service. Outputs and copies the resultant URL to the clipboard.
   - `command-not-found` – if a command is not recognized in the $PATH, this will use Ubuntu’s command-not-found package to find it or suggest spelling mistakes (Only for Ubuntu and openSUSE).
