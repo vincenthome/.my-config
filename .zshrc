@@ -7,7 +7,7 @@ SAVEHIST=10000
 # LOCAL Environment Variables
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(emoji git gitignore kubectl vscode z zsh-syntax-highlighting zsh-autosuggestions docker zsh-docker-aliases)
+plugins=(emoji git gitignore kubectl vscode z zsh-syntax-highlighting zsh-autosuggestions docker docker-compose zsh-docker-aliases)
 
 # GLOBAL Environment Variables
 # Git Credential Setup
