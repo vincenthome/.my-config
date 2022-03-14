@@ -161,6 +161,24 @@ Supports [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/repos/git/
     ```
     git clone https://github.com/akarzim/zsh-docker-aliases.git  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-docker-aliases
     ```
+  - `dirhistory` Keyboard shortcuts for navigating directory history and hierarchy. [https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dirhistory](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dirhistory)
+
+    | Shortcut                          | Description                                               |
+    |-----------------------------------|-----------------------------------------------------------|
+    | <kbd>Alt</kbd> + <kbd>Left</kbd>  | Go to previous directory                                  |
+    | <kbd>Alt</kbd> + <kbd>Right</kbd> | Go to next directory                                      |
+    | <kbd>Alt</kbd> + <kbd>Up</kbd>    | Move into the parent directory                            |
+    | <kbd>Alt</kbd> + <kbd>Down</kbd>  | Move into the first child directory by alphabetical order |
+
+  - `history` Convenient aliases for using the history command. [https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history)
+
+    | Alias | Command              | Description                                                      |
+    |-------|----------------------|------------------------------------------------------------------|
+    | `h`   | `history`            | Prints your command history                                      |
+    | `hs`  | `history \| grep`    | Use grep to search your command history                          |
+    | `hsi` | `history \| grep -i` | Use grep to do a case-insensitive search of your command history |
+
+  - `sudo` Prefix your current or previous commands with sudo by pressing esc twice. 
   - `autojump`
   - `cloudapp` – uploads files and piped contents to the Cloudapp service. Outputs and copies the resultant URL to the clipboard.
   - `command-not-found` – if a command is not recognized in the $PATH, this will use Ubuntu’s command-not-found package to find it or suggest spelling mistakes (Only for Ubuntu and openSUSE).
