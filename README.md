@@ -261,7 +261,8 @@ Supports [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/repos/git/
   - [Follow this instruction to install ohmyzsh](README.md#oh-my-zsh) EXCEPT SKIP sudo apt install zsh
   - Switch Shell without `sudo`: Unfortunately, you can't run the chsh -s $(which zsh) command because sudo is not allowed. Therefore, update your .bashrc `bash -c zsh` as a workaround. 
   - To config, run `p10k configure`
-  - [Ref1](https://devkimchi.com/2021/12/22/oh-my-azure-cloud-shell/) [Ref2](https://www.danielstechblog.io/setting-up-zsh-with-oh-my-zsh-in-azure-cloud-shell/)   
+  - Reset Cloud Drive: a. `clouddrive unmount` b. delete cloud shell storage resoure group
+  - [Ref](https://www.thomasmaurer.ch/2019/01/azure-cloud-shell) [Ref1](https://devkimchi.com/2021/12/22/oh-my-azure-cloud-shell/) [Ref2](https://www.danielstechblog.io/setting-up-zsh-with-oh-my-zsh-in-azure-cloud-shell/)   
 
 
 ## Install VS Code
