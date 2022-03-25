@@ -257,7 +257,7 @@ Supports [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/repos/git/
 
 ## Azure Cloud Shell with Oh My Zsh
   - Install the Powerline fonts Is it a must???? -> https://github.com/powerline/fonts
-  - Select Fix-width font MesloLGS NF for the browser ???
+  - Select Fix-width font MesloLGS NF for the browser
   - [Follow this instruction to install ohmyzsh](README.md#oh-my-zsh) EXCEPT SKIP sudo apt install zsh
   - Switch Shell without `sudo`: Unfortunately, you can't run the chsh -s $(which zsh) command because sudo is not allowed. Therefore, update your .bashrc `bash -c zsh` as a workaround. 
   - To config, run `p10k configure`
