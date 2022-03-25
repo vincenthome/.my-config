@@ -4,6 +4,7 @@ TOC
 - [WSL](README.md#wsl)
 - [Windows Terminal](README.md#windows-terminal)
 - [Oh My Zsh](README.md#oh-my-zsh)
+- [Azure Cloud Shell with Oh My Zsh](README.md#azure-cloud-shell-with-oh-my-zsh)
 - [Install NVM, Nodejs/Npm on Ubuntu](README.md#install-nvm-nodejsnpm-on-ubuntu)
 - [VS Code Integrated Terminal](README.md#vs-code-integrated-terminal)
 
@@ -253,6 +254,15 @@ Supports [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/repos/git/
   - Articles
     - [https://www.sitepoint.com/zsh-tips-tricks/](https://www.sitepoint.com/zsh-tips-tricks/)
     - Bindkey Tutorial [https://jdhao.github.io/2019/06/13/zsh_bind_keys/](https://jdhao.github.io/2019/06/13/zsh_bind_keys/)
+
+## Azure Cloud Shell with Oh My Zsh
+  - Install the Powerline fonts Is it a must???? -> https://github.com/powerline/fonts
+  - Select Fix-width font MesloLGS NF for the browser ???
+  - [Follow this instruction to install ohmyzsh](README.md#oh-my-zsh) EXCEPT SKIP sudo apt install zsh
+  - Switch Shell without `sudo`: Unfortunately, you can't run the chsh -s $(which zsh) command because sudo is not allowed. Therefore, update your .bashrc `bash -c zsh` as a workaround. 
+  - To config, run `p10k configure`
+  - [Ref1](https://devkimchi.com/2021/12/22/oh-my-azure-cloud-shell/) [Ref2](https://www.danielstechblog.io/setting-up-zsh-with-oh-my-zsh-in-azure-cloud-shell/)   
+
 
 ## Install VS Code
 1. Install on Windows Side
