@@ -256,10 +256,10 @@ Supports [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/repos/git/
     - Bindkey Tutorial [https://jdhao.github.io/2019/06/13/zsh_bind_keys/](https://jdhao.github.io/2019/06/13/zsh_bind_keys/)
 
 ## Azure Cloud Shell with Oh My Zsh
-  - Install the Powerline fonts Is it a must???? -> https://github.com/powerline/fonts
-  - Select Fix-width font MesloLGS NF for the browser
+  - Install the Powerline fonts MesloLGS NF following instructions in [Windows Terminal](README.md#windows-terminal)
+  - Select Fix-width font MesloLGS NF from browser settings
   - [Follow this instruction to install ohmyzsh](README.md#oh-my-zsh) EXCEPT SKIP sudo apt install zsh
-  - Switch Shell without `sudo`: Unfortunately, you can't run the chsh -s $(which zsh) command because sudo is not allowed. Therefore, update your .bashrc `bash -c zsh` as a workaround. 
+  - Switch Shell without `sudo`: Unfortunately, you can't run the chsh -s $(which zsh) command because sudo is not allowed. Therefore, update your .bashrc near the end `bash -c zsh` as a workaround. Restart Cloud Shell.
   - To config, run `p10k configure`
   - Reset Cloud Drive: a. `clouddrive unmount` b. delete cloud shell storage resoure group
   - [Ref](https://www.thomasmaurer.ch/2019/01/azure-cloud-shell) [Ref1](https://devkimchi.com/2021/12/22/oh-my-azure-cloud-shell/) [Ref2](https://www.danielstechblog.io/setting-up-zsh-with-oh-my-zsh-in-azure-cloud-shell/)   
