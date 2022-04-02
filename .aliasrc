@@ -52,5 +52,8 @@ alias gtd='git tag -d'  # delete tag e.g. gtd v1.1
 alias gpt='git push origin --tags' # add tags to remote
 alias gptd='git push origin -d' # delete tag on remote e.g. gptd v1.1
 
+# docker
+alias dkCrmaf='docker rm -f $(docker ps -aq)'
+
 # azure data studio
 alias ads='azuredatastudio'
