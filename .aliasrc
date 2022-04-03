@@ -55,5 +55,9 @@ alias gptd='git push origin -d' # delete tag on remote e.g. gptd v1.1
 # docker
 alias dkCrmaf='docker rm -f $(docker ps -aq)'
 
+# kubectl
+alias kgnowide='kgno -o wide'
+alias kgawide='kga -o wide'
+
 # azure data studio
 alias ads='azuredatastudio'
