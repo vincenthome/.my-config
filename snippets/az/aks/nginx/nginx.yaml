@@ -17,15 +17,51 @@ spec:
           image: k8s033122acr.azurecr.io/nginx80-explorer:latest
           ports:
             - containerPort: 80
+          env:
+            # Reference a ConfigMap SPECIFIC Environment Variables (mulit-line values work badly)
+            - name: NGINX_EXPLORER_MY_KEY
+              valueFrom:
+                configMapKeyRef:
+                  # `name` here must match the name specified in the ConfigMap's YAML 
+                  name: my-configmap
+                  # `key` here must match the inline key specified in the ConfigMap's YAML 
+                  key: my-inline-key
+
+          # Reference a ConfigMap ALL Environment Variables and `envFrom`
+          envFrom:
+            - configMapRef:
+                name: my-configmap
+
+          # Mount the volume that contains the configuration data into your container filesystem
+          volumeMounts:
+            # `name` here must match the name from the volumes section of this pod
+            - name: my-configmap-volume
+              # folder to hold the files where the filename is the key, its content has the value 
+              mountPath: /etc/config
+
         - name: nginx81
           image: k8s033122acr.azurecr.io/nginx81-explorer:latest
           ports:
             - containerPort: 81
+          env:
+            - name: MY_NGINX_81_KEY
+              value: "81"
+      # Add the ConfigMap as a volume to the Pod
+      volumes:
+        # `name` here must match the name specified in the volume mount
+        - name: my-configmap-volume
+          # Populate the volume with config map data
+          configMap:
+            # `name` here must match the name specified in the ConfigMap's YAML 
+            name: my-configmap
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: nginx-explorer-http
+  annotations:
+    # nginx-explorer-http.<location>.cloudapp.azure.com
+    service.beta.kubernetes.io/azure-dns-label-name: nginx-explorer-http
   labels:
     app: nginx-explorer
 spec:
@@ -36,11 +72,13 @@ spec:
     - name: http80
       protocol: TCP
       port: 8080
-      nodePort: 30080
+      # let k8s auto-assign NodePort, since Azure very slow to remove NodePort service
+      # nodePort: 30080
       targetPort: 80
     - name: http81
       protocol: TCP
       port: 8081
-      nodePort: 30081
+      # let k8s auto-assign NodePort, since Azure very slow to remove NodePort service
+      # nodePort: 30081
       targetPort: 81
 ---

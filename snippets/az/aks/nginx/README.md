@@ -26,3 +26,14 @@
   - `kubectl Proxy --port=port#` 
   - `kubectl get <object> -v 6` this will discover the api url for the object 
   - `curl localhost:port#/apis/apps/v1/namespaces/default/deployments` same as kubectl get deployments
+
+
+## ConfigMap 
+
+  - [https://cloud.google.com/kubernetes-engine/docs/concepts/configmap#create_a_configmap_from_files](https://cloud.google.com/kubernetes-engine/docs/concepts/configmap#create_a_configmap_from_files)
+  - Step 1: Create ConfigMap from data file. The file name will be the key name and content of the file will be the value
+    - `kubectl create configmap my-configmap --from-file file-a.txt --from-file file-b.txt --from-file file-c.json  --from-literal my-inline-key=1234`
+  - [Optional] Step 2: Generate configmap yaml from the newly created ConfigMap
+    - `kubectl get configmap NAME -o yaml > config-map.yaml`
+
+
