@@ -58,6 +58,16 @@ alias dkCrmaf='docker rm -f $(docker ps -aq)'
 # kubectl
 alias kgnowide='kgno -o wide'
 alias kgawide='kga -o wide'
+alias kgnow='kgnowide'
+alias kgaw='kgawide'
+alias kccm='kubectl create configmap'
+
+ketibash() {
+    keti "$1" -- bin/bash 
+}
+ketienv() {
+    keti "$1" -- bin/bash -c "env | grep $2 | sort"
+}
 
 # azure data studio
 alias ads='azuredatastudio'
