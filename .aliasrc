@@ -62,11 +62,11 @@ alias kgnow='kgnowide'
 alias kgaw='kgawide'
 alias kccm='kubectl create configmap'
 
-ketibash() {
-    keti "$1" -- bin/bash 
+keitbash() {
+    kubectl exec -it "$1" -- bin/bash 
 }
-ketienv() {
-    keti "$1" -- bin/bash -c "env | grep $2 | sort"
+keitenv() {
+    kubectl exec -it "$1" -- bin/bash -c "env | grep $2 | sort"
 }
 
 # azure data studio
