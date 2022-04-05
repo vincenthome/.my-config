@@ -10,6 +10,9 @@ alias cdzshc='cd $ZSH_CUSTOM'
 alias cdlocalbin='cd /usr/local/bin'
 alias cdssh='cd $HOME/.ssh'
 
+# network
+alias hn='hostname -I'
+
 # archive
 alias tarc='tar -czvf' # create gzip archive
 alias tarx='tar -xzvf' # extract gzip archive
@@ -61,6 +64,7 @@ alias kgawide='kga -o wide'
 alias kgnow='kgnowide'
 alias kgaw='kgawide'
 alias kccm='kubectl create configmap'
+alias keit='keti'
 
 keitbash() {
     kubectl exec -it "$1" -- bin/bash 
@@ -68,6 +72,10 @@ keitbash() {
 keitenv() {
     kubectl exec -it "$1" -- bin/bash -c "env | grep $2 | sort"
 }
+keitnode() {
+    kubectl debug node/"$1" -it --image=mcr.microsoft.com/dotnet/runtime-deps:6.0
+}
+
 
 # azure data studio
 alias ads='azuredatastudio'
