@@ -69,9 +69,14 @@ alias keit='keti'
 keitbash() {
     kubectl exec -it "$1" -- bin/bash 
 }
+# select Container
+keitcbash() {
+    kubectl exec -it "$1" -c "$2" -- bin/bash 
+}
 keitenv() {
     kubectl exec -it "$1" -- bin/bash -c "env | grep $2 | sort"
 }
+# bin/bash into Node
 keitnode() {
     kubectl debug node/"$1" -it --image=mcr.microsoft.com/dotnet/runtime-deps:6.0
 }
