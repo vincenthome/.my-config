@@ -1,4 +1,5 @@
-FROM nginx:latest
-COPY index.html /usr/share/nginx/html/index.html
-RUN rm -f /etc/nginx/conf.d/default.conf
+FROM nginx
+RUN mkdir /etc/nginx/templates
+COPY default.conf.template /etc/nginx/templates
+COPY index.html /usr/share/nginx/html/
 COPY nginx.conf /etc/nginx/nginx.conf
