@@ -1,25 +1,28 @@
 server {
+  # Using environment variables in nginx configuration (new in 1.19)
+  # https://hub.docker.com/_/nginx
+  # https://devopsian.net/notes/docker-nginx-template-env-vars/
 
-    listen       ${NGINX_PORT};
-    server_name app_server;
+  listen       ${NGINX_PORT};
+  server_name app_server;
 
-    sub_filter_once off;
-    sub_filter 'server_hostname' '$hostname';
-    sub_filter 'server_address'  '$server_addr:$server_port';
-    sub_filter 'server_url'      '$request_uri';
-    sub_filter 'remote_addr'     '$remote_addr:$remote_port';
-    sub_filter 'server_date'     '$time_local';
-    sub_filter 'client_browser'  '$http_user_agent';
-    sub_filter 'request_id'      '$request_id';
-    sub_filter 'nginx_version'   '$nginx_version';
-    sub_filter 'document_root'   '$document_root';
-    sub_filter 'proxied_for_ip'  '$http_x_forwarded_for';
+  sub_filter_once off;
+  sub_filter 'server_hostname' '$hostname';
+  sub_filter 'server_address'  '$server_addr:$server_port';
+  sub_filter 'server_url'      '$request_uri';
+  sub_filter 'remote_addr'     '$remote_addr:$remote_port';
+  sub_filter 'server_date'     '$time_local';
+  sub_filter 'client_browser'  '$http_user_agent';
+  sub_filter 'request_id'      '$request_id';
+  sub_filter 'nginx_version'   '$nginx_version';
+  sub_filter 'document_root'   '$document_root';
+  sub_filter 'proxied_for_ip'  '$http_x_forwarded_for';
 
-    location / {
-      proxy_set_header Host             $host;
-      proxy_set_header X-Real-IP        $remote_addr;
+  location / {
+    proxy_set_header Host             $host;
+    proxy_set_header X-Real-IP        $remote_addr;
 
-      root   /usr/share/nginx/html;
-      index  index.html index.htm;
-    }
+    root   /usr/share/nginx/html;
+    index  index.html index.htm;
+  }
 }
