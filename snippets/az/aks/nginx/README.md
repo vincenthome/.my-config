@@ -33,7 +33,27 @@
   - [https://cloud.google.com/kubernetes-engine/docs/concepts/configmap#create_a_configmap_from_files](https://cloud.google.com/kubernetes-engine/docs/concepts/configmap#create_a_configmap_from_files)
   - Step 1: Create ConfigMap from data file. The file name will be the key name and content of the file will be the value
     - `kubectl create configmap my-configmap --from-file file-a.txt --from-file file-b.txt --from-file file-c.json  --from-literal my-inline-key=1234`
-  - [Optional] Step 2: Generate configmap yaml from the newly created ConfigMap
+    - sample file content  
+      - key/value pairs
+        ```
+        color=red
+        fontsize=14px
+        ```
+      - JSON
+        ```
+        {
+          "id" : 101,
+          "firstname" : "John",
+          "lastname" : "Doe",
+          "age": 25,
+          "phonenums" : [
+            "111-456-7890",
+            "222-456-7890"
+          ]
+        }  
+        ```
+
+  - [Optional] Step 2: Generate configmap yaml from the newly created ConfigMap and commit to version control
     - `kubectl get configmap NAME -o yaml > config-map.yaml`
 
 
