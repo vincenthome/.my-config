@@ -56,4 +56,12 @@
   - [Optional] Step 2: Generate configmap yaml from the newly created ConfigMap and commit to version control
     - `kubectl get configmap NAME -o yaml > config-map.yaml`
 
+## Secret 
+
+  - [https://kubernetes.io/docs/concepts/configuration/secret/](https://kubernetes.io/docs/concepts/configuration/secret/) 
+  - Step 1: [Create Secret](https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl) from data file. The file name will be the key name and content of the file will be the value
+    - `kubectl create secret generic my-secret --from-file=./username --from-file=./password`
+  - Step 2: Verify Secret
+    - `kubectl get secret my-secret -o jsonpath='{.data.username}' | base64 --decode`
+  
 
