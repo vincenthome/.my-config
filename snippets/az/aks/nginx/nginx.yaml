@@ -14,10 +14,12 @@ spec:
     spec:
       containers:
         - name: nginx80
-          image: k8s033122acr.azurecr.io/nginx80-explorer:latest
+          image: k8s033122acr.azurecr.io/nginx-explorer:latest
           ports:
             - containerPort: 80
           env:
+            - name: NGINX_PORT
+              value: "80"
             # Reference a ConfigMap SPECIFIC Environment Variables (mulit-line values work badly)
             - name: NGINX_EXPLORER_MY_KEY
               valueFrom:
@@ -40,11 +42,11 @@ spec:
               mountPath: /etc/config
 
         - name: nginx81
-          image: k8s033122acr.azurecr.io/nginx81-explorer:latest
+          image: k8s033122acr.azurecr.io/nginx-explorer:latest
           ports:
             - containerPort: 81
           env:
-            - name: MY_NGINX_81_KEY
+            - name: NGINX_PORT
               value: "81"
       # Add the ConfigMap as a volume to the Pod
       volumes:
