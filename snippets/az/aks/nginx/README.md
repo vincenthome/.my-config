@@ -1,7 +1,5 @@
 # To explore k8s 
 
-## Modify nginx.conf server -> listen port # to anything other than 80
-
 ## Use Dockerfile to build a custom nginx image
 
 ## Use Kubectl apply -f nginx.yaml (kaf) to deploy 
@@ -20,8 +18,9 @@
 
   - Outside Cluster -> Public w/ LoadBalancer
     - `curl external_ip:Port`
+    - `curl my-service-name.<location>.cloudapp.azure.com`
 
-## Use an HTTP Proxy to Access the Kubernetes API
+## Use an HTTP Proxy to Access the Kubernetes REST API
 
   - `kubectl Proxy --port=port#` 
   - `kubectl get <object> -v 6` this will discover the api url for the object 
@@ -59,8 +58,11 @@
 ## Secret 
 
   - [https://kubernetes.io/docs/concepts/configuration/secret/](https://kubernetes.io/docs/concepts/configuration/secret/) 
-  - Step 1: [Create Secret](https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl) from data file. The file name will be the key name and content of the file will be the value
-    - `kubectl create secret generic my-secret --from-file=./username --from-file=./password`
+  - Step 1: [Create Secret](https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl) 
+    - From data file. The file name will be the key name and content of the file will be the value
+      - `kubectl create secret generic my-secret --from-file=./username --from-file=./password`
+    - From CLI
+      - `kubectl create secret generic my-secret --from-literal=username=produser --from-literal=password='S!B\*d$zDsb='`
   - Step 2: Verify Secret
     - `kubectl get secret my-secret -o jsonpath='{.data.username}' | base64 --decode`
   
