@@ -1,0 +1,1 @@
+alias finpmrun=' nvm exec 12.22.9 npm run'

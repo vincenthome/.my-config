@@ -17,6 +17,7 @@ export GCM_CREDENTIAL_CACHE_OPTIONS="--timeout 64800"
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.my-config/.shortcutrc" ] && source "$HOME/.my-config/.shortcutrc"
 [ -f "$HOME/.my-config/.aliasrc" ] && source "$HOME/.my-config/.aliasrc"
+[ -f "$HOME/.my-config/.immaliasrc" ] && source "$HOME/.my-config/.immaliasrc"
 
 unsetopt BG_NICE
 
