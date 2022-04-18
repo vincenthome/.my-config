@@ -56,7 +56,27 @@ alias gpt='git push origin --tags' # add tags to remote
 alias gptd='git push origin -d' # delete tag on remote e.g. gptd v1.1
 
 # docker
-alias dkCrmaf='docker rm -f $(docker ps -aq)'
+alias dkCrmaf='docker rm -f $(docker ps -aq)' 
+
+# az account 
+alias azal='az account list' # Get a list of subscriptions
+alias azas="az account set"
+alias azasid='az account show --query id --output tsv' # get Subscription ID
+alias azatl='az account tenant list' # Get Tenant IDs
+
+# az storage
+alias azsal="az storage account list" # List all storage accounts in a subscription
+alias azsasw="az storage account show" # Show storage account properties
+alias azsact="az storage account create" # Create a storage account
+alias azsasgen="az storage account generate-sas" # Generates a shared access signature for the account
+
+# az aks
+alias azaksgc="az aks get-credentials" # Get access credentials for a managed Kubernetes cluster (User)
+alias azaksgca="az aks get-credentials --admin" # Get access credentials for a managed Kubernetes cluster (Admin)
+alias azaksl="az aks list" # List managed Kubernetes clusters.
+alias azaksnpl="az aks nodepool list" # List node pools in the managed Kubernetes cluster.
+alias azakssw="az aks show" # Show the details for a managed Kubernetes cluster
+alias azaksb="az aks browse" # Show the dashboard for a Kubernetes cluster in a web browser
 
 # kubectl
 alias kgnowide='kgno -o wide'
