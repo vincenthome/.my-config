@@ -15,6 +15,10 @@ spec:
       containers:
         - name: nginx80
           image: k8s033122acr.azurecr.io/nginx-explorer:latest
+          resources:
+            limits:
+              cpu: 100m
+              memory: 100Mi
           ports:
             - containerPort: 80
           env:
@@ -61,6 +65,10 @@ spec:
 
         - name: nginx81
           image: k8s033122acr.azurecr.io/nginx-explorer:latest
+          resources:
+            limits:
+              cpu: 100m
+              memory: 100Mi
           ports:
             - containerPort: 81
           env:
