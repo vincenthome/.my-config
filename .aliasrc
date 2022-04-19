@@ -73,8 +73,8 @@ alias azsasgen="az storage account generate-sas" # Generates a shared access sig
 alias azaksgc="az aks get-credentials" # Get access credentials for a managed Kubernetes cluster (User)
 alias azaksgca="az aks get-credentials --admin" # Get access credentials for a managed Kubernetes cluster (Admin)
 alias azaksl="az aks list" # List managed Kubernetes clusters.
-alias azaksnpl="az aks nodepool list" # List node pools in the managed Kubernetes cluster.
 alias azakssw="az aks show" # Show the details for a managed Kubernetes cluster
+alias azaksnpl="az aks nodepool list" # List node pools in the managed Kubernetes cluster.
 alias azaksb="az aks browse" # Show the dashboard for a Kubernetes cluster in a web browser
 
 # kubectl
