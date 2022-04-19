@@ -59,9 +59,8 @@ alias gptd='git push origin -d' # delete tag on remote e.g. gptd v1.1
 alias dkCrmaf='docker rm -f $(docker ps -aq)' 
 
 # az account 
-alias azal='az account list' # Get a list of subscriptions
+alias azal='az account list --query "[].{Name:name, SubscriptionId:id, TenantId:tenantId}" -o table' # Get a list of subscriptions
 alias azas="az account set"
-alias azasid='az account show --query id --output tsv' # get Subscription ID
 alias azatl='az account tenant list' # Get Tenant IDs
 
 # az storage
