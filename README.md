@@ -41,6 +41,13 @@ TOC
 
   - [WSL Utils - preinstalled by Ubuntu](https://github.com/wslutilities/wslu)
     - wslview - open default Windows application like notepad, pdf viewer, browser based on file extensions or url
+  - Network
+    - Connect to WSL server (e.g. nginx/angular webserver) from a different machine (not work in VPN)
+      - Open Windows Defender Firewall Inbound Local Port 
+        - `netsh advfirewall firewall add rule name="Allow 4200" dir=in action=allow protocol=TCP localport=4200`
+      - Add Port Forwarding
+        - Same port# `netsh interface portproxy add v4tov4 listenaddress=machine_ip listenport=4200 connectaddress=localhost connectport=4200`
+        - Different port# `netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=4200 connectaddress=localhost connectport=14200`
 
 - Tips
   - File Access Path Convention
