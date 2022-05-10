@@ -64,10 +64,10 @@ Supports [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/repos/git/
   
 - [Configure](https://github.com/GitCredentialManager/git-credential-manager/blob/main/docs/wsl.md#configuring-wsl-with-git-for-windows-recommended) WSL git client to use GCM
   ```
-    git config --global credential.helper "/mnt/c/Program\ Files\ \(x86\)/Git\ Credential\ Manager\ Core/git-credential-manager-core.exe"
+    git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager-core.exe"  
 
     # For Azure DevOps support only
-    git config --global credential.https://dev.azure.com.useHttpPath true  
+    git config --global credential.https://dev.azure.com.useHttpPath true
   ```  
 - Using GCM: When you connect to a Git repository from your Git client for the first time, the credential manager prompts for credentials. Provide your Azure AD credentials. Once authenticated, the credential manager creates and caches a personal access token for future connections to the repo. Git commands that connect to this account won't prompt for user credentials until the token expires. A token can be revoked through Azure Repos.
 - How it works inside WSL: GCM leverages the built-in interop between Windows and WSL. Git inside of a WSL can launch the GCM Windows application transparently to acquire credentials. Using the host operating system (Windows) to store credentials also means that your Windows applications and WSL can all share those credentials.
