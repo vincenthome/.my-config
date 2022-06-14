@@ -1,1 +1,2 @@
-alias finpmrun=' nvm exec 12.22.9 npm run'
+alias cdchk=' cd /mnt/c/IMM/eReceiptsClient/ws/LEUNGV1'
+alias chktoday='sed "s/11-11-11/$(date '+%m-%d-%y')/g" orig.dat > _today.dat && sed "s/11-11-11/$(date '+%m-%d-%y')/g" orig.xml > _today.xml'
