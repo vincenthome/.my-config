@@ -31,9 +31,9 @@ TOC
     - Assign an existing non-root user to distro
       - Add file to distro /etc/wsl.conf
         ```
-        [automount]
+        <!--- [automount]
         enabled=false
-        root=//wsl$/ub2004.vm1/home/battlestar
+        root=//wsl$/ub2004.vm1/home/battlestar -->
         [user]
         default=battlestar
         ```
