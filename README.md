@@ -286,7 +286,7 @@ Supports [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/repos/git/
 - NVM
   - [Install](https://github.com/nvm-sh/nvm#installing-and-updating) then restart shell
     ```
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | zsh
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | zsh
     ```
   - Usage: [https://github.com/nvm-sh/nvm#usage](https://github.com/nvm-sh/nvm#usage)
 
