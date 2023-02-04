@@ -64,7 +64,7 @@ Supports [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/repos/git/
   
 - [Configure](https://github.com/GitCredentialManager/git-credential-manager/blob/main/docs/wsl.md#configuring-wsl-with-git-for-windows-recommended) WSL git client to use GCM
   ```
-    git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager-core.exe"  
+    git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
 
     # For Azure DevOps support only
     git config --global credential.https://dev.azure.com.useHttpPath true
