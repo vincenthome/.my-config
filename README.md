@@ -26,7 +26,7 @@ TOC
     - Export distro to tar: wsl --export Ubuntu-20.04 Ubuntu-20.04.tar.gz
     - Import distro from tar 1+ times: 
       ```
-      wsl --import ub2004.vm1 C:\_wslvms\Ubuntu-20.04-112021\vm1 C:\_wslvms\Ubuntu-20.04-112021\Ubuntu-20.04.tar.gz
+      wsl --import ub2004.vm1 C:\_wslvms\Ubuntu-20.04-112021\vm1 C:\_wslvms\Ubuntu-22.04-112021\Ubuntu-22.04.tar.gz
       ```
     - Assign an existing non-root user to distro
       - Add file to distro /etc/wsl.conf
