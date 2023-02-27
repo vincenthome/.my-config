@@ -337,6 +337,10 @@ sudo apt-get install jq
       start = "my_poetry_app.index:start"
       ```
     - create `my_poetry_app/index.py`
+        ```      
+        def start():
+          print("Hello World!!!")
+        ```
     - run `poetry run start`
 
 - Java: `sudo apt install openjdk-11-jre-headless`
