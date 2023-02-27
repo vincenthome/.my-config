@@ -330,6 +330,14 @@ sudo apt-get install jq
   ```
   - Add Poetry to your PATH `$HOME/.local/bin`
   - Verify: `poetry --version`
+  - Run
+    - pyproject.toml
+      ```
+      [tool.poetry.scripts]
+      start = "my_poetry_app.index:start"
+      ```
+    - create `my_poetry_app/index.py`
+    - run `poetry run start`
 
 - Java: `sudo apt install openjdk-11-jre-headless`
 - Go: `sudo apt install golang-go`
