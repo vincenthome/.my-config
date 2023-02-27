@@ -315,14 +315,14 @@ sudo apt-get install jq
   - python3: preinstalled on ubuntu 20.04. Check: python3 --version
   - PIP: `sudo apt install -y python3-pip`
   - Development tools: `sudo apt install build-essential libssl-dev libffi-dev python-dev`
-  - Virtual Environment venv: `sudo apt install -y python3-venv`
-  - Create Environment
+  - Install virtual environment venv: `sudo apt install -y python3-venv`
+  - Create virtual environment
     ```
-    mkdir environments
-    cd environments
     python3 -m venv my_env
     source my_env/bin/activate
     ```
+    You will see the name of the virtual environment on the right prompt
+    
 - Python 2 `sudo apt install python2`
 - [Install Poetry](https://python-poetry.org/docs/#installation)
   ```
