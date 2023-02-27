@@ -324,6 +324,13 @@ sudo apt-get install jq
     source my_env/bin/activate
     ```
 - Python 2 `sudo apt install python2`
+- [Install Poetry](https://python-poetry.org/docs/#installation)
+  ```
+  curl -sSL https://install.python-poetry.org | python3 -
+  ```
+  - Add Poetry to your PATH `$HOME/.local/bin`
+  - Verify: `poetry --version`
+
 - Java: `sudo apt install openjdk-11-jre-headless`
 - Go: `sudo apt install golang-go`
 - Rust: `sudo apt install rustc`
