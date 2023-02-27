@@ -347,6 +347,53 @@ sudo apt-get install jq
 - Go: `sudo apt install golang-go`
 - Rust: `sudo apt install rustc`
 - [C++](https://linuxconfig.org/how-to-install-g-the-c-compiler-on-ubuntu-20-04-lts-focal-fossa-linux): `sudo apt install build-essential`
+
+## Spark [Setup](https://phoenixnap.com/kb/install-spark-on-ubuntu)
+
+- Install Pre-requirement ``` sudo apt install default-jdk scala git -y ```
+- Verify ``` java -version; javac -version; scala -version; git --version ```
+- Install
+  ```
+  wget https://downloads.apache.org/spark/spark-3.0.1/spark-3.0.1-bin-hadoop2.7.tgz
+  ```
+  ```
+  tar xvf spark-*
+  ```
+  ```
+  sudo mv spark-3.0.1-bin-hadoop2.7 /opt/spark
+  ```
+- Configure
+  ```
+  export SPARK_HOME=/opt/spark
+  export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+  export PYSPARK_PYTHON=/usr/bin/python3
+  ```
+- Start Master
+``` start-master.sh ```
+
+- UI
+``` http://locahhost:8080/ ```
+
+- Start Slave
+``` start-slave.sh [-c 1] [-m 512M] spark://master:port // copy from UI above ```
+
+- Test Spark Shell
+``` spark-shell // :q to quit```
+
+- Python in Spark
+``` pyspark ```
+
+- More
+```
+start-master.sh
+stop-master.sh
+stop-slave.sh
+start-all.sh
+stop-all.sh
+```
+
+
+
 ## Install Azure CLI
 
 - Instructions: [https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt#option-1-install-with-one-command](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt#option-1-install-with-one-command)
