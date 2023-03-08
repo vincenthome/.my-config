@@ -56,6 +56,7 @@ alias gta='git tag -a'  # add tag e.g. gta v1.1 -m 'v1.1'
 alias gtd='git tag -d'  # delete tag e.g. gtd v1.1
 alias gpt='git push origin --tags' # add tags to remote
 alias gptd='git push origin -d' # delete tag on remote e.g. gptd v1.1
+alias gbrnl='git branch -m' # rename currnt local branch, should follow by gpsup and gpod <old_branch>
 
 # nginx
 alias nginxs='cd $(wslpath "$(wslvar NGINX)"); cmd.exe /c "start $(wslvar NGINX)/nginx.exe"; cdh'
