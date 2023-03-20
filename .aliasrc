@@ -58,8 +58,8 @@ alias gpt='git push origin --tags' # add tags to remote
 alias gptd='git push origin -d' # delete tag on remote e.g. gptd v1.1
 alias gbrnl='git branch -m' # rename currnt local branch, should follow by gpsup and gpod <old_branch>
 alias gsf='git update-index --skip-worktree' # skip local config file(s) https://compiledsuccessfully.dev/git-skip-worktree/
-alias gusf='git update-index --no-skip-worktree' # unskip local config file(s) https://compiledsuccessfully.dev/git-skip-worktree/
-alias glsf='git ls-files -v|grep "^S"' # ls skip file(s)
+alias gsfu='git update-index --no-skip-worktree' # unskip local config file(s) https://compiledsuccessfully.dev/git-skip-worktree/
+alias gsfl='git ls-files -v|grep "^S"' # ls skip file(s)
 
 # nginx
 alias nginxs='cd $(wslpath "$(wslvar NGINX)"); cmd.exe /c "start $(wslvar NGINX)/nginx.exe"; cdh'
